@@ -1,0 +1,370 @@
+PAGE 1
+Improved Throwing Mechanics in VR - Spatial User Interfaces
+Jeppe Dahl Guldager *
+Aalborg University
+Laurids Jacobsen†
+Aalborg University
+Maria Matthildi Savranaki ‡
+Aalborg University
+Figure 1: Elemental Throwing
+ABSTRACT
+This project explores the design of an improved object interaction
+technique for throwing in Virtual Reality. A force-based selection
+and throwing mechanic was developed and compared to Unity’s
+default interaction system through a small user evaluation. The
+study combined performance-based measures with subjective feed-
+back. Results indicate that the proposed interaction led to higher
+task performance and was perceived as easier for hitting targets,
+while both techniques were considered understandable and relatively
+natural. The findings serve as an early usability assessment and
+provide direction for further refinement of the interaction.
+Index Terms:Medialogy—Spatial User Interfaces—Mini-project
+1 INTRODUCTION
+One of the strengths of Virtual Reality (VR) is that it gives users the
+freedom to interact with otherwise inaccessible and unnatural envi-
+ronments in fun and entertaining ways. But there are some aspects
+where the known and natural are the most desired and sometimes
+hardest to achieve: for example physics. No matter how mystical the
+surroundings, in most cases we want interactions to feel like they
+do in our real world. Throwing is a task where we want it to feel as
+natural as possible. [4] compared the task of throwing in VR to real
+life and found that precision and accuracy were drastically worse
+*e-mail: jgulda22@student.aau.dk
+†e-mail: ljacob22@student.aau.dk
+‡e-mail: msavra24@student.aau.dk
+in VR. Qualitative interviews showed that especially trigger release
+timing inaccuracy contributed to this difference in quality. [1] goes
+in depth explaining possible reasons why he believes that throwing
+often doesn’t work in VR. With these findings in mind, we set out
+to create a prototype game with an intuitive throwing mechanic,
+coupled with an alternative object selection and grabbing method.
+2 PREVIOUSWORK
+Interaction in virtual environments has been widely studied within
+the field of Spatial User Interfaces (SUIs), with a particular focus
+on how users select, manipulate, and control virtual objects. This
+section outlines the relevant academic foundations and practical
+examples that inform the design of the project.
+2.1 Selection and Manipulation in Virtual Environments
+A fundamental framework for understanding interaction in virtual
+environments is the distinction between selection and manipulation.
+Selection refers to the process of identifying and choosing an object,
+while manipulation involves modifying its position, orientation, or
+other properties [2]. These two stages are often treated separately in
+interface design but are closely related in practice.
+In immersive environments, manipulation typically involves six
+degrees of freedom (6-DoF), allowing objects to be translated and
+rotated in three-dimensional space. Designing intuitive mappings
+between user input and object behaviour is a central challenge, as
+users must be able to control objects precisely while maintaining a
+sense of natural interaction.
+2.2 Extended Reach Interaction
+One limitation of direct interaction techniques is that they are con-
+strained by the user’s physical reach. To address this, several ex-
+PAGE 2
+tended interaction techniques have been developed that allow users
+to interact with objects beyond arm’s length.
+A well-known example is the Go-Go interaction technique pro-
+posed by Poupyrev et al. [3]. This technique introduces a non-linear
+mapping between the user’s physical hand movement and the virtual
+hand position, effectively extending the reach of the user. When
+the user’s hand moves beyond a certain threshold, the virtual hand
+accelerates forward, allowing distant objects to be selected and ma-
+nipulated.
+This approach highlights an important design principle: interac-
+tion techniques do not need to strictly mimic real-world behaviour,
+but should instead support the user’s intention in an intuitive way.
+The present project addresses a similar problem—interacting with
+distant objects, but explores an alternative solution based on force-
+driven attraction rather than spatial remapping.
+2.3 Physics-Based Object Interaction
+Another important direction in SUI research is the use of physics-
+based interaction. Instead of directly attaching objects to the user’s
+hand or controller, forces and torques are applied to simulate realistic
+movement.
+Physics-based approaches can enhance the perception of realism
+by introducing properties such as inertia, momentum, and resistance.
+This results in object behaviour that is less rigid and more dynamic
+compared to direct manipulation techniques. However, it also intro-
+duces challenges in control, as users must adapt to indirect responses
+rather than immediate positional mapping.
+In the context of this project, physics-based interaction is particu-
+larly relevant because objects are not instantly moved to the user’s
+hand. Instead, they travel through space toward the user, creating a
+continuous transition between selection and grasping.
+2.4 Game References
+Two commercial VR games were used as design references for the
+interaction concept:Acron: Attack of the Squirrels!andHalf-Life:
+Alyx.
+Acron: Attack of the Squirrels!demonstrates how simple grab-
+and-throw mechanics can form the core of a VR interaction system.
+The VR player interacts with the environment by grabbing nearby
+objects and throwing them toward targets. The interaction is highly
+intuitive, as it relies on familiar physical actions such as reaching,
+aiming, and releasing. This makes it easy for users to understand
+and engage with the system without requiring complex instructions.
+Half-Life: Alyxintroduces a different approach through the use
+of Gravity Gloves, which allow players to interact with objects at a
+distance. Users can select an object, perform a pulling gesture, and
+have the object travel toward their hand. This creates a smooth transi-
+tion between distance selection and direct manipulation, maintaining
+a strong sense of embodiment.
+The present project combines these two interaction paradigms.
+FromAcron, it adopts the simplicity and intuitiveness of grab-and-
+throw mechanics. FromHalf-Life: Alyx, it adopts the force-based
+attraction of distant objects. Additionally, the project extends these
+ideas by introducing a recall mechanic, allowing objects to be
+brought back to the user after being thrown, creating a continuous
+interaction loop.
+3 DESIGN ANDIMPLEMENTATION
+The final product ended up being a small one minute game, where
+users pick up and throw elemental balls, trying to hit as many targets
+as possible. We wanted each different element (rock, fire, lightning)
+to feel distinctive when interacting with them. First of all, a specific
+set of haptic patterns were created for each element. Each contains
+a haptic that loops when hovering the ball, one that plays when you
+grab it and another looping pattern when holding the ball. All were
+created using Meta Haptics Studio. This was chosen for its ability
+to manually create advanced haptic patterns. However, integrating
+this with XR Interaction Toolkit, which was used for the project,
+proved to more than challenging than first anticipated. We created
+the GetController Method (See figure 2) as a workaround to this
+problem, which allowed for Meta haptic clips to be played on the XR
+controllers. Most of the functionality was implemented by adding
+the XRGrabInteractable to the balls, making it easy to connect
+functionality to specific events (eg. hover, select enter / exit).
+Figure 2: GetController method
+We wanted a way to be able to select and grab the balls from
+distance. This is inherently possible by hovering the ray on an
+object, grabbing it with a button click and using the controller stick,
+sliding it to your hand. However, through the grabbing interaction
+we wanted to give the user a bit more sense of agency and physical
+involvement in the virtual world. When hovering a ball, the user
+can quickly pull their hand toward themselves to send the ball flying
+into their hand. A ControllerData script tracks the velocity of both
+controllers and detects whether it exceeds the set threshold. The ball
+uses this information to activate the coroutine that moves the ball.
+The coroutine uses a lerp to move the ball, and here ’t’ is controlled
+by an animation curve. Each element implements its own custom
+animation curve, making it possible to shape the flight path so it fits
+the given element, giving them each a distinctive feel.
+3.1 Improved Throwing Interaction
+The throwing mechanic in the application is implemented as a cus-
+tom system that extends beyond Unity’s default XR Interaction
+Toolkit behavior. Instead of relying solely on controller velocity,
+the system combines physical input with directional guidance to
+improve accuracy and consistency.
+When an object is released, the throw direction is calculated
+using a projected target based on a crosshair (see Figure 3), which
+is positioned in front of the non-throwing hand. This allows the
+user to aim explicitly rather than depending only on natural hand
+motion. The final velocity applied to the object is derived from
+the controller’s movement magnitude, scaled and clamped within
+defined limits to ensure stable and predictable behavior.
+Figure 3: Screenshot of the throwing interaction including the
+crosshair
+PAGE 3
+Additional adjustments, such as a slight upward bias and hor-
+izontal correction, are applied to produce a more natural arc and
+compensate for common misalignment between hand position and
+player view. This results in a throwing interaction that feels both re-
+sponsive and easier to control, particularly in target-based scenarios.
+3.2 Evaluation Minigame
+Targets are spawned at random positions within a defined radius
+around the player, ensuring they appear within a controlled and
+playable area. When a target is hit, it is immediately replaced by a
+new one to maintain a consistent number of targets.
+A time-limited scoring system is used to evaluate performance.
+Players earn points by hitting targets and the final score is recorded
+when the timer ends. These scores were used to compare Unity’s
+default throwing system with the custom throwing mechanic, pro-
+viding a simple measure of accuracy and effectiveness between the
+two approaches.
+4 EVALUATIONMETHOD
+The evaluation is designed as a comparative user study between two
+object interaction techniques in VR. The purpose is to compare the
+proposed force-based selection and throwing mechanic with Unity’s
+default object picking and throwing interaction.
+The study follows a within-subjects design, meaning that each
+participant tests both interaction techniques. This allows the perfor-
+mance and experience of the two techniques to be compared using
+the same participants, reducing differences caused by individual
+skill level or prior VR experience.
+4.1 Interaction Conditions
+Two interaction conditions will be evaluated:
+• Default Unity Interaction:Participants use the standard pick-
+ing and throwing mechanic provided by Unity’s XR interaction
+system.
+• Proposed Force-Based Interaction:Participants use the cus-
+tom interaction mechanic developed for this project, where
+objects are thrown using the proposed throwing mechanic.
+4.2 Task Design
+Participants will complete the same target-hitting task using both
+interaction techniques. In each condition, the participant will attempt
+to hit as many targets as possible in one minute by selecting and
+throwing objects within the virtual environment.
+Each participant will complete the time based task with the default
+Unity interaction and with the proposed force-based interaction. The
+order of the two conditions should be counterbalanced, meaning
+that some participants start with the Unity interaction while others
+start with the proposed interaction. This is done to reduce learning
+effects.
+4.3 Measures
+The evaluation will collect both performance-based and subjective
+data.
+Performance measuresinclude:
+• Number of targets hit during the timed task
+Subjective measuresinclude:
+• Perceived ease of use
+• Perceived control
+• Perceived precision
+• Did the interaction feel natural
+• User preference between the two techniques in a number of
+categories
+These subjective measures will be collected through a short post-
+task questionnaire after both conditions have been tested. The evalu-
+ation questions and results can be seen in full on the project Github
+page.
+4.4 Procedure
+Participants will first receive a short introduction to the VR environ-
+ment and the task. Before each condition, they will be given a brief
+practice period to become familiar with the interaction technique.
+After the practice period, participants will perform the one minute
+test using the first interaction technique. They will then repeat the
+same task using the second interaction technique. The number of
+successful hits will be recorded for each condition.
+After completing both conditions, participants will be asked to
+provide feedback on which interaction technique they found easier,
+more accurate, more intuitive, more effortless and more enjoyable
+to use.
+4.5 Data Analysis
+The collected data will be used to compare task results and subjective
+perceptions for each interaction condition. The number of targets
+hit will be compared between the default Unity interaction and the
+proposed force-based interaction.
+Qualitative feedback from participants will be used to identify
+perceived strengths and weaknesses of each interaction technique.
+5 RESULTS
+5.1 Task Results
+The performance results from the one-minute playthroughs are
+shown in Figure 4. Two participants completed five trials with
+each interaction technique. For both participants, the force-based
+interaction resulted in a higher number of targets hit across all trials.
+Across both participants, the force-based condition consistently
+produced higher scores in every corresponding trial. The difference
+between the two interaction techniques appears relatively stable,
+with no instances where the default interaction outperformed the
+force-based interaction.
+These results indicate a higher task performance, measured by
+number of targets hit, when using the force-based interaction com-
+pared to the default Unity interaction.
+5.2 Likert Scale Questionnaire
+The Likert scale questionnaire results provide subjective evaluations
+of the two interaction techniques across several dimensions. They
+were asked to rate from a scale of 1 to 7. Results can be seen
+visualized in Figure 5
+For the default Unity interaction, both participants reported that
+the interaction was easy to understand (scores of 7 and 6) and mod-
+erately felt in control (both scoring 5). However, both participants
+rated the ease of hitting targets relatively low (scores of 3 and 2) and
+the perceived naturalness varied between participants (6 and 3) .
+For the force-based interaction, both participants again rated the
+interaction as easy to understand (both scoring 6 or 7) and reported
+slightly higher perceived control (both scoring 6). Notably, both
+participants rated the ease of hitting targets higher compared to the
+default interaction (scores of 7 and 6). The perceived naturalness
+was rated similarly or slightly higher (scores of 6 and 5) .
+Additional questions specific to the force-based interaction
+showed that pulling objects toward the user was rated as easy (scores
+of 7 and 6), while the transition from pulling to throwing received
+PAGE 4
+Figure 4: The result of the two participants in the two different tasks
+Figure 5: Subjective questionnaire likert scores of Left: participant 1
+and Right: participant 2
+lower ratings (scores of 4 and 3), indicating more mixed perceptions
+for this aspect of the interaction .
+Overall, the Likert scale responses suggest that both interaction
+techniques were considered understandable and reasonably natural,
+while the force-based interaction was rated higher in terms of ease of
+hitting targets and slightly higher in perceived control. These results
+also identify areas of potential improvement in future iterations.
+5.3 Comparison Questionnaire
+The comparison questionnaire asked participants to directly compare
+the two interaction techniques across several criteria, including pre-
+cision, effort, enjoyment and overall preference, crossing off either
+’default’, ’force-based’ or ’no difference’.
+Participant 1 preferred force-based in all 5 categories. Participant
+2 did the same, except for the question ’Which interaction required
+less effort?’ where the participant found no difference.
+Overall, the results combine objective performance data and sub-
+jective evaluations, showing consistent differences between the two
+interaction techniques across both measures.
+6 DISCUSSION
+The evaluation compared the default Unity XR interaction with the
+proposed force-based interaction using both performance measures
+and subjective feedback. Overall, the results indicate a consistent
+difference between the two techniques across both objective and
+subjective data.
+From a performance perspective, both participants achieved
+higher scores in all trials when using the force-based interaction.
+This suggests that the proposed interaction may support improved
+accuracy in target-based tasks. The consistency of this pattern across
+all trials and both participants strengthens the indication that the
+difference is not due to isolated performances. However, the results
+alone do not explain the reason for this improvement.
+The subjective results provide additional context. Participants
+rated both interaction techniques as easy to understand, indicating
+that neither system posed a significant learning barrier. However, the
+force-based interaction was rated higher in terms of ease of hitting
+targets and slightly higher in perceived control. This aligns with
+the observed performance differences and suggests that the added
+directional guidance (e.g., crosshair-based aiming) may contribute
+to improved usability.
+The comparison questionnaire and qualitative feedback further
+support this trend, with participants expressing a preference for
+the force-based interaction, particularly in relation to targeting and
+precision.
+A key limitation of the evaluation is the small number of partici-
+pants. With only two participants, the results cannot be generalized,
+and individual differences may have a significant influence on the
+outcome. A larger and more diverse participant group would be
+required to draw more reliable conclusions.Additionally, the short
+duration of each condition (one minute) also limits the ability to
+assess long-term usability, fatigue or adaptation over time.
+Rather than serving as a conclusive evaluation, this evaluation
+design can be understood as an early-stage or mid-way usability test.
+The purpose of the evaluation was not only to compare performance,
+but also to identify strengths and weaknesses of the proposed inter-
+action. In this context, the results are useful for informing further
+development. For instance, while the force-based interaction appears
+to improve targeting performance, the lower ratings for the transi-
+tion between pulling and throwing highlight an area that requires
+refinement.
+Future evaluations should build on these findings by including
+more participants, refining the interaction based on the identified
+issues and potentially incorporating additional measures such as
+accuracy rate or error patterns. This would allow for a more compre-
+hensive understanding of how and why the interaction performs as
+observed.
+7 CONCLUSION
+This project presented a force-based interaction technique for se-
+lecting and throwing objects in VR and evaluated it against Unity’s
+default interaction. The results showed improved performance and
+more positive user feedback for the proposed method, particularly in
+terms of target accuracy. However, limitations such as the small num-
+ber of participants mean that the findings are not conclusive. Instead,
+the evaluation highlights both the potential of the approach and areas
+for improvement, supporting further iteration and development of
+the interaction design.
+REFERENCES
+[1] O. Kreylos. Why throwing often does not work in vr. https://www.
+youtube.com/watch?v=eREYrwCwqYo, 2018. YouTube video.
+[2] J. J. LaViola Jr, E. Kruijff, R. P. McMahan, D. Bowman, and I. P.
+Poupyrev.3D user interfaces: theory and practice. Addison-Wesley
+Professional, 2017.
+[3] I. Poupyrev, M. Billinghurst, S. Weghorst, and T. Ichikawa. The go-go
+interaction technique: non-linear mapping for direct manipulation in vr.
+InProceedings of the 9th annual ACM symposium on User interface
+software and technology, pp. 79–80, 1996.
+[4] T. Zindulka, M. Bachynskyi, and J. M¨uller. Performance and experience
+of throwing in virtual reality. InProceedings of the 2020 CHI conference
+on human factors in computing systems, pp. 1–8, 2020.

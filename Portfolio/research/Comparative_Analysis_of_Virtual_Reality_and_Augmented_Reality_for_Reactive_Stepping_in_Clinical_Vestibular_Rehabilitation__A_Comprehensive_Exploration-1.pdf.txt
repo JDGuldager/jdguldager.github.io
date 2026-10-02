@@ -1,0 +1,718 @@
+PAGE 1
+VR and AR for Reactive Stepping Exercises: A Comparative Feasibility
+and Acceptability Study in Elderly with Vestibular Dysfunction
+Jeppe Dahl Guldager*
+Multisensory Experience Lab
+Aalborg University
+Laurids Jacobsen†
+Multisensory Experience Lab
+Aalborg University
+Alina Jaseneckaja‡
+Multisensory Experience Lab
+Aalborg University
+Pernille Mortensen§
+Multisensory Experience Lab
+Aalborg University
+Mathilde Maria Stanborough¶
+Multisensory Experience Lab
+Aalborg University
+Figure 1: Conceptual illustration of balance and reactive stepping training for older adults, reflecting the design approach of our
+VR/AR rehabilitation experience (Generated with ChatGPT)
+ABSTRACT
+This study explores the comparative use of Virtual Reality (VR)
+and Augmented Reality (AR) technologies for reactive stepping re-
+habilitation in elderly individuals diagnosed with vestibular dys-
+function. A programme was developed and tested in both VR and
+AR conditions on the Meta Quest 3 headset, designed in Unity, and
+in collaboration with Gentofte Hospital. The final experiment in-
+volved five female participants aged 65–78 years (mean age 71),
+all presenting varying degrees of balance impairment. The purpose
+was not to measure clinical outcomes directly, but rather to inves-
+tigate user experience, perceived usability, acceptance, and prefer-
+ence through observation, semi-structured interviews, and repeated
+administration of the Simulator Sickness Questionnaire (SSQ). Par-
+ticipants generally found the AR condition more intuitive and less
+disorienting, with four out of five preferring it due to the visibility of
+their physical surroundings. The VR condition, while rated as more
+immersive and motivating, led to feelings of disorientation or ner-
+*jgulda22@student.aau.dk
+†ljacob22@student.aau.dk
+‡ajasen22@student.aau.dk
+§pmorte20@student.aau.dk
+¶mstanb22@student.aau.dk
+vousness in three participants, and one reported mild cybersickness.
+Observational data revealed more exaggerated stepping behaviours
+in VR, while stepping in AR appeared more confident and con-
+trolled. Physiotherapists highlighted VR’s potential for immersive,
+therapist-guided training, while recommending AR for home-based
+use due to its lower sensory load and safer context. These findings
+suggest that both modalities have complementary roles. The VR
+condition for controlled, immersive clinical interventions, and the
+AR condition for intuitive, real-world practice. The study provides
+insights into XR usability among elderly users and contributes to
+the design and deployment of safe, adaptable rehabilitation tools.
+Index Terms: Vestibular Dysfunction, Balance, STABLE, Phys-
+iotherapy, Rehabilitation, Virtual Reality (VR), Augmented Real-
+ity (AR), Meta Quest 3, Pass-Through, Reactive Stepping, Elderlys
+Acceptance, Cybersickness
+1 I NTRODUCTION
+1.1 Vestibular Dysfunction and Rehabilitation Needs
+Vestibular dysfunction is a widespread and often under-diagnosed
+condition that significantly affects the health and quality of life
+of elderly populations. Studies estimate that up to 35% of adults
+over 40 years of age experience some form of vestibular dysfunc-
+tion, with the prevalence increasing substantially with age, affecting
+nearly 50% of individuals over 60 and up to 85% of those over 80
+[12]. This progressive deterioration of the vestibular system, which
+plays a critical role in maintaining balance and spatial orientation,
+PAGE 2
+often results in symptoms such as vertigo, dizziness, unsteadiness,
+spatial disorientation and oscillopsia (the sensation that the visual
+field is moving) [1]. These symptoms contribute to a heightened
+risk of falls, which are a leading cause of injury, hospitalisation,
+loss of independence and mortality in older adults. According to
+the World Health Organisation, falls are the second leading cause
+of accidental deaths worldwide and over 30% of adults over 65 fall
+at least once per year, with 10% of those falls resulting in serious
+injuries such as fractures or traumatic brain injuries [26].
+One of the most critical skills for fall prevention is reactive step-
+ping, defined as the ability to take rapid, automatic and corrective
+steps when balance is suddenly lost. Unlike anticipatory postu-
+ral adjustments, which involve planned movements, reactive step-
+ping is an involuntary response triggered by unexpected perturba-
+tions, such as tripping over an obstacle or slipping on a wet surface.
+Reactive stepping is particularly important for elderly individuals,
+as age-related declines in sensory integration, neuromuscular con-
+trol and cognitive-motor interaction reduce their ability to recover
+from such disturbances. Impairments in reactive stepping have been
+linked to a significantly higher risk of falls, making it a priority do-
+main for intervention in vestibular rehabilitation [6].
+Traditional vestibular rehabilitation protocols often focus on in-
+person physiotherapy sessions, where patients engage in structured
+exercises targeting balance, gaze stabilisation and postural control
+[5]. These sessions typically involve guided feedback from phys-
+iotherapists, who provide verbal, visual and tactile cues to help pa-
+tients refine their movements and develop compensatory strategies
+[1], but these interventions can sometimes lack variety, controlled
+challenge progression or the ability to simulate complex or high-
+risk scenarios safely.
+Emerging digital technologies, such as Virtual Reality (VR) and
+Augmented Reality (AR), offer innovative ways to address these
+challenges. VR provides fully immersive environments that sim-
+ulate real-world scenarios or controlled therapeutic settings, en-
+abling patients to engage in task-specific training under safe and
+supervised conditions [5]. The immersive nature of VR can pro-
+mote body ownership, enhance engagement and provide precise,
+multimodal feedback through visual, auditory and haptic cues [1].
+Meanwhile, AR overlays digital elements onto the physical world,
+allowing patients to practice tasks within a familiar environment,
+promoting ecological validity and potentially enhancing skill trans-
+fer to real-life situations [2]. Both modalities offer promising av-
+enues for advancing the balance rehabilitation experience in new
+and challenging ways. However, despite their potential, the com-
+parative strengths, limitations and clinical relevance of VR and AR,
+particularly in the context of rehabilitation for vestibular patients,
+remain under-explored in existing literature.
+This paper builds upon the work conducted in our project in col-
+laboration with Gentofte Hospital, where we developed and tested
+both VR and AR conditions for reactive stepping training. The pro-
+gramme consisted of two versions; VR and AR. The VR condi-
+tion featured a lake, surrounded by nature and trees and on the lake
+lily-pads appeared from the water (Figure 2, Right). The AR envi-
+ronment did not contain the lake or trees, just the lily-pads (Figure
+2, Left). In both programmes there were virtual shoes, that would
+align with the user’s feet placement. The user’s task in the pro-
+gramme is to register the location of the lily pad, step onto it and
+once the step is completed, a new lily pad appears, prompting the
+user to repeat the exercise in a continuous sequence. An animated
+frog jumps from lily pad to lily pad, indicating the target location
+for the user. This design took inspiration from reactive stepping ex-
+ercises observed during physiotherapy sessions. The frog not only
+provides visual guidance but also enhances immersion by adding
+liveliness and movement to the scene. It is deliberately coloured
+bright red to stand out against the green lily pads, ensuring it is eas-
+ily seen. The frog’s jumping motion is animated using a custom rig
+and Unity’s animation curve to simulate a smooth arc, helping older
+adults intuitively follow its path.
+Figure 2: Left: AR task in progress - Right: VR task in progress
+In addition, a “ghost feet” system is implemented to demonstrate
+the correct foot movement to the first lily pad (Figure 3). This sys-
+tem displays transparent shoes as visual markers for where the user
+should step, reinforcing the reactive stepping task and reducing un-
+certainty.
+Figure 3: The ghost feet and frog meant to guide the user to take the
+first step in the application
+By integrating theoretical frameworks such as the STABLE
+model (Specific Training According to BaLance Evaluation) [6],
+the Virtuality Continuum and principles of user-centred design for
+elderly populations, we aim to critically assess and compare how
+these technologies can support vestibular rehabilitation. Through
+empirical data collection, user feedback and physiotherapist in-
+sights, we seek to contribute to the growing body of research
+on Extended Reality (XR) applications in healthcare and provide
+evidence-based recommendations for their integration into clinical
+practice.
+1.2 Aims and Research Area
+The primary aim of this study is to investigate the comparative ef-
+fectiveness, feasibility and clinical relevance of VR and AR as tools
+for reactive stepping rehabilitation in elderly patients with vestibu-
+lar dysfunction. Specifically, we seek to understand how these tech-
+nologies differ in terms of user experience, engagement, safety and
+potential for skill transfer.
+The secondary aim is to explore elderly’s and physiotherapists’
+acceptance of VR / AR, how they perceive the usability, challenges
+and benefits of each modality and how these perspectives can in-
+form the design of future XR-based rehabilitation tools.
+2 T HEORETICAL FRAMEWORK
+This section presents the theoretical foundations underpinning our
+comparative study of VR and AR in vestibular rehabilitation, fo-
+cusing on reactive stepping. We draw on established rehabilitation
+models, human-computer interaction theory, XR design principles
+and literature on ageing populations and technology use.
+2.1 The STABLE Framework in Vestibular Rehabilitation
+Vestibular rehabilitation is a specialised area within physiotherapy
+aimed at improving balance, gaze stability and postural control.
+The STABLE model offers a structured framework for addressing
+the multidimensional aspects of balance rehabilitation. Developed
+PAGE 3
+through clinical research and expert consensus [6], the STABLE
+model identifies six key domains essential for comprehensive bal-
+ance training: Stability limits, sensory orientation, cognitive-motor
+interaction, turning, power and reactive stepping.
+Among these, reactive stepping is of particular interest for fall
+prevention, as it directly addresses the body’s ability to respond
+rapidly and appropriately to unexpected imbalances. Unlike antici-
+patory postural adjustments, where individuals prepare for a move-
+ment in advance, reactive stepping is an involuntary, automatic re-
+sponse triggered by external disturbances. For example, when a
+person trips over an uneven surface, their ability to execute a quick
+step can mean the difference between recovering balance or experi-
+encing a fall.
+Evidence suggests that age-related declines in sensory process-
+ing (particularly from the vestibular system), muscle strength, reac-
+tion time and cognitive-motor integration impair reactive stepping
+ability in elderly populations [12][8]. Consequently, training inter-
+ventions must not only target physical components such as strength
+and agility but also simulate realistic real-world balance challenges.
+Traditional physiotherapy attempts to address this through manual
+perturbations or controlled exercises, but these methods have lim-
+itations. They may lack variety, realism and intensity control, and
+they are often restricted to the clinical setting [1].
+XR technologies, VR and AR, offer novel ways to put STA-
+BLE principles into practice, enabling controlled, repeatable bal-
+ance challenges (VR) and contextualised practice in real environ-
+ments (AR). For our research, the STABLE framework guided the
+design of training tasks, emphasising the need for dynamic, respon-
+sive environments that challenge postural control without introduc-
+ing safety risks.
+2.2 The Virtuality Continuum and XR Technologies
+The Virtuality Continuum (Figure 4), introduced by Milgram and
+Kishino (1994), conceptualises XR technologies as existing on a
+spectrum between the completely real and the fully virtual [15].
+At one end lies the Real Environment (RE), the world we navigate
+every day. At the opposite end lies Virtual Reality (VR), computer-
+generated environment. Between these extremes lies Augmented
+Reality (AR), where digital content is overlaid onto the physical
+environment, enhancing but not replacing reality [21].
+Figure 4: An illustration of the Virtuality Continuum spectrum, which
+ranges from fully real environments to fully virtual ones, including
+Augmented Reality (AR) and Augmented Virtuality (AV) as stages in
+between [7]
+This continuum provides a theoretical lens for comparing VR
+and AR in rehabilitation contexts.
+VR, by immersing users in a fully synthetic world, allows precise
+control over stimuli, enabling the presentation of tailored, repeat-
+able and often exaggerated perturbations that would be impractical
+or unsafe in the real world. This control is particularly valuable for
+simulating hazardous scenarios (e.g., stepping on unstable surfaces,
+navigating obstacles) without physical risk [19]. However, VR’s
+strength in immersion can also be a weakness. Users are discon-
+nected from their real surroundings, which may hinder the transfer
+of trained skills to daily life [23].
+In contrast, AR preserves the real-world context, allowing pa-
+tients to practice tasks in familiar settings, such as their own living
+room [2]. This ecological validity supports the transfer of skills to
+real-world environments, which is crucial for functional indepen-
+dence. However, AR systems often offer less precise control over
+stimuli, as the environment’s unpredictability can limit the types of
+perturbations introduced. AR’s reliance on tracking real-world fea-
+tures also introduces technical challenges, such as spatial mapping
+inaccuracies or limited field of view [1].
+The Virtuality Continuum highlights that no single modality is
+inherently superior, rather, each has distinct affordances and lim-
+itations. For vestibular rehabilitation, where both controlled skill
+acquisition (e.g., practising stepping strategies in a safe space) and
+task generalisation (e.g., applying skills in daily life) are important,
+understanding this continuum is critical for designing effective in-
+terventions.
+2.3 Presence, Cybersickness and Ageing Populations
+A central consideration in XR design is presence, the psychologi-
+cal state of ”being there” in the virtual or augmented environment.
+Presence enhances engagement, promotes embodiment (the sense
+of owning and controlling a virtual body) and may facilitate mo-
+tor learning by aligning visual, proprioceptive and vestibular inputs
+[22][20][16]. In VR, high presence is typically achieved through
+immersive visuals, spatial audio, natural interaction metaphors
+(e.g., hand tracking) and minimal latency. AR generally induces
+lower presence, as the real world remains the primary reference
+frame and digital overlays may feel less integrated into the user’s
+perception of their environment [2].
+While presence is often viewed as desirable, it carries trade-
+offs, particularly the risk of cybersickness, a motion-sickness-like
+syndrome caused by sensory conflicts (e.g., visual motion without
+corresponding vestibular or proprioceptive feedback). Cybersick-
+ness symptoms include dizziness, nausea, disorientation and vi-
+sual fatigue, which can limit session duration and user adherence
+[9][11][14]. Notably, studies suggest that older adults may expe-
+rience lower cybersickness than younger users, potentially due to
+age-related declines in the sensitivity of the vestibular system and
+reduced responsiveness of the autonomic nervous system [3][25].
+This finding is encouraging for the application of XR in elderly
+populations, though it must be tempered by awareness that individ-
+ual susceptibility varies and factors such as task complexity, system
+design (e.g., frame rate, latency) and user familiarity all influence
+symptom onset [18][17].
+For reactive stepping tasks, the risk of cybersickness is par-
+ticularly relevant, as dynamic movements can exacerbate visual-
+vestibular conflicts. Therefore, XR system design must prioritise
+minimising visual-vestibular mismatches, ensuring smooth motion
+rendering, maintaining stable frame rates and providing appropriate
+visual anchors (e.g., ground planes, horizon lines) [24][13]. Ad-
+ditionally, given the reduced reaction times and potential balance
+deficits in elderly users, safety considerations must guide every as-
+pect of XR intervention design. This includes establishing clear
+physical boundaries, enabling real-time supervision (especially in
+VR) and offering gradual progression in task difficulty [12][8].
+In summary, the interplay between presence, embodiment and
+cybersickness forms a critical consideration for XR design in
+vestibular rehabilitation. Balancing immersion with safety and user
+comfort is essential for creating systems that are both engaging and
+clinically effective.
+3 M ETHODOLOGY AND DESIGN
+This section outlines the methodological approach used to investi-
+gate the comparative effectiveness of VR and AR for reactive step-
+PAGE 4
+ping rehabilitation in elderly patients with vestibular dysfunction. It
+details the implementation process, system design, user testing and
+evaluation methods. The approach followed an adaptive, iterative
+model, combining insights from physiotherapists, elderly users and
+theoretical frameworks such as STABLE and the Virtuality Contin-
+uum.
+3.1 Implementation Process
+The VR and AR prototypes were developed through an adaptive
+process that combined agile development principles with ongoing
+feedback from physiotherapists and user testing. The implemen-
+tation spanned roughly 15 weeks and centred around several core
+components.
+The initial design was informed by the STABLE framework and
+discussions with physiotherapists, focusing on exercises that sup-
+ported balance and reactive stepping in elderly users with vestibular
+dysfunction. The goal was to create a system that felt intuitive and
+accessible, while directly targeting relevant skills.
+The VR environment presented a calm lake scene with floating
+lily pads as stepping targets. Visual elements were deliberately kept
+simple to avoid overwhelming users and 3D assets were created in
+Blender. Natural ambient sounds, such as water ripples and frog
+calls, added to the sense of immersion without overstimulation.
+Development took place in Unity using the XR Interaction
+Toolkit. The Meta Quest 3 was selected for its stand-alone func-
+tionality and pass through capabilities, which enabled the experi-
+ence to be adapted for both VR and AR. In VR, the user was fully
+immersed in the lake scene, while in AR, the lily pads were an-
+chored to the floor of the user’s own environment using the Quest’s
+pass through API. Spatial anchors and collision detection ensured
+safe placement and reliable interaction.
+To ensure safety, each session included clear physical bound-
+aries, active supervision and time limits tailored to the needs and
+comfort of elderly participants.
+3.2 Design Process
+The design process was user-centred, guided by principles of ac-
+cessibility, simplicity and clinical relevance. It aimed to create a
+system that was both engaging and practical for elderly users with
+vestibular dysfunction, drawing on adaptive feedback from partici-
+pants and physiotherapists throughout the development.
+From an early stage, 5 men and 4 women were directly involved
+in initial testing of elderly’s acceptance of Meta Quest 3 headset.
+They tried an extremely minimalistic VR prototype and an exist-
+ing VR game from the Quest store, providing valuable feedback.
+Physiotherapists were engaged throughout the development process
+to ensure that the game’s exercises aligned with best practices in
+vestibular rehabilitation, focusing on safety, task relevance and the
+specific needs of elderly users.
+The visual design focused on creating a calm, uncluttered envi-
+ronment. In VR, the scene featured a tranquil lake with floating
+lily pads as stepping targets, rendered in soft colours. An animated
+frog acted as a visual guide, jumping from one lily pad to the next
+to indicate the correct target and support user engagement (Figure
+5). In AR, the design used simple, high-contrast overlays to ensure
+the stepping prompts were clearly visible and safe to use within
+real-world spaces.
+Figure 5: Left: Model of the frog created in blender. Right: The top-
+down image used as reference([4])
+The interaction design encouraged multi-directional stepping,
+with lily pad targets appearing dynamically in randomised positions
+to promote reactive movement. Users were required to identify the
+correct target and step onto it, reinforcing balance control through
+repeated, responsive actions. Visual and auditory feedback con-
+firmed successful interactions, while different coloured lily pads
+indicated varying levels of difficulty during task selection (Figure
+6).
+Figure 6: Three colored lily pads appear, each lilypad will start a
+route Green: Easy - Y ellow: Medium - Red: Hard
+Once a route is selected, lily pads appear sequentially and the
+player must step on the next before the currently stepped on disap-
+pears. The duration before disappearance is adjusted by difficulty,
+encouraging faster and more deliberate steps on harder levels. The
+player’s goal is to complete the route and return to the start pad. The
+frog stays one pad ahead, indicating the next step in the sequence.
+This collaborative, iterative approach was central to the develop-
+ment of a system designed to be both technically robust and practi-
+cally useful in supporting balance training for older adults.
+3.3 Experiment and Results
+The evaluation phase used a mixed-methods approach, combining
+quantitative measures (e.g., usability scores and cybersickness inci-
+dence) with qualitative insights (e.g., user comfort, perceived real-
+ism and physiotherapist feedback) to gain a comprehensive under-
+standing of system performance.
+3.3.1 Experiment Design
+User testing involved five elderly participants aged 65–78 years
+(mean age 71) all diagnosed with vestibular dysfunction, each with
+varying degrees of balance impairment but no severe cognitive
+deficits. The participant pool only consisted of females, not due
+to any gender inclusion or exclusion, simply due to what was avail-
+able at the time. Participants were recruited via the Gentofte Hos-
+pital physiotherapy network. Informed consent was obtained and
+sessions were supervised for safety.
+Each participant took part in two sessions; one using the VR
+system and one using the AR system. Each session lasted 4-5 min-
+utes, including onboarding, task familiarisation, a 2-minute active
+PAGE 5
+Figure 7: Diagram visualising the experiment setup and order
+stepping phase and a cooldown period, which was when the cyber-
+sickness questionnaire was conducted. The participant completed
+the Simulator Sickness Questionnaire (SSQ) three times: once be-
+fore beginning any AR or VR tasks (to establish a baseline), once
+between the two demonstrations, and a final time after completing
+both conditions. A semi-structured interview was conducted fol-
+lowing the final SSQ. The order in which participants experienced
+the AR and VR conditions was randomised to minimise order ef-
+fects. See Figure 7 for a visualisation of the experiment setup.
+3.3.2 Data Collection
+The Simulator Sickness Questionnaire (SSQ) [10] was adminis-
+tered pre-, mid- and post-session to monitor symptoms such as
+dizziness and nausea. Semi-structured interviews explored partici-
+pants’ perceptions of usability, user-experience, cybersickness and
+preference. Observational data captured by researchers focused
+on task completion, hesitation, error correction and adaptive be-
+haviours.
+3.3.3 Experiment Results
+Out of the five elderly participants tested, four found the AR condi-
+tion to be more intuitive and easier to use. This perception was pri-
+marily attributed to the ability to see and orient themselves within
+the real environment, which reduced uncertainty and contributed to
+a sense of safety and control. The VR condition, on the other hand,
+was described as immersive and engaging, but three participants
+also reported mild disorientation, dizziness, or a sense of nervous-
+ness during or after the experience.
+Cybersickness symptoms were minimal overall. However, one
+participant in the VR condition explicitly reported feelings of dizzi-
+ness, which were not present during the AR condition. Across the
+full sample, approximately two-thirds of the 60 questionnaire items
+(12 items × 5 participants) recorded the same value across all three
+testing rounds, indicating limited variation in cybersickness symp-
+toms. This suggests that the XR experiences were generally well
+tolerated, though the small sample limits broader generalisation.
+Behaviourally, participants in the VR condition exhibited more
+exaggerated postural adjustments, which was noted through obser-
+vations. These included wider stances, delayed steps and occasional
+hesitation, likely due to reduced peripheral awareness in the fully
+immersive environment. In contrast, participants in the AR con-
+dition displayed more confident stepping patterns and an increase
+in speed, likely because they remained aware of their physical sur-
+roundings and potential real-world obstacles.
+When it came to task performance, three out of five participants
+completed the stepping tasks faster in the AR condition than in VR.
+This could be attributed to the greater familiarity and lower cog-
+nitive load associated with AR, as users did not need to adapt to
+a fully virtual environment. Nonetheless, some participants ex-
+pressed greater motivation and presence during the VR experi-
+ence, suggesting that it may have greater potential for immersive,
+therapist-led training scenarios, while AR may be more suitable for
+home-based exercises.
+These results, though based on a small and specific sample, pro-
+vide early insights into the usability, comfort and behavioural re-
+sponses associated with XR-based rehabilitation. They underscore
+the importance of tailoring modality choice to individual needs and
+training contexts.
+Physiotherapists viewed the VR condition as a promising tool
+for delivering controlled, immersive training scenarios that would
+be difficult or unsafe to replicate in real-life clinical environments,
+particularly those involving dynamic visual cues and reduced en-
+vironmental predictability. They appreciated the potential for us-
+ing VR in structured, therapist-guided sessions to safely challenge
+balance and visual-vestibular coordination. In contrast, they high-
+lighted the AR condition as more suitable for home-based rehabili-
+tation, due to its lower sensory load and ability to maintain aware-
+ness of the physical surroundings. The experts also emphasised the
+importance of task customisability, specifically suggesting greater
+variation in step distances and the option to adjust response times.
+They viewed these features as essential for tailoring the experience
+to individual patients, and for enabling progressive difficulty scal-
+ing as part of a broader, adaptable rehabilitation programme.
+These findings informed iterative refinements to the system, in-
+cluding adjustments to task difficulty thresholds, larger and more
+variating distance between lily pads, improved visual cues in AR
+and enhanced onboarding procedures for VR to mitigate disorien-
+tation.
+4 D ISCUSSION
+This section critically examines the study’s findings in the context
+of existing literature, clinical practices and the broader goals of
+vestibular rehabilitation. By comparing VR and AR for reactive
+stepping training, we aim to provide nuanced insights into their re-
+spective strengths, limitations and integration potential within clin-
+ical rehabilitation programmes for elderly patients with vestibular
+dysfunction.
+4.1 Clinical Implications
+Our findings underscore that Virtual Reality (VR) and Augmented
+Reality (AR) offer distinct yet potentially complementary roles in
+supporting balance training for elderly users. The study evaluated
+five elderly participants’ experiences with both AR and VR condi-
+tions of a custom-developed balance training prototype, created in
+Unity for the Meta Quest 3. The goal was not to measure clinical
+outcomes directly, but to gain insight into usability, perceived en-
+gagement and physical comfort through qualitative interviews, ob-
+servation and standardised questionnaires, including the Simulator
+Sickness Questionnaire (SSQ).
+Four out of five participants found the AR condition to be more
+intuitive and less overwhelming, which they attributed to being
+able to see their physical surroundings throughout the experience.
+In contrast, the VR condition was described by most participants
+as more immersive and engaging, but also led to feelings of dis-
+orientation or nervousness in three out of five participants, with
+one participant reporting symptoms of cybersickness during VR
+use. These perceptions were supported by behavioural observa-
+tions, where participants tended to display more exaggerated postu-
+ral adjustments in VR compared to more confident and faster move-
+ment in AR. These findings support existing research suggesting
+that AR may offer a smoother and more accessible introduction to
+XR for older adults, while VR holds greater promise for deliver-
+ing fully immersive and dynamic training scenarios in supervised
+clinical settings.
+Feedback from the physiotherapists, while gathered informally,
+provided valuable context for interpreting the system’s poten-
+tial clinical relevance. Their comments supported the idea that
+XR technologies could effectively complement traditional balance
+training. This aligns with participant feedback, where many ex-
+pressed enjoyment and curiosity, despite initial unfamiliarity with
+the technology. However, physiotherapists also pointed out limita-
+tions in the current implementation, most notably the lack of varia-
+PAGE 6
+tion in step patterns and distances. They suggested that the uniform
+stepping task, particularly on the easier difficulty route, might limit
+the programme’s effectiveness in challenging users across multiple
+motor domains. Introducing variation in step length, direction and
+timing was proposed as a way to better simulate real-world balance
+scenarios and support more robust training outcomes.
+Another important point raised was the differing use cases for
+VR and AR. While VR was seen as well-suited for supervised clin-
+ical environments, where immersive tasks could be carefully moni-
+tored and adapted, the physiotherapists recommended AR as a more
+accessible option for home-based training. The AR version’s abil-
+ity to maintain visual contact with the real world was considered
+safer and more intuitive for independent use, particularly for users
+new to XR.
+These insights reinforce the importance of aligning XR content
+with established vestibular rehabilitation principles. The system
+must remain safe and adaptable, particularly for elderly users, while
+also delivering enough variation and challenge to support long-term
+therapeutic value. Future iterations of the programme would benefit
+from integrating these expert suggestions into the task design and
+tailoring the experience to specific clinical contexts.
+In summary, while this study did not evaluate clinical outcomes
+such as fall risk reduction, the findings suggest that AR may offer
+a more accessible and intuitive solution for home-based training,
+while VR could support more immersive, clinic-based interventions
+for balance enhancement.
+4.2 Cybersickness and Ageing
+The study observed minimal reports of cybersickness among el-
+derly participants, with only one participant noting slight dizziness
+after using the VR system. This is consistent with existing litera-
+ture, which suggests that older adults may experience fewer cyber-
+sickness symptoms due to age-related changes in vestibular func-
+tion. Nevertheless, the small sample size and short exposure times
+limit the generalisability of this finding.
+However, it is important to note that while baseline susceptibility
+to cybersickness may be lower in older adults, other factors, such
+as pre-existing vestibular deficits, medication use, or postural insta-
+bility, can still interact with XR use in complex ways. For instance,
+one participant in our study reported increased caution and reduced
+step amplitude in VR, potentially reflecting a subconscious fear of
+falling or disorientation. This observation reinforces the need for
+gradual onboarding, careful progression of task complexity and su-
+pervised training during initial sessions, particularly in VR. In con-
+trast, AR’s lower sensory conflict and visual anchoring within the
+real environment inherently mitigates cybersickness risk, making it
+a safer choice for unsupervised, home-based training.
+4.3 Limitations
+While the findings of this study are promising, several limitations
+must be acknowledged. Firstly, the small participant pool (n=5)
+limits the generalisability of results. Although qualitative insights
+from elderly users and physiotherapists offer valuable perspectives,
+a larger, more diverse sample, including individuals with varying
+levels of vestibular impairment, mobility status and technology fa-
+miliarity, would strengthen the robustness of conclusions.
+Secondly, the informal nature of physiotherapist interviews,
+while useful for formative feedback, lacks the systematic rigour
+of structured qualitative methodologies such as thematic analysis.
+Future research should incorporate formalised interview protocols,
+multiple coders for qualitative data and triangulation with quantita-
+tive measures (e.g., balance assessments, step accuracy metrics) to
+ensure methodological rigour.
+Thirdly, the study’s focus on short-term usability and engage-
+ment leaves open questions about long-term adherence, retention
+of skills and real-world functional outcomes. While participants
+expressed enthusiasm for XR training, sustained engagement over
+weeks or months, particularly in home settings, remains to be
+tested. Future longitudinal studies should evaluate retention ef-
+fects, real-world fall incidence and the impact of XR interventions
+on quality of life metrics.
+Lastly, technical limitations such as hardware constraints (e.g.,
+AR field of view, VR headset weight), tracking accuracy and the
+learning curve associated with XR devices must be addressed to en-
+sure accessibility for elderly users, many of whom may have limited
+prior exposure to digital technologies.
+5 C ONCLUSION
+This short paper reflects on the findings from our project, where
+we explored elderly users’ acceptance of Virtual Reality (VR) and
+Augmented Reality (AR) technologies for balance training using
+the Meta Quest 3.
+Our results indicate that both VR and AR offer valuable, yet dis-
+tinct, possibilities for balance training, depending on the context of
+use. AR was generally perceived as more intuitive by elderly users,
+as it integrates digital prompts into their familiar, real-world sur-
+roundings, making it suitable for home-based rehabilitation. The
+simplicity of AR and its lower potential for disorientation appeared
+to support greater user comfort and engagement in everyday envi-
+ronments.
+Conversely, VR provides opportunities for immersive, focused
+training scenarios that are not possible in the real world. The fully
+synthetic environments of VR allow for the creation of controlled,
+repeatable tasks, such as dynamic stepping challenges or immersive
+visual cues, that could be useful for simulating specific balance sce-
+narios. Importantly, physiotherapists in our study highlighted that
+VR’s ability to introduce visual challenges, such as sudden obsta-
+cles or moving targets, could be particularly valuable for address-
+ing specific aspects of balance control that are difficult to replicate
+safely in a real-world setting. However with VR there is a need for
+careful onboarding, supervision and gradual exposure when intro-
+ducing this technology to elderly users.
+In summary, the choice between VR and AR is not a matter of
+which technology is better overall, but rather which is better suited
+to the specific rehabilitation context. AR holds promise for at-home
+practice and task generalisation, while VR offers unique opportuni-
+ties for controlled, immersive training within supervised clinical or
+research settings. Future research should continue to explore how
+these modalities can complement each other in balance rehabilita-
+tion, ensuring that technology remains a tool to support, not replace,
+the therapeutic process.
+6 F UTURE WORK
+This study highlights several directions for future research. Longi-
+tudinal studies are needed to evaluate the long-term effects of XR
+interventions on balance, fall risk and independence. Future sys-
+tems should explore adaptive features, such as a difficulty adapta-
+tion and personalised feedback, to accommodate diverse user needs
+and capabilities.
+Integrating XR into clinical practice requires research into de-
+ployment strategies, clinician training and cost-effectiveness. Ex-
+panding XR content to cover other areas of vestibular rehabilita-
+tion such as gaze stabilisation, cognitive-motor tasks and dual-task
+training could offer more comprehensive therapeutic solutions.
+Finally, future work should ensure XR design remains accessi-
+ble to a wide range of users by considering ergonomics, clear visual
+targets and simplified interaction options. These efforts can help en-
+sure that XR technologies evolve into effective, safe and engaging
+tools for elderly users in balance rehabilitation.
+PAGE 7
+REFERENCES
+[1] M. Bergeron, C. L. Lortie, and M. J. Guitton. Use of virtual reality
+tools for vestibular disorders rehabilitation: a comprehensive analysis.
+Advances in medicine, 2015(1):916735, 2015. 2, 3
+[2] S. Blomqvist, S. Seipel, and M. Engstr ¨om. Using augmented reality
+technology for balance training in the older adults: a feasibility pilot
+study. BMC geriatrics, 21:1–13, 2021. 2, 3
+[3] A. T. Dilanchian, R. Andringa, and W. R. Boot. A pilot study ex-
+ploring age differences in presence, workload, and cybersickness in
+the experience of immersive virtual reality environments. Frontiers in
+Virtual Reality, 2:736793, 2021. 3
+[4] Free3D. Free3d, 2024. Accessed: 2025-05-15. 4
+[5] N. M. Hazzaa, A. F. Manzour, E. Yahia, and E. Mohamed Galal. Effec-
+tiveness of virtual reality-based programs as vestibular rehabilitative
+therapy in peripheral vestibular dysfunction: a meta-analysis. Euro-
+pean Archives of Oto-Rhino-Laryngology , 280(7):3075–3086, 2023.
+2
+[6] S. T. Henriksen, A. Adjorlu, S. Serafin, M. G. Onofrei, F. Fontana, and
+K. Søndergaard. Co-design of virtual reality exergames for balance re-
+habilitation. In Proceedings of the IEEE Conference on Virtual Reality
+and 3D User Interfaces (IEEE VR 2025) , pp. 1–4. IEEE, Saint-Malo,
+France, 2025. 2, 3
+[7] Interaction Design Foundation. Virtuality continuum, n.d. Accessed:
+2025-05-24. 3
+[8] J. O. N. . D. K. M. J. A. Balogun, K. A. Akindele. Age-related changes
+in balance performance. Disability and Rehabilitation , 16(2):58–62,
+1994. 3
+[9] R. S. Kennedy, N. E. Lane, K. S. Berbaum, and M. G. Lilienthal. Sim-
+ulator sickness questionnaire: An enhanced method for quantifying
+simulator sickness. The international journal of aviation psychology ,
+3(3):203–220, 1993. 3
+[10] R. S. Kennedy, N. E. Lane, K. S. Berbaum, and M. G. Lilienthal. Sim-
+ulator sickness questionnaire: An enhanced method for quantifying
+simulator sickness. The International Journal of Aviation Psychology,
+3(3):203–220, 1993. doi: 10.1207/s15327108ijap0303 3 5
+[11] T. Kiryu and R. H. So. Sensation of presence and cybersickness in
+applications of virtual reality for advanced rehabilitation. Journal of
+neuroengineering and rehabilitation, 4:1–5, 2007. 3
+[12] H. Konrad, M. Girardi, and R. Helfert. Balance and aging. The Laryn-
+goscope, 109:1454–1460, 1999. 1, 3
+[13] J. J. LaViola Jr. A discussion of cybersickness in virtual environments.
+ACM Sigchi Bulletin, 32(1):47–56, 2000. 3
+[14] A. Mazloumi Gavgani, F. R. Walker, D. M. Hodgson, and E. Nali-
+vaiko. A comparative study of cybersickness during exposure to vir-
+tual reality and “classic” motion sickness: are they different? Journal
+of Applied Physiology, 125(6):1670–1680, 2018. 3
+[15] P. Milgram and F. Kishino. A taxonomy of mixed reality visual
+displays. IEICE TRANSACTIONS on Information and Systems ,
+77(12):1321–1329, 1994. 3
+[16] N. C. Nilsson, R. Nordahl, and S. Serafin. Immersion revisited: A re-
+view of existing definitions of immersion and their relation to different
+theories of presence. Human technology, 12(2):108–134, 2016. 3
+[17] A. C. Paillard, G. Quarck, F. Paolino, P. Denise, M. Paolino, J. F.
+Golding, and V . Ghulyan-Bedikian. Motion sickness susceptibility in
+healthy subjects and vestibular patients: effects of gender, age and
+trait-anxiety. Journal of V estibular Research, 23(4-5):203–209, 2013.
+3
+[18] K. Petri, K. Feuerstein, S. Folster, F. Bariszlovich, and K. Witte. Ef-
+fects of age, gender, familiarity with the content, and exposure time on
+cybersickness in immersive head-mounted display based virtual real-
+ity. American Journal of Biomedical Sciences , 12(2), 2020. 3
+[19] T. Rose, C. S. Nam, and K. B. Chen. Immersion of virtual reality for
+rehabilitation-review. Applied ergonomics, 69:153–161, 2018. 3
+[20] M. J. Schuemie, P. Van Der Straaten, M. Krijn, and C. A. Van
+Der Mast. Research on presence in virtual reality: A survey. Cy-
+berpsychology & behavior, 4(2):183–201, 2001. 3
+[21] R. Skarbez, M. Smith, and M. C. Whitton. Revisiting milgram and
+kishino’s reality-virtuality continuum. Frontiers in Virtual Reality ,
+2:647997, 2021. 3
+[22] M. Slater. A note on presence terminology. Presence connect, 3(3):1–
+5, 2003. 3
+[23] M. Slater. Immersion and the illusion of presence in virtual reality.
+British journal of psychology, 109(3):431–433, 2018. 3
+[24] S. M. Slobounov, W. Ray, B. Johnson, E. Slobounov, and K. M.
+Newell. Modulation of cortical activity in 2d versus 3d virtual reality
+environments: an eeg study. International Journal of Psychophysiol-
+ogy, 95(3):254–260, 2015. 3
+[25] S. Weech, S. Kenny, and M. Barnett-Cowan. Presence and cybersick-
+ness in virtual reality are negatively related: a review. Frontiers in
+psychology, 10:158, 2019. 3
+[26] World Health Organization. Decade of Healthy Ageing 2020–2030.
+Technical report, World Health Organization, Geneva, Switzerland,
+2020. Accessed: 2025-02-11. 2

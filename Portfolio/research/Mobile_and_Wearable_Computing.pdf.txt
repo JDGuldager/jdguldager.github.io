@@ -1,0 +1,215 @@
+PAGE 1
+Wearable Glove Controller for a One
+Minute Asteroid Game
+Mobile and Wearable Computing - Medialogy
+Jeppe Dahl Guldager - 7th Semester Mini Project
+9 December 2025
+PAGE 2
+Contents
+1 Introduction 2
+2 Related Work 2
+3 Design 2
+3.1 Game . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 2
+3.2 Wearable controller . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 3
+3.3 Hardware design considerations . . . . . . . . . . . . . . . . . . . . . . . 4
+3.4 Input mapping . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 4
+3.5 Signal processing and mapping methodology . . . . . . . . . . . . . . . . 4
+4 Implementation 4
+4.1 Hardware . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 4
+4.2 Unity integration . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 5
+4.3 End to end system flow . . . . . . . . . . . . . . . . . . . . . . . . . . . . 5
+4.4 Gameplay systems . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 6
+5 Comparison of control methods 7
+6 Evaluation 7
+6.1 Controlled comparison . . . . . . . . . . . . . . . . . . . . . . . . . . . . 7
+6.2 Precision and stability . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 7
+6.3 Subjective usability . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 7
+6.4 Qualitative observations . . . . . . . . . . . . . . . . . . . . . . . . . . . 7
+7 Limitations 7
+1
+PAGE 3
+1 Introduction
+This project implements a wearable glove controller and integrates it as the primary
+input method for a spaceship game. The glove provides continuous orientation, throttle,
+and shooting input. The game lasts one minute and the objective is to destroy as many
+asteroids as possible. All sensing, data processing, and game control functions are
+implemented as custom software and hardware components.
+A full playthrough of the game is available here: Click Me - YouTube video
+2 Related Work
+Glove based input has been used for spatial interaction, gesture recognition, and hand pose
+estimation [Sturman and Zeltzer(1994) , Dipietro et al.(2008)]. These systems commonly
+employ flex sensors and inertial measurement units, which match the hardware in this
+project. Studies have evaluated IMU based game controllers and demonstrated that such
+devices can be integrated into interactive environments with reasonable accuracy and
+low latency [Kuang and Ericsson(2017)].
+Unity based motion control using inertial sensors is common in prototyping
+environments and is supported by prior work on IMU based motion mapping
+[Fang et al.(2018)]. Research on orientation based interaction shows that hand rota-
+tion can be used for effective pointing and navigation but is sensitive to noise and drift
+[Teather and Stuerzlinger(2011)].
+3 Design
+3.1 Game
+The game is a one minute asteroid destruction scenario. The player controls a ship located
+at the center of the environment. Asteroids spawn uniformly around the player at a fixed
+radius. When hit, an asteroid fractures and increments the score. The GameManager
+controls the countdown, the play period, the end phase, skybox selection, and score
+tracking.
+2
+PAGE 4
+Figure 1.Game environment with player ship and asteroid field.
+3.2 Wearable controller
+The glove includes a SparkFun BNO08x inertial measurement unit mounted on the back
+of the hand, a flex sensor attached along a finger, and a button reachable by the thumb. All
+components connect to an Arduino Nano. Orientation controls rotation. The flex sensor
+provides a continuous throttle value. The button triggers shooting. This configuration
+follows established glove sensing methods [Dipietro et al.(2008)].
+Figure 2.Prototype glove with inertial measurement unit, flex sensor, and button.
+3
+PAGE 5
+3.3 Hardware design considerations
+The inertial measurement unit was mounted on the back of the hand because this location
+provides a stable reference frame with minimal local deformation. The flex sensor was
+placed along the ring finger since it generates consistent resistance changes when the
+finger bends. The button was positioned such that the thumb can reach it without
+disrupting hand posture.
+3.4 Input mapping
+The inertial measurement unit provides quaternion data which is converted to Euler
+angles on the Arduino. Unity receives these angles and applies deadzones and smoothing.
+Pitch, roll, and yaw are mapped to ship rotation in FighterJetMovement. The flex sensor is
+normalized to a value between zero and one and mapped to throttle in JetEngineController.
+The button state is forwarded to ShipShooting which instantiates projectiles.
+3.5 Signal processing and mapping methodology
+Raw angle values contain jitter introduced by hand tremor and sensor noise. Unity applies
+deadzones so small changes in angle do not produce movement. Signals are smoothed
+using exponential filtering:
+snew =s old +α(r−s old)
+where r is the raw input and α controls responsiveness. This reduces high frequency
+variation while preserving overall responsiveness.
+4 Implementation
+4.1 Hardware
+The Arduino Nano communicates with the BNO08x over I2C. The flex sensor is part of a
+voltage divider connected to an analog input. The button is connected to a digital input
+using an internal pull up resistor. All components share a common ground. The Arduino
+prints comma separated values containing quaternion components, Euler angles, raw
+flex value, and button state.
+4
+PAGE 6
+Arduino Nano
+5V
+3.3V
+GND
+A0
+A4 (SDA)
+A5 (SCL)
+D2
+IMU BNO08x
+3.3V
+GND
+SDA
+SCL
+Flex sensor
+one end to 5V
+mid point to A0
+16 kOhm to GND
+Button
+one side to D2
+other side to GND
+internal pull up
+3.3V
+GND
+A4 SDA
+A5 SCL
+5V
+A0
+GND
+D2
+GND
+Figure 3.Wiring overview for the IMU, flex sensor with 16 kOhm resistor, and button connected
+to the Arduino Nano.
+4.2 Unity integration
+Unity reads serial data using the ArduinoInput component. The component parses comma
+separated values using invariant culture formatting. It stores calibrated Euler angles,
+normalized throttle values, and button state.
+4.3 End to end system flow
+The system consists of five stages. The glove generates raw sensor readings. The Arduino
+samples the sensors and formats the data. Unity receives the data over serial and extracts
+numerical values. Unity applies filtering and normalization. Finally, the processed values
+are passed to components that control ship rotation, throttle, and shooting.
+5
+PAGE 7
+Glove hardware
+IMU, flex sensor, button
+Arduino Nano
+sampling and formatting
+ArduinoInput
+serial parsing and filtering
+FighterJetMovement
+ship rotation
+JetEngineController
+throttle
+ShipShooting
+projectiles
+GameManager
+timer and score
+serial data
+Figure 4.End to end system flow from glove hardware through Arduino to Unity components
+that process rotation, throttle, and shooting before updating the game state.
+4.4 Gameplay systems
+Spaceship movement is implemented by the FighterJetMovement script (It is called so
+since I initally wanted to make a fighter jet, but later switched to a spaceship). Input is
+filtered through deadzones and exponential smoothing to compensate for noise typical in
+inertial sensors [Teather and Stuerzlinger(2011)]. Throttle input from the flex sensor is
+passed through the JetEngineController script. The ShipShooting script handles projectile
+instantiation and audio feedback. Asteroids are spawned by the AsteroidSpawner script.
+The GameManager script monitors time, score, and round flow.
+6
+PAGE 8
+5 Comparison of control methods
+Feature Glove controller Keyboard input
+Input type Continuous orientation Discrete key presses
+Throttle control Analog flex sensor Binary increments
+Precision Affected by sensor noise High
+Latency Sensor plus filtering delay Low
+Fatigue Depends on posture Minimal
+Immersion High Moderate
+Table 1.Comparison of glove based input and keyboard input.
+6 Evaluation
+Although no empirical testing was conducted, several suitable evaluation methods can
+be identified for future work.
+6.1 Controlled comparison
+Participants would complete two rounds of the one minute game: one with the glove and
+one with a keyboard. The order would be counterbalanced.
+6.2 Precision and stability
+Angular variance during stationary periods could be logged to assess rotational stability.
+Comparison across conditions would indicate control accuracy.
+6.3 Subjective usability
+Participants could rate ease of use, comfort, and precision. Workload measures such as
+NASA TLX [Hart(1986)] could be included.
+6.4 Qualitative observations
+Observations could include recalibration frequency, overshooting behaviour, and interac-
+tion patterns.
+7 Limitations
+The inertial measurement unit produces drift over time which requires recalibration.
+The flex sensor is susceptible to temperature changes and mechanical noise. The wired
+7
+PAGE 9
+connection restricts movement and may affect comfort. The button placement limits the
+number of discrete actions available.
+References
+[Dipietro et al.(2008)] Lorenzo Dipietro, Angelo M Sabatini, and Paolo Dario. 2008. A
+survey of glove based systems and their applications.IEEE Transactions on Systems,
+Man, and Cybernetics38, 4 (2008), 461–482.
+[Fang et al.(2018)] B. Fang, Z. Wang, and Y. Jia. 2018. Research on motion control based
+on IMU in Unity3D engine. InIEEE International Conference on Robotics and Computer
+Vision. 94–98.
+[Hart(1986)] Sandra G Hart. 1986.NASA Task Load Index (TLX) Paper and Users Manual.
+Technical Report. NASA Ames Research Center.
+[Kuang and Ericsson(2017)] Y. Kuang and J. Ericsson. 2017. Design and evaluation of an
+IMU based game controller. InProceedings of the Annual Symposium on Computer
+Human Interaction in Play. 517–521.
+[Sturman and Zeltzer(1994)] David Sturman and David Zeltzer. 1994. A survey of glove
+based input.IEEE Computer Graphics and Applications14, 1 (1994), 30–39.
+[Teather and Stuerzlinger(2011)] R. Teather and W. Stuerzlinger. 2011. Assessing the
+Effects of Orientation and Device on Pointing. InIEEE Symposium on 3D User Interfaces.
+107–114.
+8

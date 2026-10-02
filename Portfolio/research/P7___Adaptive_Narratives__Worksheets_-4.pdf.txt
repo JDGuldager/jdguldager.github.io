@@ -1,0 +1,2433 @@
+PAGE 1
+Titel:Adaptive narratives - Worksheets
+Tema:Adaptive systems
+Projektperiode:01. september 2025 -
+19. december 2025
+Projektgruppe: 6
+Jeppe Dahl Guldager
+jgulda22@student.aau.dk
+Laurids Jaocbsen
+ljacob22@student.aau.dk
+Steffen Møgelmose
+smogel22@student.aau.dk
+Vanilla Riis Mortensen
+vrmo22@student.aau.dk
+Julia Fredrika Kristina
+J¨unger
+jjunge25@student.aau.dk
+Vejleder:Luis Emilio Bruni
+Institut:Institut for Arkitektur, Design og
+Medieteknologi
+Afslutningsdato:October 2, 2026
+Acknowledgements:
+The authors would like to acknowledge the assistance of AI tools, including ChatGPT
+which were utilized for support in areas such as programming and grammar.
+PAGE 2
+Contents
+1 Background Research 2
+1.1 Interactive Narratives . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 2
+1.1.1 Branching narratives . . . . . . . . . . . . . . . . . . . . . . . . . . . 2
+1.1.2 User engagement in interactive narratives . . . . . . . . . . . . . . . 2
+1.1.3 Designing Interactive Stories . . . . . . . . . . . . . . . . . . . . . . 3
+1.2 Interactivity . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 3
+1.2.1 Eye Tracking and Gaze Interaction . . . . . . . . . . . . . . . . . . . 4
+1.2.2 Mouse vs. Eye-Tracking . . . . . . . . . . . . . . . . . . . . . . . . . 5
+1.2.3 Voice User Interfaces . . . . . . . . . . . . . . . . . . . . . . . . . . . 6
+1.2.4 The Midas Touch Problem and Advances in Reliable Eye-Tracking
+Interaction . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 7
+1.3 What is tension and how is it created? . . . . . . . . . . . . . . . . . . . . . 8
+1.3.1 The General Psychological Model of Tension and Suspense . . . . . . 9
+1.3.2 Affective Intensity and Anticipated Outcomes . . . . . . . . . . . . . 9
+1.3.3 Tension and the Drive for Psychological Homeostasis . . . . . . . . . 9
+1.3.4 The Role of Uncertainty and the Paradox of Suspense . . . . . . . . . 10
+1.3.5 Temporal Dynamics of Tension . . . . . . . . . . . . . . . . . . . . . 10
+1.3.6 The Pleasure of Tension in Aesthetic Contexts . . . . . . . . . . . . . 11
+1.4 How to Measure Tension and Suspense through Physiological Signals? . . . 11
+1.4.1 The Autonomic Nervous System and Emotional Arousal . . . . . . . 11
+1.4.2 Photoplethysmography (PPG) and Heart Rate Metrics . . . . . . . . 12
+1.4.3 Electroencephalogram (EEG) . . . . . . . . . . . . . . . . . . . . . . 15
+1.5 Physiological stress detection . . . . . . . . . . . . . . . . . . . . . . . . . . 16
+1.6 Phenomenological Insights . . . . . . . . . . . . . . . . . . . . . . . . . . . . 16
+1.7 Interrogation as a form of communication . . . . . . . . . . . . . . . . . . . 17
+1.7.1 Nonverbal communication . . . . . . . . . . . . . . . . . . . . . . . . 17
+1.7.2 Different interrogation approaches . . . . . . . . . . . . . . . . . . . 17
+1.8 Test Methods . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 18
+1.9 State of the art . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 19
+1.9.1 Interrogation in Video Games? . . . . . . . . . . . . . . . . . . . . . 20
+1.10 Affect Adaptive Games . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 21
+1.11 Research Question . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 23
+PAGE 3
+2 Design 24
+2.1 Brainstorming . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 24
+2.1.1 Moving away from user emotion and introducing LLM . . . . . . . . 25
+2.2 Creating Mood Boards and Choosing an Engine . . . . . . . . . . . . . . . . 25
+2.3 Creating the story for the experience . . . . . . . . . . . . . . . . . . . . . . 26
+2.3.1 Creating the flashback story . . . . . . . . . . . . . . . . . . . . . . . 26
+2.3.2 Resum ´e of the flashback-story . . . . . . . . . . . . . . . . . . . . . . 27
+2.3.3 How the flashbacks fits into the Hollywood Model . . . . . . . . . . . 28
+2.3.4 Entire scripts of flashbacks and user choices during flashbacks . . . . 29
+2.3.5 Evidence and clues that triggers the Flashbacks . . . . . . . . . . . . 31
+2.4 Testing The Story In Twine . . . . . . . . . . . . . . . . . . . . . . . . . . . . 32
+2.5 Creating the Interrogation System . . . . . . . . . . . . . . . . . . . . . . . . 33
+2.5.1 Moving away from using an LLM to make the interrogator dynamic . 35
+2.6 Designing the Characters . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 35
+3 Implementation 37
+3.1 System Implementation in Unreal Engine . . . . . . . . . . . . . . . . . . . . 37
+3.1.1 File Manager . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 37
+3.1.2 Scene Manager . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 40
+3.1.3 Environment and optimization . . . . . . . . . . . . . . . . . . . . . 42
+3.1.4 Creating the Characters . . . . . . . . . . . . . . . . . . . . . . . . . 43
+3.1.5 Speech Processing and Performance Design . . . . . . . . . . . . . . 45
+3.1.6 Animation and Sequences . . . . . . . . . . . . . . . . . . . . . . . . 46
+3.2 Machine Learning Model for Stress Detection . . . . . . . . . . . . . . . . . 48
+3.2.1 Lab Streaming Layer . . . . . . . . . . . . . . . . . . . . . . . . . . . 49
+4 Evaluation 50
+4.1 K-prototypes for clustering . . . . . . . . . . . . . . . . . . . . . . . . . . . . 50
+4.1.1 Playing around with the data . . . . . . . . . . . . . . . . . . . . . . 50
+4.1.2 Summery Figures of k = 8 . . . . . . . . . . . . . . . . . . . . . . . . 55
+4.2 Results from Paper . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 58
+4.2.1 Semi-Structured Interviews . . . . . . . . . . . . . . . . . . . . . . . 58
+4.2.2 Descriptive statistics for primary measures . . . . . . . . . . . . . . . 58
+4.2.3 SAM (Valence, Arousal, Control) Reports . . . . . . . . . . . . . . . . 61
+4.2.4 Identification . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 63
+4.2.5 Immersion . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 64
+4.2.6 Adaptivity . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 65
+4.2.7 Post-Hoc Analysis . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 67
+4.2.8 Clustering with K-prototypes . . . . . . . . . . . . . . . . . . . . . . 67
+5 Discussion 72
+PAGE 4
+Hyperobjects in VR Chapter 0
+Bibliografi 72
+A Appendix 80
+A.1 Initial Guerilla Story Test . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 80
+A.1.1 Participant 1: . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 80
+A.1.2 Participant 2: . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 80
+A.1.3 Participant 3: . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 80
+A.1.4 Participant 4: . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 81
+A.2 Semi-Structured Interview Responses . . . . . . . . . . . . . . . . . . . . . . 81
+A.3 Interrogation Scenes . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 86
+A.4 Consent Form . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 93
+A.5 Participant Recruitment . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 94
+A.5.1 Recruitment Script . . . . . . . . . . . . . . . . . . . . . . . . . . . . 94
+A.5.2 Baseline Procedure . . . . . . . . . . . . . . . . . . . . . . . . . . . . 94
+A.5.3 Post-Experience Instructions . . . . . . . . . . . . . . . . . . . . . . . 94
+A.5.4 Post-Experience Questions . . . . . . . . . . . . . . . . . . . . . . . . 94
+A.5.5 Debrief . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 95
+1
+PAGE 5
+Chapter 1
+Background Research
+1.1 Interactive Narratives
+”Imagine that Harry Potter can decide not to go to Hogwarts. Or Frodo decides to keep the
+ring and become the best thief in the Middle Earth.”[1]
+Interactive narratives are also known as choose-your-own-adventure stories, as the di-
+rection of the plot is decided by the user. [2] Interactive digital narratives (IDN) tightly
+integrate interactivity and narrative.[3]
+1.1.1 Branching narratives
+Branching narrative structures are a specific kind of interactive narrative. In role-playing
+games, the story is built around fixed decision points, also called nodes. When a player
+reaches such a node, their choice determines which pre-written story branch they experi-
+ence next. Even though branching narratives can offer many possible paths, each individ-
+ual playthrough is linear in hindsight, one story among many possibilities. Branching can
+therefore be seen as the mechanism that enables immersion into a story which, from the
+inside, feels personal.[4]
+1.1.2 User engagement in interactive narratives
+Transportation
+Transportation refers to the cognitive and emotional immersion a person experiences when
+absorbed in a story . During transportation, one’s attention, emotions, and mental imagery
+become so focused on the narrative world that it often causes the real world to fade from
+awareness. Transportation can be strengthened by interactivity as the reader or player
+“enacts rather than witnesses the story ,” which can make the experience more immersive
+and enjoyable. Transportability is an individual’s general tendency to become absorbed in
+stories; those high in transportability are more easily immersed. [2]
+User Control
+User engagement in an interactive narrative is closely tied to the user’s sense of control.
+When a user is given control inside the interactive narrative we often refer to it as agency .
+Effectance is the subjective experience of agency which gives the player a sense of com-
+petence and influence that produces a feeling of being “in control.” For this feeling to
+emerge, players must see evidence that their actions actually affect the world. If they do
+not, engagement drops significantly .[4]
+2
+PAGE 6
+Hyperobjects in VR Chapter 1
+Identification
+Identification is the process of merging with a character, adopting their goals, perspective,
+and emotions. It involves stepping into the character’s shoes and feeling empathy for
+their situation. However, in interactive narratives, the ability to influence story events
+allows users to act as the character or as themselves, and they often choose the latter.[2]
+Given moral agency in an RPG with a branching structure, it was found that users made
+decisions as they would in real life, had high empathy for non-player characters (NPCs),
+and experienced emotions like those in actual interpersonal interactions.[4] Because users
+actively determine the character’s actions, they feel a sense of responsibility for the story’s
+outcomes.[2]
+Narrative Structure
+Branching complexity refers to the number of different possible paths that are available in
+the system/story graph. Players build mental models of how the game reacts to their ac-
+tions, for example: ‘If I choose to save this character, maybe they’ll help me later.’ This is a
+mental model of causal agency . Such models are closely aligned with players’ mental mod-
+els of the overall narrative structure, meaning that when players imagine how their choices
+matter, they are really imagining the shape of the story’s branching paths. Together, these
+mental models shape the perceived complexity of the narrative, which in turn influences
+experienced richness. Greater perceived complexity produces greater richness, which sup-
+ports engagement by making the game feel more meaningful and capable of developing
+the player’s skills.[4]
+1.1.3 Designing Interactive Stories
+Designing interactive stories poses a challenge, as the increased user control can lead to a
+decrease in narrative structure.[2]
+Spierling[5] proposes a framework that integrates interaction design principles as nar-
+rative techniques for interactive digital storytelling (IDN). Drawing on Norman’s[6] con-
+cepts of affordances, feedback, mapping, and constraints, and Foley et al.’s[7] four levels
+of interaction design, Spierling reinterprets these as layers of narrative construction. At
+the conceptual level, authors define the overarching story logic and player role; at the
+semantic level, they design narrative functions of actions and their consequences; at the
+syntactic level, they determine patterns and sequences for how events and feedback are
+presented; and at the lexical level, they define concrete input and output mechanisms.
+This hierarchy allows story and interaction to be designed as one unified system.
+1.2 Interactivity
+Definitions of interactivity are complicated by the fact that the nature of interactivity can differ
+depending on the medium; interactivity could mean one thing when referring to a written
+narrative, but could mean something else when referring to a videogame or a website. (...)
+3
+PAGE 7
+Hyperobjects in VR Chapter 1
+Definitions also differ on whether or not the interactivity is between two people, between a
+person and a medium, or between a person and a message.[2]
+1.2.1 Eye Tracking and Gaze Interaction
+[8], [9]
+Eye tracking is a technology that records where and how long a person looks at visual
+stimuli, capturing gaze direction, fixation duration, and saccadic movements. As reviewed
+by Nov´ak et al. (2024), eye tracking has evolved from a niche experimental tool into a
+central component of usability and user experience (UX) research. It allows for detailed,
+quantitative insights into how users visually interact with interfaces or environments, com-
+plementing traditional usability measures such as task completion time or subjective sat-
+isfaction. Modern eye tracking technologies, including infrared-based systems (e.g., Tobii
+devices) and budget webcam-based trackers, can identify fixations and saccades to deter-
+mine Areas of Interest (AOIs) and patterns of visual attention, which can then be mapped
+to interface elements or physical products.
+At the core of gaze-based research are two primary eye movement types: fixations,
+where the eye remains relatively stable allowing information processing, and saccades,
+the rapid movements between fixations that enable visual scanning. Understanding these
+movements provides valuable information about user attention, cognitive load, and task
+intent (Rayner, 1978; Hafed, 2011). Nov´ak et al. emphasize that while eye tracking offers
+powerful implicit data, it must be triangulated with interaction data (e.g., clicks, scrolling)
+or biometric measures to contextualize user behavior and emotion.
+Building on these foundations, gaze interaction expands the use of eye tracking from
+passive observation to active control. As demonstrated in Sibert and Jacob’s seminal study
+Evaluation of Eye Gaze Interaction, gaze can function as a natural, efficient input method.
+Their experiments compared gaze-based selection using dwell time to conventional mouse
+interaction. Results showed that gaze selection was faster than mouse-based selection,
+leveraging the inherent quickness of eye movements. The technique, grounded in the
+physiology of fixations and saccades, translated natural eye behavior into interaction com-
+mands by recognizing stable gaze points (approximately 100–150 ms dwell) as intentional
+selections. This made interaction feel intuitive, almost anticipatory , freeing users’ hands
+for other tasks—an advantage for large-screen environments and accessibility applications.
+From a systems perspective, Sibert and Jacob’s architecture integrated real-time eye
+tracking data with a User Interface Management System that processed fixations and
+mapped gaze points to nearby on-screen objects. Their algorithm considered spatial and
+temporal thresholds to distinguish meaningful fixations from natural eye jitter, enabling
+robust, real-time interaction despite technological constraints of early eye trackers. This
+early work laid the foundation for modern gaze-based systems in virtual and augmented
+4
+PAGE 8
+Hyperobjects in VR Chapter 1
+reality , automotive interfaces, and assistive technologies.
+Contemporary research, as summarized by Nov´ak et al., extends these early principles
+by combining gaze data with machine learning techniques for automated pattern recog-
+nition, emotion detection, and adaptive interface behavior. For instance, gaze data can
+now inform UX optimization by identifying frustration patterns or predicting user inten-
+tions in real time. Machine learning models enhance event detection, classify fixations
+and saccades, and map gaze to interface elements automatically , reducing manual data
+interpretation.
+Overall, the convergence of gaze interaction and eye tracking represents a shift from
+passive observation of visual behavior to active, intelligent systems that adapt to users’
+attention and intent. Gaze-based input holds particular promise for hands-free control, ac-
+cessibility , and immersive environments, offering a natural, low-effort interaction paradigm
+that complements other modalities such as speech and gesture.
+1.2.2 Mouse vs. Eye-Tracking
+[10]
+When comparing mouse interaction with eye-tracking, each input method offers clear
+strengths and limitations that make them suitable for different contexts. The mouse re-
+mains the most accurate tool for object selection. In clustered or occluded environments,
+users were able to place the cursor with very high control, often without the need to
+zoom in. Its familiarity and reliability also play an important role: participants in stud-
+ies had decades of experience with mouse use, which meant that little to no training was
+required. Moreover, performance with a mouse is consistent and not affected by factors
+such as lighting, user physiology , or fatigue, issues that often impact the accuracy of eye-
+tracking systems. Despite these advantages, the mouse shows some weaknesses. In simple
+scenarios with clearly separated objects, eye-tracking with a confirmation click proved to
+be faster on average. The physical effort of using a mouse also makes it less accessible for
+motor-impaired users. In addition, ingrained habits such as double-clicking occasionally
+led to unintended errors.
+By contrast, eye-tracking interaction leverages the fact that eye movements precede
+hand actions, allowing users to select targets almost as soon as they look at them. In non-
+clustered environments, eye-tracking with a confirmation click was not only the fastest
+method but also produced the lowest average error rates and the lowest reported cognitive
+load. It provides hands-free accessibility , which is especially valuable for users with mo-
+tor impairments, and it can enhance immersion in interactive experiences such as games
+by creating a more natural, direct mode of input. However, eye-tracking is limited by
+precision. Natural eye jitter (micro-saccades) and calibration issues reduce its accuracy
+compared to mouse control, often forcing users to zoom or accept higher error rates in
+5
+PAGE 9
+Hyperobjects in VR Chapter 1
+more complex tasks. The “Midas Touch” problem—where not everything the eye looks at
+should be selected—remains a central challenge, usually mitigated by dwell-time or con-
+firmation mechanisms that add delay . Furthermore, accuracy varied significantly between
+users and across different regions of the screen, being influenced by factors such as light-
+ing conditions, eyewear, and even eye color. In clustered environments, these weaknesses
+led to longer task completion times and higher cognitive load than mouse interaction.
+Choosing between mouse and eye-tracking therefore depends on the intended task,
+user context, and system goals. For simple and non-clustered tasks, eye-tracking with con-
+firmation click can outperform the mouse, while for complex, clustered environments, the
+mouse remains superior in both speed and cognitive load. User accessibility is another
+important factor: for motor-impaired users, eye-tracking may be the only viable option,
+whereas for typical users, mouse input remains the safest and most efficient choice. The
+goals of the system also matter. If immersion, natural interaction, or hands-free operation
+are priorities, eye-tracking is attractive. If precision, reliability , and low error rates are crit-
+ical, the mouse is preferable. In many cases, hybrid solutions offer the best compromise,
+for example by using gaze to indicate a target and mouse, keyboard, or voice as a confir-
+mation method, thereby balancing speed and accuracy while minimizing the weaknesses
+of each approach.
+1.2.3 Voice User Interfaces
+[11]
+Voice User Interfaces (VUIs) provide a natural and intuitive way for users to inter-
+act with digital systems by speaking rather than relying on manual input. This modality
+leverages speech as humans’ primary communication channel, making interaction with
+technology more conversational and accessible.
+One of the major strengths of VUIs is their hands-free and eyes-free nature, which al-
+lows interaction while the user is engaged in other tasks. This makes them particularly
+suitable for mobile contexts, accessibility applications, or scenarios where visual attention
+must remain on the environment. VUIs also provide low entry barriers; users do not re-
+quire extensive training, as speaking is already a highly familiar skill. Studies highlight
+their potential to increase accessibility for visually impaired users and those with motor
+disabilities, as well as their role in improving inclusivity in interaction design. Additionally ,
+VUIs can enhance immersion and naturalness in narrative-driven or game environments,
+as they allow players to interact in ways closer to real-world dialogue.
+Despite these advantages, VUIs also present significant challenges. Speech recognition
+accuracy is a persistent issue, with performance affected by background noise, accents,
+speech impairments, and language variety . Errors in recognition can quickly lead to frus-
+tration, particularly in high-stakes or time-sensitive tasks. VUIs are also context-sensitive;
+they often perform well in quiet, private spaces but become less practical in noisy or pub-
+6
+PAGE 10
+Hyperobjects in VR Chapter 1
+lic environments where speaking aloud may be socially awkward or disruptive. Another
+weakness is the limited discoverability of commands. Unlike graphical interfaces where
+options are visible, VUIs often rely on users knowing or guessing the correct commands,
+which can increase cognitive load and learning effort. Finally , there are privacy and trust
+concerns, as VUIs typically require open microphones and sometimes cloud processing,
+raising user worries about surveillance and data security .
+The decision to implement voice interaction should be based on the intended context
+and system goals. VUIs are particularly valuable when hands-free operation is necessary ,
+such as in driving, industrial work, or accessibility-focused applications. They are also at-
+tractive in immersive or narrative scenarios, where conversational input enhances realism
+and user engagement. However, VUIs are less suitable in noisy , public, or socially sensi-
+tive environments, and they should not be the sole input method for tasks that require
+high precision, reliability , or speed, given the potential for recognition errors. A common
+recommendation is to integrate VUIs as part of a multimodal system, where speech com-
+plements but does not fully replace other input methods such as touch, mouse, or gaze.
+This hybrid approach mitigates weaknesses while still leveraging the strengths of natural
+voice interaction.
+1.2.4 The Midas Touch Problem and Advances in Reliable Eye-Tracking
+Interaction
+[12] , [13]
+A persistent challenge in gaze-based interaction systems is the Midas touch problem, a
+phenomenon where the system cannot distinguish between a user’s natural gaze behavior
+and intentional selection commands. In other words, when users simply look around
+to explore a scene, the system might misinterpret these fixations as activation signals,
+triggering unintended commands (Jacob, 1990). This issue arises from the dual role of
+the human eye—as both a perceptual organ and a potential control device—making it
+difficult for gaze interfaces to reliably separate seeing from doing.
+Over the years, several approaches have been proposed to mitigate the Midas touch
+problem, aiming to make eye-based interfaces more robust and intuitive.
+1. Dwell-Time Processing
+The most common solution has been dwell-time selection, where a command is trig-
+gered only when the gaze remains fixed on a target for a specified period (typically be-
+tween 300–1100 ms) ( ˇSpakov and Miniotas, 2004). The assumption is that intentional
+fixations are longer than incidental glances. Studies have shown that dwell-time can be
+efficient—even outperforming mouse clicks in certain controlled tasks (Sibert and Jacob,
+2000). However, this method introduces a delicate trade-off: short dwell times increase
+false activations, while long ones slow down interaction and cause visual fatigue (Verte-
+gaal, 2008; Pfeuffer et al., 2020).
+7
+PAGE 11
+Hyperobjects in VR Chapter 1
+To refine this, Velichkovsky et al. (2014) proposed a focal fixation extraction approach
+that identifies deliberate visual commands based on the properties of fixation duration
+and context. By empirically setting the activation threshold to the mean fixation duration
+(around 325 ms), the method differentiated between task-related fixations and ordinary
+eye movements, providing a data-driven way to reduce false positives. This approach
+moved toward a more physiological, adaptive model of gaze intention rather than fixed
+time thresholds.
+2. Smooth Pursuits and Gaze Gestures
+Alternative paradigms include smooth pursuit-based methods, where users follow a
+moving stimulus with their eyes to activate a command (Vidal et al., 2013; Velloso et al.,
+2016). This makes it easier to confirm intentional engagement since following a trajec-
+tory requires active participation. Similarly , gaze gestures—predefined sequences of eye
+movements (e.g., drawing a shape or direction pattern)—have been developed to signal
+intent explicitly (Drewes and Schmidt, 2007). These methods successfully reduce acciden-
+tal activations but may lead to visual fatigue and slower performance during extended use,
+especially for novice users.
+3. Multimodal Interaction
+A more recent trend involves multimodal approaches, which combine gaze with sec-
+ondary input modalities (e.g., touch, speech, sound, or head movement) to separate point-
+ing and selection actions. This separation significantly enhances reliability and reduces
+unintentional triggers.
+One prominent example is the EyeTAP system (Parisay et al., 2021), which integrates
+eye tracking for pointing with acoustic input (such as a tongue click or microphone tap) for
+selection. By requiring a deliberate auditory signal to confirm gaze-based pointing, Eye-
+TAP effectively eliminates accidental activations while maintaining hands-free operation.
+The technique proved especially useful in accessibility contexts and environments requir-
+ing contact-free interaction. Compared with traditional dwell-time and voice-recognition
+methods, EyeTAP achieved lower error rates and reduced cognitive workload, demonstrat-
+ing that multimodal fusion can make gaze interfaces both efficient and reliable.
+4. Toward Adaptive and Intelligent Solutions
+Recent work continues to explore adaptive thresholds and contextual recognition—leveraging
+machine learning to dynamically interpret gaze patterns, fixation stability , and environ-
+mental factors. These models aim to personalize activation criteria based on user behavior,
+thereby minimizing false positives while preserving speed and comfort.
+1.3 What is tension and how is it created?
+[14] Toward a general psychological model of tension and suspense Tension and suspense
+are affective states found in everyday life, art, and entertainment. They arise from conflict,
+8
+PAGE 12
+Hyperobjects in VR Chapter 1
+dissonance, instability , or uncertainty , and involve future-oriented processes of expecta-
+tion, anticipation, and prediction. Initiating events associated with conflict or uncertainty
+trigger predictions about possible outcomes; the greater the divergence in their emotional
+value, the stronger the experienced tension. Tension creates a desire for resolution and
+can be linked to both positive (hope, excitement) and negative (fear, anxiety) emotions,
+depending on the outcome expected.
+Tension is shaped by several factors: the emotional significance of possible outcomes,
+the degree of uncertainty , and the lack of control over events. Importantly , tension unfolds
+over time and can occur at both micro- and macro-levels, from the phrasing of a sentence
+to the structure of an entire narrative.
+Despite its often negative connotations, tension can be pleasurable, especially in aes-
+thetic contexts such as music, film, or literature, where it is safe and resolved within fic-
+tional frameworks. This makes tension a powerful driver of engagement and immersion.
+1.3.1 The General Psychological Model of Tension and Suspense
+These affective states are rooted in universal cognitive and emotional mechanisms that
+operate across a variety of domains, including music, film, literature, and everyday life, as
+per the General Psychological Model of Tension and Suspense [14]. In order to emphasize
+that the same basic mechanisms underlie the experience of tension regardless of its con-
+text, this model takes a domain-independent stance. Essentially , tension and suspense are
+affective states that are distinguished by a yearning for resolution, emotional concern for
+potential outcomes, and reliance on predictive, future-oriented mental processes. These
+states are characterized by conflict, instability , or uncertainty .
+1.3.2 Affective Intensity and Anticipated Outcomes
+The subjective intensity of tension is the result of the discrepancy between the affective
+values (desirability) of the anticipated outcomes of an event. Tension increases with the
+size of the range between extremely positive and extremely negative possible outcomes
+(see figure 1.1). As a result, circumstances that have both desirable and undesirable po-
+tential outcomes cause tension because they arouse the prospect emotions of hope for
+favorable outcomes and fear or anxiety about unfavorable ones. Therefore, tension acts
+as a diffuse affective prelude to more distinct emotional responses that follow resolution,
+like happiness, relief, or disappointment.
+1.3.3 Tension and the Drive for Psychological Homeostasis
+At its core, tension is indicative of the human impulse to achieve psychological homeostasis
+-the desire to reconcile dissonance and reestablish equilibrium. This concept is consistent
+with Festinger’s cognitive dissonance theory , which posits that psychological inconsistency
+induces discomfort and leads to resolution [15]. In aesthetic settings like music, dissonant
+chords or harmonic deviations from a tonal center create instability and tension that goes
+away when stable, consonant harmonies are restored. The affective force of tension is
+9
+PAGE 13
+Hyperobjects in VR Chapter 1
+Figure 1.1:Enter Caption Source: Toward a general psychological model of tension and
+suspense [14]
+rooted in this desire for balance across modalities.
+1.3.4 The Role of Uncertainty and the Paradox of Suspense
+Uncertainty is a critical factor in the development of tension; however, its significance is
+complicated by the paradox of suspense, which occurs when individuals continue to feel
+tension despite the fact that the outcome of an event is already known, as for example,
+during repeated exposure to a well-known story or musical composition [14].
+This paradox may be attributed to the experience of feigned uncertainty in fictional
+contexts, where audiences voluntarily suspend their knowledge of outcomes, and auto-
+matic pre-attentive processing in music perception, where tension responses are triggered
+by violations of expectation despite familiarity . This paradox shows that although tension
+is often increased by uncertainty , uncertainty by itself cannot adequately account for its
+persistence.
+1.3.5 Temporal Dynamics of Tension
+Tension is a temporally dynamic phenomenon that is constantly changing over a range
+of time scales. It may manifest at either micro-levels (e.g., within a phrase, sentence, or
+musical motif) or macro-levels (e.g., throughout an entire narrative or composition). The
+emotional trajectory of tension is influenced by the temporal distance between the ini-
+tiating event and its eventual resolution. Conversely , the affective experience may be
+weakened by rapid resolution, while it is intensified and sustained by a prolonged resolu-
+tion. Because of these time-dependent features, tension is a useful concept for studying
+how emotions predict and prepare people. By demonstrating the long-term interactions
+between cognitive prediction and emotional experience, tension research does, in fact, pro-
+10
+PAGE 14
+Hyperobjects in VR Chapter 1
+vide a link between ”cold” cognitive models of prediction, such as Bayesian brain theories
+and predictive coding, and the ”hot” affective dynamics of emotion.
+1.3.6 The Pleasure of Tension in Aesthetic Contexts
+In aesthetic and entertainment contexts, tension can be a source of pleasure, even though
+it frequently manifests as discomfort or anxiety in daily life. This is because the risks as-
+sociated with tension are safely contained. Tension creates intense emotions that can be
+enjoyed on its own, leading to excitement, thrill, and engagement in these fictional or
+artistic settings. Emotional satisfaction and closure are facilitated by the eventual resolu-
+tion of tension, which reinforces the rewarding nature of the experience and immersion.
+In this way , tension is not only a sign of psychological conflict, but it is also a key part of
+enjoying art, getting emotionally involved, and getting lost in a story .
+1.4 How to Measure Tension and Suspense through Phys-
+iological Signals?
+In narrative arts like literature, film, and interactive media, suspense and tension are es-
+sential components [16]. They are characterized by emotional arousal, uncertainty , and
+anticipation. Physiological measurements offer objective, continuous indicators of ten-
+sion, while subjective reports can be used to evaluate audience engagement.This section
+concentrates on two frequently employed signals: photoplethysmography (PPG), which is
+sometimes referred to as a finger pulse meter, and electrodermal activity (EDA), specifi-
+cally the skin conductance level (SCL) and skin conductance responses (SCRs) [17] [14].
+1.4.1 The Autonomic Nervous System and Emotional Arousal
+The autonomic nervous system (ANS) governs involuntary bodily functions and is divided
+into:
+• Thesympathetic nervous system (SNS)mediates the ”fight-or-flight” response, in-
+creasing heart rate, sweat gland activity , and alertness [18]. During moments of
+suspense, sympathetic activation elevates heart rate and triggers sweat secretion
+through the release of adrenaline.
+• Theparasympathetic nervous system (PNS)facilitates the ”rest-and-digest” pro-
+cesses that promote relaxation and recovery [18].
+11
+PAGE 15
+Hyperobjects in VR Chapter 1
+Figure 1.2:The two major branches of the autonomic nervous system: sympathetic (fight-
+or-flight) and parasympathetic (rest-and-digest). Source: www.researchgate.net “Psy-
+chophysiological responses to distress and eustress” [19].
+The ANS is composed of two primary branches: the sympathetic system, which is re-
+sponsible for the fight-or-flight response, and the parasympathetic system, which regulates
+the rest-and-digest activity . These branches have nerves that send information to the heart,
+sweat glands, and stomach [18] (see figure 1.2).
+1.4.2 Photoplethysmography (PPG) and Heart Rate Metrics
+A finger pulse meter, or PPG, gauges variations in the blood volume in the fingertip. Several
+metrics related to the heart can be derived from this signal:
+•Heart Rate (HR):Measured in beats per minute (BPM), HR increases with sympa-
+thetic activation.
+•Heart Rate Variability (HRV):The variation in time intervals between successive
+heartbeats, reflecting parasympathetic modulation. High HRV indicates relaxation,
+whereas low HRV reflects heightened tension or stress.
+12
+PAGE 16
+Hyperobjects in VR Chapter 1
+•LF/HF Ratio:The ratio of low- to high-frequency HRV power, commonly interpreted
+as an indicator of sympathetic–parasympathetic balance.
+HR tends to rise and HRV falls during tense scenes, suggesting sympathetic dominance.
+Heart rate (HR) peaks usually happen at the most exciting parts of a story , while short-lived
+resolutions can cause HRV rebounds [14].
+Electrodermal Activity (EDA)
+EDA measures skin conductance and is exclusively controlled by the sympathetic nervous
+system. It is highly sensitive to suspenseful stimuli and reflects emotional arousal [20].
+EDA is a technique for detecting fluctuations in sweat gland activity by analyzing the
+conductance of the skin’s surface [17]. EDA is composed of two parts:
+•Skin Conductance Level (SCL):The tonic, slow-changing baseline of conductance
+over several minutes. A high SCL indicates sustained arousal or cumulative tension,
+whereas a low SCL reflects a relaxed state.
+•Skin Conductance Response (SCR):The phasic, rapid increase in conductance fol-
+lowing discrete events such as jump scares or plot twists.
+Figure 1.3:EDA sensor placement. Source: www.pluxbiosignals.com “PLUX Biosignals –
+Electrodermal Activity (EDA) Datasheet” [21].
+Pupillometry
+Pupillometry measures changes in pupil diameter, which are driven by the balance of
+sympathetic and parasympathetic influences:
+13
+PAGE 17
+Hyperobjects in VR Chapter 1
+•Sympathetic activation(via the dilator pupillae muscle) causes pupil dilation, re-
+flecting arousal, suspense, or cognitive load.
+•Parasympathetic activation(via the sphincter pupillae muscle) leads to constric-
+tion, associated with relaxation or low arousal.
+Pupil diameter thus provides a non-invasive index of autonomic arousal that comple-
+ments EDA, HR, and HRV measures [22, 23, 24]. Eye-tracking systems such as the Tobii
+Eyetracker 5 [25] can capture pupil size and gaze dynamics in real time, offering tempo-
+rally precise correlations between visual attention and suspenseful narrative moments.
+Figure 1.4:Pupil control pathways: a) constriction via the iris sphincter (green), b) di-
+lation via the iris dilator (yellow). Source: “Pupillometry: Psychology , Physiology , and
+Function” –Journal of Cognition[22].
+Sympathetic PathwayThe dilator pupillae muscle is innervated via a pathway origi-
+nating in the hypothalamus, descending through the spinal cord to the superior cervical
+ganglion. Activation of this pathway leads to pupil dilation, which occurs in response to
+stress, suspense, or increased cognitive load.
+Parasympathetic PathwayThe sphincter pupillae muscle is controlled by the Edinger-
+Westphal nucleus through the oculomotor nerve (cranial nerve III). Parasympathetic acti-
+vation causes pupil constriction, reflecting low arousal or relaxation.
+Physiological SignificancePupil diameter dynamically represents the interplay between
+sympathetic and parasympathetic influences. In narrative contexts, increases in pupil size
+often correspond with moments of suspense or cognitive engagement. Eye-tracking sys-
+tems, such as the Tobii Eyetracker 5 [25], allow real-time measurement of pupil size,
+gaze direction, and eye movements, providing temporally precise insights into attention,
+arousal, and discomfort [23, 24].
+14
+PAGE 18
+Hyperobjects in VR Chapter 1
+1.4.3 Electroencephalogram (EEG)
+Electroencephalography (EEG) uses electrodes on the scalp to record the electrical activity
+of the brain. Due to its high temporal resolution, EEG enables researchers to monitor quick
+shifts in the neural activity linked to tension and suspense [18] [17].
+EEG Frequency Bands and Emotional Arousal
+EEG signals are typically divided into frequency bands, each of which is linked to unique
+cognitive and emotional states:
+•Delta (0.5–4 Hz):Mainly present during deep sleep; not often connected to active
+suspense but may show general cortical downregulation.
+•Theta (4–8 Hz):Related to emotional processing, memory encoding, and anticipa-
+tion. When the viewer is emotionally engaged and anticipating a narrative outcome,
+theta power frequently increases.
+•Alpha (8–12 Hz):Usually connected to a calm, awake states. Alpha suppression, or
+a reduction in alpha power, can be a sign of increased attention and arousal during
+a calm, awake state.
+•Beta (13–30 Hz):Related to anxiety , alertness, and active cognition. When partici-
+pants feel tension or uncertainty , beta power tends to rise.
+•Gamma (>30Hz):Correlated with high-level cognitive processes and perceptual
+binding. May momentarily rise during intense tension.
+Event-Related Potentials (ERPs)
+EEG can also captureevent-related potentials (ERPs), which are time-locked neural re-
+sponses to discrete stimuli:
+•P300:A positive deflection occurring roughly 300 ms after a surprising or attention-
+grabbing event. Larger P300 amplitudes reflect higher attentional engagement, often
+observed during unexpected plot twists [18].
+•Late Positive Potential (LPP):Sustained positive deflection associated with emo-
+tional arousal, including suspense and tension. The LPP can reflect the cumulative
+impact of prolonged suspenseful stimuli [18].
+EEG and Sympathetic–Parasympathetic Interactions
+The central-peripheral coupling of suspense, peripheral physiological measures (HR, HRV,
+EDA) can be integrated with neural patterns [18]:
+• Synchronous neural and autonomic arousal is suggested by the fact that increases in
+beta and theta activity frequently occur in tandem with HR and SCR peaks.
+• Complementing tonic SCL increases that represent ambient tension, alpha suppres-
+sion may indicate cognitive engagement with the unfolding narrative.
+15
+PAGE 19
+Hyperobjects in VR Chapter 1
+1.5 Physiological stress detection
+Physiological stress detection commonly uses electrodermal activity (EDA) and blood vol-
+ume pulse (BVP), as both signals reflect autonomic responses linked to psychological stress.
+One reason for selecting these sensors in the present project is that they are non-intrusive,
+easy to attach, and can be comfortably worn on the wrist or hand. Unlike sensors such as
+ECG chest straps or respiration belts, EDA and BVP do not interfere with movement and
+are suitable for continuous monitoring in interactive applications.
+The WESAD dataset [26] is a standard benchmark for wearable stress detection and
+provides wrist-based EDA and BVP recorded during baseline, stress, and amusement condi-
+tions. Because the dataset uses the same sensing modalities as this project, it is frequently
+referenced when evaluating stress-recognition models.
+Ninh et al. [27] trained several machine-learning models on the WESAD dataset using
+features derived from EDA, BVP, and temperature. Their best-performing approach was
+a subject-independent Random Forest classifier trained on baseline-normalized features,
+which significantly improved generalization to new participants. The study demonstrates
+that EDA and BVP, when combined with an appropriate normalization strategy , are suffi-
+cient for effective stress detection using consumer-grade wearable devices.
+Although EDA alone is known to be a reliable indicator of physiological arousal [28],
+one goal of the present project was to incorporate a machine-learning component, as re-
+quired by the project specification. For this reason, a multi-sensor model was explored to
+investigate whether combining EDA and BVP-derived metrics (such as heart rate and HRV)
+could improve predictive performance over single-signal baselines.
+This work follows the same principles observed in prior research by using EDA and
+BVP features together with a baseline calibration phase before performing real-time stress
+classification.
+1.6 Phenomenological Insights
+Phenomenology provides a critical framework for comprehending the human experience
+in relation to technology , particularly through the works of Heidegger and Merleau-Ponty .
+Heidegger’s conception of being is always positioned as being-in-the-world (In-der-Welt-
+sein), a way of living that emphasizes active participation over objective observation. This
+perspective emphasizes the relational and situated nature of experience, in which tools
+and technologies are not neutral intermediaries but rather contribute to the evolution of
+the structure of being. With his focus on embodiment, Merleau-Ponty expands on this line
+of thinking. Perception is an enactment of the body as a lived and intentional structure
+rather than an abstract cognitive function [29]. Instead of being an object in space, the
+body is what makes space meaningful and inhabitable.
+Phenomenological analysis establishes a basis for comprehending the interaction and
+immersion in technological environments as inherently corporeal and situated experiences.
+Current studies on digital and virtual media highlight that the bodily integration of percep-
+16
+PAGE 20
+Hyperobjects in VR Chapter 1
+tion and action within the mediated environment is crucial for spatial immersion, rather
+than relying only on visual realism or sensory fidelity [30]. The dynamic interplay of
+the lived body , the environment’s spatial organization, and the benefits of technological
+mediation creates the user’s sense of presence.
+1.7 Interrogation as a form of communication
+Keywords:Non-verbal communication, Diagnosticity, Positive Confrontations, Russano cheat-
+ing paradigm, Accusatorial vs Information-gathering interrogation styles
+1.7.1 Nonverbal communication
+Denault2020[31] There’s no universal “Pinocchio” cue; links between cues (gaze, fidgets)
+and deception are small, context-dependent, and easily misused. BAI (first step of Reid):
+uses verbal/nonverbal “tells” to decide guilt before accusatory interrogation.
+M. Laca[32] Argues that non-verbal communication can provide insight into a per-
+son’s state of comfort or discomfort, although findings within non-verbal communication
+can not be scientifically verified. He cites Jo Navarro’s statement that”There is no such
+thing as the Pinocchio effect”, which means that there is no definitive tell that people are
+lying. Laca emphasizes that nonverbal observation is supplementary , not conclusive. It
+should help form hypotheses, not determine guilt directly .
+1.7.2 Different interrogation approaches
+J. Eastwood[33] Diagnosticity relates to the ability of an interrogation approach to get
+confessions from the guilty while avoiding false confessions from the innocent. In this
+article, Eastwood compares the relative diagnosticity of a persuasion-based and a dialogue-
+based interrogation approach.
+In persuasion-based tactics, such as the Reid technique, the interrogator stresses their
+certainty of the suspect’s guilt from the start (e.g., “There is no doubt you took the money”;
+direct confrontation) and offers face-saving justifications to minimize or normalize the
+crime (e.g., “Maybe you took the money to buy food for your family”; theme development).
+Research suggests that these kinds of tactics are effective in generating confessions from
+guilty suspects, but may cause innocent suspects to confess as well.
+In Dialogue-based approaches, such as the PEACE model, present case evidence in a
+non-accusatorial fashion to give the suspect a chance to clarify (e.g., “You mentioned you
+were not present at the bar. However, we have two eyewitnesses who claim to have seen
+you there. How can you account for this?).
+In this study , they followed the Russano cheating paradigm, where participants are ei-
+ther induced or not induced to cheat on an experimental task to create innocent and guilty
+conditions. Some interesting findings were that in the persuasion-based approach, most
+participants confessed during the first attempt, while for the dialogue-based approach, the
+17
+PAGE 21
+Hyperobjects in VR Chapter 1
+largest proportion of confessions were made during the third and final attempt, meaning
+that guilty participants in the dialogue-based condition did not confess until the strongest
+evidence was presented.
+C. Meissner[34]
+The article distinguishes accusatorial vs information-gathering interrogation styles: the
+former emphasizes psychological control, confrontation, presumption of guilt; the latter
+emphasizes rapport, cooperation, and eliciting the suspect’s narrative.
+Accusatorial methods often employ maximization (threats, exaggeration) and mini-
+mization (offering face-saving rationales), plus false-evidence ploys, to pressure a confes-
+sion. Such methods risk false confessions, particularly from vulnerable individuals (youth,
+mentally ill, suggestible) or under conditions of stress, fatigue, or perceived coercion.
+In contrast, information-gathering approaches begin by building rapport, encouraging
+the suspect to provide their own account, and strategically introducing evidence later to
+resolve inconsistencies. The benefit of information-gathering is diagnostic value: it tends
+to preserve or improve true confession rates while reducing false confessions (i.e. greater
+accuracy) in experimental settings.
+The authors advocate further research to refine best practices, validate techniques
+across contexts, and understand moderating factors (e.g. cultural, situational) that in-
+fluence which style is optimal.
+1.8 Test Methods
+• Presence: [35]
+• Immersion: [36]
+• Engangement: [37]
+• measuring emotion: [38]
+• AB and Guerrilla testing: [39]
+• Agency - SOARS scale: [40] also see [41] for usage.
+• The Transportation Scale–Short Form (TS–SF): [42]
+18
+PAGE 22
+Hyperobjects in VR Chapter 1
+1.9 State of the art
+Table 1.1:Related Work on Biofeedback and Adaptive Game Interaction
+Reference Contribution / Focus Relevance to Our Project
+Nacke et al.
+(2011)
+Introduced taxonomy of direct
+vs. indirect physiological control
+in games; explored how biofeed-
+back can modify gameplay expe-
+rience.
+Conceptual grounding for map-
+ping physiological data (e.g.,
+stress) to in-game reactions of
+the interrogator.
+Oner et al.
+(2025)
+Developed a biofeedback-based
+Dynamic Difficulty Adjustment
+(DDA) system to evaluate player
+stress and motivation.
+Demonstrates practical sensor
+integration (HR, voice ampli-
+tude, stress) and adaptation
+logic similar to our planned
+setup.
+Fisher et al.
+(2024)
+Compared emotion-,
+performance-, and hybrid-
+based DDA methods using
+physiological signals.
+Provides insights on trade-offs
+between emotion-based and
+performance-based adaptation
+models.
+Lopes et al.
+(2025)
+Systematic review of experience-
+driven game adaptation, classify-
+ing methods by data source and
+adaptation target.
+Frames our work within the
+underexplored area of affective
+(emotion-based) adaptation in
+games.
+Adaptive Speed
+Biofeedback
+(2023)
+Adjusted game pacing dynami-
+cally using biofeedback to influ-
+ence player arousal and engage-
+ment.
+Illustrates simple and effective
+mapping between physiolog-
+ical input and tension pac-
+ing—applicable to interrogator
+tone and timing.
+Daniel-
+Watanabe et al.
+(2025)
+Used a VR biofeedback game
+for breathing and stress manage-
+ment training.
+Shows how immersive feedback
+loops can regulate emotional ex-
+perience and maintain user en-
+gagement.
+Lee & Jung
+(2020)
+Measured stress through
+ECG/HRV in a VR puzzle
+game to assess physiologi-
+cal–psychological correlations.
+Offers methods for synchroniz-
+ing gameplay events with phys-
+iological signals, useful for our
+experimental setup.
+19
+PAGE 23
+Hyperobjects in VR Chapter 1
+1.9.1 Interrogation in Video Games?
+Figure 1.5:Her Story [43]
+Her Story (2015) by Sam Barlow presents interrogation as a narrative puzzle built en-
+tirely through fragmented video interviews. The player takes on the role of an investigator
+using a police database to search clips of a woman being questioned about her missing
+husband. There is no explicit interrogation mechanic; instead, the interrogation emerges
+through the player’s interpretation and keyword searches. This indirect form of interaction
+transforms the player into both interrogator and audience, engaging cognitive processes
+of deduction and empathy . The fragmented narrative structure mirrors the uncertainty
+of real interrogations, requiring players to actively construct coherence and truth. Emo-
+tional tension is sustained through ambiguity and the player’s responsibility in forming
+conclusions, inverting the traditional power dynamic between interrogator and suspect.
+Figure 1.6:MotionsScan [44]
+L.A. Noire (2011, Rockstar Games) uses a more direct simulation of police interroga-
+tion. Players assume the role of Detective Cole Phelps and conduct interviews using facial
+20
+PAGE 24
+Hyperobjects in VR Chapter 1
+expressions, dialogue options, and evidence confrontation. The game’s innovative Motion-
+Scan technology records subtle facial micro-expressions to cue the player toward truth,
+doubt, or lie responses. This mechanic explicitly connects nonverbal communication, cen-
+tral to real-world interrogation, with gameplay decision-making. However, the system’s
+reliance on binary choices and exaggerated acting often reduced diagnostic accuracy , lead-
+ing to frustration when player interpretation did not match the developers’ intended truth.
+Nevertheless, L.A. Noire stands as an important experiment in combining narrative agency ,
+performance realism, and the psychological tension of interrogation within an interactive
+framework.
+Figure 1.7:Detroit Become Human
+Detroit: Become Human (2018, Quantic Dream) extends the interrogation theme into
+interactive ethics. As android protagonist Connor, the player investigates and interrogates
+human and android suspects. The game dynamically adapts to player choices, tone, and
+timing, reflecting either accusatorial or information-gathering approaches. Emotional ten-
+sion arises from the balance between empathy and control: pressing too hard can break
+rapport or provoke violence, while showing understanding can yield cooperation or lead
+to manipulation. Detroit thus frames interrogation not merely as a procedural act but as
+an emotionally charged negotiation of power, morality , and identity . Its branching narra-
+tive and real-time adaptation to player behavior represent the current state of the art in
+interactive interrogation design.
+1.10 Affect Adaptive Games
+Affective computing has been a prominent topic within human–computer interaction (HCI)
+research. By taking the current affective state of the user into account, it has the potential
+to provide optimal emotional experiences.
+However, in a systematic review by Croissant et al.[45], they found that there is a lack
+of sufficient systematic evidence to determine whether affective adaptation in video games
+successfully enhances their positive effects on players. One contributing issue they identify
+21
+PAGE 25
+Hyperobjects in VR Chapter 1
+is that many studies focus primarily on exploration of technological solutions regarding
+emotion recognition and adaptation, and not in the evaluation of affect-adaptive games.
+Affective design
+Affective design focuses on three core components:[45]
+• Emotion sensing.
+• Computational emotion modeling.
+• Adaptation.
+These components can be addressed through the Affective Feedback Loop. This loop
+describes the emotional interaction between player and game. It consists of three phases:
+• Emotion Elicitation: The game presents various elements such as NPC behaviors,
+environments, narrative events ect. that trigger emotional responses in the player.
+• Emotion Detection/Modelling: the game detects the emotional reactions of the player,
+and interprets those reactions according to the context of the game.
+• Emotion Adaptation and Expression: based on that interpretation, the game changes
+its behavior, content, or NPC expressions to respond appropriately to the player. This,
+in turn, affects the player, making them respond through game actions and emotional
+reactions, which leads us to step 1 again.
+This is illustrated in Figure 1.8.[46]
+Figure 1.8:The Affective Feedback Loop.[46]
+22
+PAGE 26
+Hyperobjects in VR Chapter 1
+Emotions
+A defining feature of emotions is that they are multi-modal, meaning they involve several
+interacting components. This has important consequences for both how player emotions
+are sensed and recognised, and how game characters express emotion. The most imme-
+diately observable component is the behavioural or expressive modality , which includes
+facial expressions, speech patterns, posture, and emotion-related behavioural choices.
+Closely connected to this is the physiological or somatic modality , which reflects the neu-
+rophysiological processes that support the emotional experience and behaviour, such as
+changes in heart rate, sweating ect.[47]
+Sensing emotional reactions can be done through measuring physiological responses
+(HR, HRV, EDA, EMG, EEG), behavioural responses (FER, gesture analysis, voice analysis),
+or subjective feelings through self-reports.[45]
+1.11 Research Question
+In an affect-adaptive IDN that adapts to the user’s EDA and BVP, which patterns of corre-
+lations between physiological state and dialogue choices (behavioral tendencies) emerge
+and how does these patterns correlate to the perceived immersion?
+23
+PAGE 27
+Chapter 2
+Design
+2.1 Brainstorming
+To initiate the project, we began with a brainstorming session to develop potential ideas.
+From the outset, we knew that we had to create something adaptive and incorporate an
+element of machine learning. Our initial concept centered on using user emotions as
+input to create an adaptive narrative. Consequently , the early stages of our brainstorming
+focused on exploring how emotional feedback could influence the unfolding of the story .
+We first conducted an open group discussion where everyone could freely exchange
+and build upon each other’s ideas. After this collaborative phase, each team member was
+given time to individually write down their ideas, which we afterward reviewed together.
+Ultimately , we decided to create an interrogation scene as an interactive narrative experi-
+ence. This decision was driven both by shared personal interest among the group members
+and by the belief that such a scenario would be a good fit for emotional adaptation. To
+make the emotional detection more reliable, we also planned to incorporate electrodermal
+activity (EDA) and heart rate variability (HRV) measurements, allowing us to triangulate.
+Figure 2.1:Brainstorm
+24
+PAGE 28
+Hyperobjects in VR Chapter 2
+2.1.1 Moving away from user emotion and introducing LLM
+After reviewing established approaches to emotion recognition, we determined that im-
+plementing a robust, real-time solution would require substantially more effort than the
+project scope allowed. To preserve the intended adaptive component, we initially explored
+the use of a large language model to generate dynamic interrogator responses informed
+by both user dialogue and physiological measures (EDA and HRV). However, our experi-
+ments showed that the LLM was difficult to constrain and often produced unpredictable
+outputs, making it unsuitable for a tightly scripted interrogation scenario. As a result, we
+abandoned the LLM approach and adopted a supervised machine learning model trained
+on the WESAD dataset to classify the user’s physiological state as stressed, relaxed, or
+baseline. This model ultimately provided the adaptive input necessary for guiding the
+interrogator’s behavior.
+2.2 Creating Mood Boards and Choosing an Engine
+To explore the overall aesthetic direction of the project we created mood boards. At this
+stage, we had not yet decided which engine to use, and we were considering two main ap-
+proaches. One option was to pursue a realistic style, as seen in Figure 2.2, using MetaHu-
+mans, for which Unreal Engine would be the most suitable choice due to its extensive
+support packages and animation tools designed specifically for MetaHumans. However,
+achieving convincing realism can be challenging; if not executed carefully , the characters
+may enter the “uncanny valley ,” [48] potentially disrupting the user’s immersion and di-
+minishing the overall experience.
+Alternatively , we considered adopting a more stylized or cartoon-like visual approach
+to avoid this issue as seen in Figure 2.3. For this, we would use Unity , which most of the
+group members were more experienced in and comfortable with. In the end, we decided
+to pursue the realistic style, as we were drawn to the creative and technical challenge
+it presented, as well as the range of interesting MetaHuman plugins available in Unreal
+Engine that we wanted to experiment with.
+25
+PAGE 29
+Hyperobjects in VR Chapter 2
+Figure 2.2:Highly realistic.
+ Figure 2.3:Stylized.
+2.3 Creating the story for the experience
+To make the interrogation experience exciting and, create that tension that often classifies
+a good interrogation scene, we decided to introduce an element of uncertainty . The way
+we did this was by making the user play a character with amnesia, someone who doesn’t
+remember what happened prior to their arrest. As the interrogation progresses, evidence
+or clues trigger fragmented memories, in the form of flashbacks, allowing the player to
+piece together the truth alongside the interrogator.
+2.3.1 Creating the flashback story
+Before scripting the interrogation, we first needed to develop the flashback storyline. This
+narrative was essential, not only because it depicts the crime itself, but also because it
+provides the dramatic foundation that shapes the interrogation and keeps the experience
+engaging. To structure this story , we used the Hollywood Model as our guiding framework.
+In total, we created five flashbacks, two of which depict alternate versions of the same
+event: one where the user is guilty and one where they are innocent as illustrated in Figure
+2.4.
+26
+PAGE 30
+Hyperobjects in VR Chapter 2
+Figure 2.4:The figure shows the flashback story in chronological order, with each box
+representing one flashback. As illustrated, Flashback 3 exists in two versions—one por-
+traying the user as innocent and one portraying them as guilty .
+2.3.2 Resum ´e of the flashback-story
+The flashbacks form a mini-story that reveals what actually happened during the night in
+of the crime. They unfold out of order during the interrogation but together describe a
+single chain of events.
+The flashback storyline revolves around you and your coworker Sam, both employees
+in a shady , morally questionable company . The exact nature of the business is never fully
+explained, but it is clear that something deeply unethical is happening behind the scenes.
+Sam has discovered is preparing to expose the company , even if it means destroying both
+the organization and the people tied to it. He confines in you and asks you to help him
+leak it. There are two endings to this story . One where you betray Sam and kill him and
+one where the Boss finds out and kills Sam.
+27
+PAGE 31
+Hyperobjects in VR Chapter 2
+2.3.3 How the flashbacks fits into the Hollywood Model
+Figure 2.5:Hollywood model with flashbacks.
+Flashback 1 – Sam’s Confession
+You’re sitting in the lunchroom with Sam. Across the room, your boss is laughing and
+chatting with other employees. Sam confides in you that he’s been losing sleep over the
+company’s activities—hinting at exploitation, manipulation, and something involving chil-
+dren. He calls the boss a manipulative psychopath and tells you he wants to bring the
+company down, even if it means going down with it. Before he can explain his full plan,
+the boss suddenly approaches, interrupting the conversation.
+The impact: Creates curiosity by throwing the user directly into the conversation with Sam.
+Presentation: Introduces key characters (You, Sam, the boss) and their dynamics.
+Elaboration: Deepens the conflict as Sam reveals moral concerns, hints of criminal activity ,
+and a plan forming.
+Flashback 2 – The Note
+You are at your desk when Sam rushes by and discreetly drops a note onto your workspace.
+In it, he writes that he has gathered the last pieces of evidence needed to expose the com-
+pany . He tells you he plans to leak it tonight and instructs you to meet him so the plan can
+go through.
+28
+PAGE 32
+Hyperobjects in VR Chapter 2
+Point of no return: Sam has the final evidence. There is no going back to normal.
+Escalation of conflict: Stakes are rising as the leak will happen tonight! It has to be kept
+secret, because they are going behind the Boss’s back.
+Flashback 3:
+Guilty Version: You meet Sam in the breakroom. He has everything ready for the leak.
+Just before he sends the information out, the boss walks in. He tells you to shoot Sam.
+In that moment Sam realizes you’ve betrayed him. You pull out a gun and shoot him. He
+collapses onto the table, knocking over a coffee pot that shatters on the floor. Immediately
+afterward, the boss strikes you in the head with the pistol—knocking you unconscious so
+that you will take the fall for the murder.
+Innocent Version: You meet Sam in the breakroom. The final leak preparations are ready .
+Before you and Sam can upload anything, the boss enters the room and shoots Sam him-
+self. He then hits you in the head, knocking you unconscious so that you will appear to be
+the culprit when the authorities arrive.
+Climax: The confrontation with the boss. The moment where truth is revealed. The story’s
+central question is answered: Did you kill Sam or not?
+Flashback 4 – The Aftermath
+You regain consciousness on the floor. Your vision is blurry , and the first thing you see is
+a pistol lying in your hand. You can barely move—only tilt your head enough to see Sam
+lying dead on the table above you. In the distance, you hear sirens drawing closer. Your
+vision fades, slipping into darkness.
+Fade out: You are about to be caught by the police.
+2.3.4 Entire scripts of flashbacks and user choices during flashbacks
+In Figure 2.6 and Figure 2.7, the full scripts for each flashback are presented. These figures
+also show that the user is able to make different choices—both in what they say and how
+they act—during the flashbacks. Originally , these choices were intended to influence the
+determination of the character’s innocence, effectively deciding which version of Flash-
+back 3 the user would receive. However, as the project increasingly centered on patterns
+of physiological state and dialogue choices and how these correlate to immersion, we be-
+came concerned that this mechanic would complicate the evaluation. For that reason, the
+choices themselves would not affect the story but were kept to enhance user engagement
+during the flashbacks.
+29
+PAGE 33
+Hyperobjects in VR Chapter 2
+Figure 2.6:Flashback 1 and 2.
+30
+PAGE 34
+Hyperobjects in VR Chapter 2
+Figure 2.7:Flashback 3 and 4.
+2.3.5 Evidence and clues that triggers the Flashbacks
+As stated earlier the flashbacks are triggered by pieces of evidence presented by the in-
+terrogator or another form for clue to the past. Therefore it was taken into amend that a
+piece of evidence or clue should be presented in the flashback that could relate back to the
+31
+PAGE 35
+Hyperobjects in VR Chapter 2
+interrogation. We decided on the following clues: a gun, a question about the conversation
+between the user and Sam, a note and spilling the coffee as presented in Figure
+Figure 2.8:The blue boxes represents the interrogation scenes and the red boxes represent
+the flashback scenes. At the top of each blue box is the clue that triggers the following
+flahback.
+2.4 Testing The Story In Twine
+We made low-fi prototype of our story in Twine[49] to test if the flashback story made
+sense and if it made sense with the flashbacks and how they were triggered. Twine is a
+free website used to creating branching text-based narratives and visual novels.
+To imitate the real structure of the experience, we included simple interrogation scenes
+between the flashbacks. Once the low-fi prototype was complete, we conducted a guer-
+rilla test[50], a quick and time-efficient test-method, by asking random students at our
+university to run through the story . Afterwards, we carried out a short semi-structured
+interview[51] in which we asked three questions. Two facilitators were present: one to
+take notes and one to conduct the interview.
+1. What did you think of the story?
+2. Do you think the story made sense?
+3. Is there anything you would like to add to improve the story?
+32
+PAGE 36
+Hyperobjects in VR Chapter 2
+We tested on four participants in total. All notes from the test can be found in appendix
+A.1. Below is a summary of the feedback:
+• The story generally made sense. Although the beginning was somewhat confusing
+for some, everything became clear by the end.
+• Participants found it engaging to shift in and out of the main character’s thoughts
+through the flashbacks. One participant commented that it made them feel like the
+character in the story .
+• Half of the participants did not wish to change anything. The remaining participants
+offered minor suggestions, such as adding a bit more information at the beginning.
+Because the overall feedback was positive, we proceeded with developing the interrogation
+part of the narrative.
+2.5 Creating the Interrogation System
+Our goal is to design an interrogation system in which the interrogator would react dy-
+namically to both the user’s chosen dialogue options and their physiological state (whether
+they are stressed or non-stressed). This is important because we want the interaction to
+feel, as if the interrogator were reading not only the user’s words, but also their body
+language. Therefore we treated the physiological state as a nonverbal layer of communi-
+cation. Much like real body language that can reveal tension or dishonesty even when a
+person’s verbal response says otherwise, for example, looking away while lying.
+In our system, each dialogue choice and physiological reading forms a pairing that
+determines the tone and style of the interrogator’s response. While the core meaning of
+the reply remains the same, its word choice and tone shifts. To ensure these reactions felt
+natural, we mapped the relationships between user states and interrogator responses, as
+shown in Figure 2.9.
+33
+PAGE 37
+Hyperobjects in VR Chapter 2
+Figure 2.9:Mapping between user physiological state and interrogator response style.
+Finally , we incorporated a point–based system to determine the narrative outcome of
+the interrogation. If the user’s total score at the end was zero or above, they would be
+innocent and if it fell below zero, they would be guilty .
+34
+PAGE 38
+Hyperobjects in VR Chapter 2
+Figure 2.10:Depending on the users dialogue choice and physiological data they will get
+a score varying from -2 to +2. This scoring will decide the outcome of the narrative, if the
+user is guilty or of the user it innocent.
+2.5.1 Moving away from using an LLM to make the interrogator dy-
+namic
+Initially , we considered using an LLM to make the interrogator’s responses more dynamic.
+However, after researching and experimenting with a tool called Convai [52], we con-
+cluded that an LLM would be too difficult to control for our purposes. As a result, we
+decided to script, animate and voice-act the interrogator ourselves instead.
+2.6 Designing the Characters
+The characters were designed with the Epic Games MetaHuman framework [53] imple-
+mented in Unreal Engine 5.6 [54], a pipeline for producing high-fidelity digital humans.
+MetaHuman’s editor was used to define the main facial features, proportions, and skin fea-
+tures. This made it possible to create believable character identities that fit the story needs
+of the scenes. The ability to control facial morphology , hair and clothing, and textural
+detail allows for a strong visual differentiation of the characters (See figure 2.12).
+MetaHuman was chosen for character design due to its native integration with Unreal
+Engine 5.6 , which eliminates the necessity for external import pipelines and mitigates po-
+tential complications associated with mesh compatibility , material setup, and retargeting.
+35
+PAGE 39
+Hyperobjects in VR Chapter 2
+Figure 2.11:Early version of the Interrogator character made in Character Creator 5.
+Additionally , the Fab store offers a vast ecosystem of MetaHuman-ready assets, which fa-
+cilitates the rapid prototyping and consistent character customization of characters within
+a unified environment. Even though Character Creator 5 and iClone 8 have powerful char-
+acter creation tools and animation pipelines, using them adds extra steps like exporting,
+converting, and retargeting, which wasn’t possible for this project because of time con-
+straints. Consequently , MetaHuman’s direct in-engine workflow offered a more effective
+and technically simplified solution.
+Figure 2.12:Interrogator, Boss and Coworker characters made in Metahuman Creator.
+36
+PAGE 40
+Chapter 3
+Implementation
+3.1 System Implementation in Unreal Engine
+The System is implemented in Unreal Engine 5.6 and consists of several modules that
+handle asset management, environment setup, character creation, animation, audio, and
+real time physiological input. These modules work together to present the narrative and
+adapt the experience according to the user state. Bellow is an in depth description of how
+each of these systems were implemented.
+3.1.1 File Manager
+A Blueprint in Unreal Engine receives the predicted user state through a Lab Streaming
+Layer inlet. The inlet reads the real time classification output from the Python system and
+provides a string value corresponding to baseline, relax, or stress. The Blueprint contains
+a simple state handler that increments separate counters each time one of these states
+is received. These counters allow the system to track how often the player enters each
+physiological state during the experience. (See Figure 3.1)
+For evaluation and documentation, the Blueprint also logs these incoming states to a
+local file. The file is written incrementally during runtime, enabling later analysis of user
+behaviour, model consistency , and the relation between in-game events and physiological
+responses. This log file serves as the primary record for validating the real time inference
+pipeline and its influence on the interactive experience.
+37
+PAGE 41
+Hyperobjects in VR Chapter 3
+Figure 3.1:Counter and State Writer Blueprints
+Another Blueprint functions as a simple evaluator that determines which physiological
+state has been dominant during the session. It receives the three counters for baseline,
+relax, and stress from the logging Blueprint and compares their values. When one counter
+becomes greater than the others, the evaluator sets a corresponding Boolean that indicates
+the prevailing state. This Boolean is then used by the game logic to trigger the correspond-
+ing narrative sequence.
+Figure 3.2:State Evaluator that alters the boolean which handles the way the narrative
+progresses
+We also include a log of the users state which is driven by the boolean in Figure 3.2
+and which button they clicked during gameplay . Which can be either Defensive or Honest.
+38
+PAGE 42
+Hyperobjects in VR Chapter 3
+Figure 3.3:Part of another blueprint that simply logs which button the user pressed and
+their state during the press.
+The data after a user have finished their playrthrough will look like in Figure 3.4.
+Figure 3.4:Example of a data file gathered during a playthrough
+39
+PAGE 43
+Hyperobjects in VR Chapter 3
+3.1.2 Scene Manager
+Figure 3.5:Blueprint that controls the scenes.
+The blueprint in Figure 3.5, controls which scene is activated. It checks if there is more
+scenes in the array of scenes and if there is it activates the scene through the event
+StartScene. It binds itself to the event SceneFinished and then when the event is activated
+it adds one to the index. When SceneFinished is activated it call the event StartScene
+which starts the cycle again. It also checks wether the current index is 7 and then it checks
+if the points are above or below zero and starts the appropriate ending.
+A Blueprint controls the flow of each interaction segment. It begins by playing a pre-
+defined cinematic sequence and, once the sequence has finished, switches the character
+to an idle animation. The Blueprint then creates a dialogue widget containing two choice
+buttons. The text on these buttons is populated dynamically with one defensive option and
+one honest option. This allows the user to select a response that influences the direction
+of the interaction and the progression of the narrative.
+40
+PAGE 44
+Hyperobjects in VR Chapter 3
+Figure 3.6:The blueprint that controls the flow of a scene in the game.
+Another Blueprint manages the outcome of each dialogue interaction. It begins by
+removing all active widgets and stopping the idle animation. It then calls the previously
+described evaluator function to determine the dominant physiological state. The resulting
+Boolean is checked to decide which branch of the logic to execute. If the Boolean is true,
+the Blueprint adds a point to the scene manager, records the user state and the selected
+dialogue option, and plays the corresponding sequence. If the Boolean is false, it performs
+the same operations but triggers the alternative sequence associated with that outcome.
+Figure 3.7:Overview of the Outcome Evaluation Blueprint, which selects the appropriate
+narrative sequence.
+41
+PAGE 45
+Hyperobjects in VR Chapter 3
+3.1.3 Environment and optimization
+(a)Interrogation room
+ (b)Conference room
+(c)Cantina
+ (d)Office
+Figure 3.8:Environment Images: visual overview of the four environments in which the
+sequences take place (interrogation room, conference room, cantina, and office).
+The QA Interrogation Room and Conference Room environment kits were among the assets
+acquired from Fab [55, 56]. We have heavily modified these, as they were extremely
+performance intensive.
+42
+PAGE 46
+Hyperobjects in VR Chapter 3
+Optimizing the environment
+Figure 3.9:Light Optimization tool in Unreal Engine showing the light optimization look-
+ing towards the cantina - White areas are the areas the sequences take place and require
+more light complexity
+To ensure good performance while maintaining visual fidelity , the lighting setup combines
+baked lighting for static elements with move-able lights for dynamic objects and charac-
+ters. Static geometry such as walls, furniture, and background props receives precomputed
+global illumination and shadow information through light baking, which reduces render-
+ing cost during runtime. Move-able lights are used for objects that require real time inter-
+action, including character models and elements that cast or receive changing shadows.
+This approach maintains consistent lighting quality while allowing dynamic components
+to integrate into the environment without excessive performance overhead.
+Additional optimization steps include: adjusting reflection capture placement, config-
+uring level of detail settings for assets, and reducing unnecessary draw calls to keep the
+frame rate stable during interactive sequences.
+3.1.4 Creating the Characters
+The MetaHuman pipeline is fully integrated into Unreal Engine 5.6, which allows for char-
+acter creation, performance, and animations without the need for external applications.
+First, a base MetaHuman template was chosen from the available preset configurations in
+the MetaHuman interface. The character’s facial morphology , body proportions, skin ma-
+terials, hair, and clothing were all customized through adjustments. Additionally , various
+external digital assets were acquired to facilitate character customization. Apparel pack-
+43
+PAGE 47
+Hyperobjects in VR Chapter 3
+ages and hair kits for facial hair were among the assets acquired from Fab [57, 58, 59, 60,
+61].
+Figure 3.10:The Interrogator character in MetaHuman Creator sculpt mode shown with
+a clay-like material.
+44
+PAGE 48
+Hyperobjects in VR Chapter 3
+Figure 3.11:The Interrogator character in MetaHuman Creator with realistic skin and eye
+material.
+After the customization phase was completed, the MetaHuman was assembled, includ-
+ing the skeletal rig structures along with blueprint parts and material assignments. This set
+up a fully configured MetaHuman that was ready to be animated and used for sequences.
+3.1.5 Speech Processing and Performance Design
+Each line of dialogue was recorded separately and then put together using ElevenLabs’
+Eleven Multilingual v2 model [62]. The Eleven Multilingual v2 text-to-speech model is
+state of the art at turning text into natural-sounding dialogue. ElevenLabs’ Voice Changer
+is a speech-to-speech system that can transform a recorded performance into a different
+voice while maintaining the same timing and delivery as recorded. When combined, they
+offer a quick, reliable method for producing dialogue and character voices. This method
+allows preserving a high degree of control over prosody and delivery . We employed the
+model and subsequent post-processing to standardize vocal timbre and establish consistent
+character-specific identities across the sessions. Even though the method worked well
+overall, there were sporadic phonetic substitutions where some words were represented as
+approximate versions of words that sounded similar. Accent features were also processed
+inconsistently at times, leading to pronunciations that were not natural or expected. Due
+to time constraints we implemented it as-is.
+The processed audio files were edited in Audacity [63], imported into Unreal Engine
+5.6 [54], and integrated with MetaHuman characters [53] using Unreal’s audio-driven fa-
+cial animation pipeline [64] (See figure 3.12). By automatically extracting lip-sync infor-
+mation from the speech waveform and generating corresponding facial movement curves,
+45
+PAGE 49
+Hyperobjects in VR Chapter 3
+this system enables high-fidelity MetaHuman performances without the necessity of man-
+ual facial keyframing.
+Figure 3.12:Audio files with dialogue speech were used to produce MetaHuman Perfor-
+mances and turn them into animations.
+3.1.6 Animation and Sequences
+A big component of the implementation was the cutscenes, made in the Unreal Engine
+sequencer tool. This is where many of the described elements were put together, creat-
+ing coherent first-person POV scenes, bringing together character animations, dialogue,
+sound, camera work and much more. The sequencer provides an intuitive tool for creating
+movie-like scenes, and organizing them neatly . Once facial animations, body animations
+and sound effects etc., had been manipulated and imported to the project, much of the
+workflow was about dragging those assets into the timeline, followed by thorough tweak-
+ing, making sure all elements combined seamlessly . Most movements within a certain
+level of complexity could be achieved by blending between the different idle and talking
+animations, creating new movements from imported animations. This is handled in the
+sequencer timeline, where you blend the end of one animation into the beginning of the
+next, controlling the transition meticulously . While most of the animations were handled
+by importing from Narrative Motion and Mixamo ([65], [66]), some specific character
+actions needed to be animated manually , since no suitable animations could be found for
+import, and also because of the exact movement control it provided. These were made by
+accessing the Metahumans’ control rigs, allowing full control of all of the characters’ body
+parts.
+46
+PAGE 50
+Hyperobjects in VR Chapter 3
+Motion-capture sequences were acquired from Narrative Motion [65], a provider of
+high-quality motion-capture body-animations that are well-suited for real-time animations.
+MetaHuman characters were assigned these animations in sequences to reinforce the emo-
+tional tone and behavioral context of interrogation interactions. The motion repertoire was
+expanded by the addition of additional animations from Mixamo [66]. These included
+animations of posture, gestures, and behavior. To complement the tone and emotional
+framing of each interrogation segment and flashback scenes, the animations were timed
+to the spoken dialogue and the corresponding lip-synced facial animations. To guarantee
+consistent skeletal compatibility , material handling, and performance integration through-
+out the project, all external assets were imported, retargeted, and processed within Unreal
+Engine 5.6.
+With the behavior of the characters accounted for, we can focus on some of the other
+central parts of the sequencer workflow. First of all, camera manipulation plays a vital part
+in creating realistic first-person sequences. We rotate the camera slightly back and forth
+throughout most sequences, giving the sense of the POV character looking around the
+room, and generally feeling more alive. The focus distance setting was also used regularly ,
+helping focus on certain things important to the story , and to simulate the main character
+fading in and out of consciousness. We also utilized the sequencer fade track. This renders
+a chosen color across the entire screen, ranging in opacity between 0 and 1. This aswell
+was used for fading between scenes and consciousness with a black color. It was also used
+to simulate the character blinking when waking up and as a brief white flash when guns
+were fired.
+Figure 3.13:The Interrogation 01 DA scene’s sequencer window in full
+Figure 3.13 shows the sequencer window of a specific scene in its entirety , showcasing
+47
+PAGE 51
+Hyperobjects in VR Chapter 3
+all of its elements. From top to bottom we see; Audio tracks including dialogue and sound
+effect, fade track for visual reaction to the interrogator hitting the table, the interrogator
+animation track including instantiation of the MetaHumanControlRig to perform a more
+complex movement (hitting the table), his facial talking animations blended with an idle
+face animation to prevent the face snapping back to default and the CineCameraActor with
+its transform providing simulated dynamic head movement. Most scenes share a simular
+outlook as this one. In total, 48 sequences were made of varying length and complexity .
+3.2 Machine Learning Model for Stress Detection
+The machine learning component is based on supervised classification using features ex-
+tracted from EDA and BVP signals in the WESAD dataset. After preprocessing, the signals
+are segmented into five second windows. For each window, the system computes mean
+heart rate, RMSSD heart rate variability , EDA mean, EDA standard deviation, and the stan-
+dard deviation of the first derivative of EDA. These features capture changes in autonomic
+activity that correspond to baseline, relax, and stress conditions.
+Wearable Sensors
+EDA and BVP
+OpenSignals
+LSL Physio Stream
+Python Processing
+Feature Extraction and Baseline Normalization
+Trained Random Forest
+Stress State Prediction
+LSL Output Streams
+User State and Probabilities
+Unreal Engine 5.6
+Blueprint Inlets and Adaptive Logic
+Figure 3.14:Compact overview of the system architecture for real time stress state inte-
+gration in Unreal Engine.
+To account for subject specific differences in physiology , baseline segments in WESAD
+are used to compute per subject reference values. These values are subtracted from the raw
+features to create baseline normalized features. The model is trained on these normalized
+features, as this improves the ability to generalize across subjects.
+48
+PAGE 52
+Hyperobjects in VR Chapter 3
+A Random Forest classifier is selected for its robustness to noise and its ability to model
+nonlinear relations in the feature space. GroupKFold cross validation is applied with each
+subject treated as one group. This ensures that no data from the same subject appear in
+both the training and test sets. The model achieves a subject independent accuracy of
+approximately sixty five percent, which is consistent with results reported for wrist based
+WESAD signals.
+After training, the model is exported as a joblib file for integration into the real time
+system. During deployment, incoming features are normalized using the user baseline
+collected at start up, and the trained classifier predicts one of three states. The output is
+used to drive the adaptive behaviour in the game, and is streamed via Lab Streaming Layer
+(See section 3.2.1).
+3.2.1 Lab Streaming Layer
+Lab Streaming Layer (LSL) [67] is an open-source middleware framework for real-time
+streaming, synchronization, and recording of time-series data across devices and applica-
+tions, such as eye tracking, motion capture, EEG, game events, etc.
+The Lab Streaming Layer (LSL) was employed as the primary middleware for the real-
+time acquisition, synchronization, and distribution of physiological data between the mea-
+surement system, analysis scripts, and the game engine. The raw sensor data was uni-
+formly timestamped and device-independently accessible through the use of the OpenSignals
+software to record EDA and BVP signals and expose them as LSL streams. A Python script
+received these streams via LSL inlets, executed fundamental preprocessing and feature
+extraction, and transmitted compact representations of the physiological state to an Un-
+real Engine 5.6 blueprint inlet. These input values were translated into logic and game
+parameters in Unreal, allowing the interactive experience to instantly adjust to the user’s
+physiological state.
+49
+PAGE 53
+Chapter 4
+Evaluation
+4.1 K-prototypes for clustering
+Clustering is a good way to find emerging patterns in the data. K-prototypes is good for
+mixed data as it combines both numerical and categorical data.
+4.1.1 Playing around with the data
+Variation 1
+Using raw physiological state counts, k-prototypes clustering produced three coarse player
+groups, reflecting broad differences in physiological activity and engagement. K=3 was
+chosen as the siluhette score peaked at 3 (Figure 4.1a) and the clusters were somewhat
+stable across runs (mean ARI 0.46) and in the UMAP we have a fair distinction between
+clusters. We can see one main cluster (n=72) in the bottom right corner, one smaller
+cluster (n=32) in the top left corner and one tiny outlier cluster (n=4) at the middle
+bottom (Figure 4.1b). The cluster values can be seen in Figure 4.1 and a description of
+them can be seen in Figure 4.2.
+(a)Cost and Silhouette score
+ (b)UMAP
+Figure 4.1:Variantion 1
+ClusternStress (cnt) Relax (cnt) Baseline (cnt)System Identification ImmersionValence Arousal Control Dialogue tendency
+(mean) (mean) (mean)
+C04 2.00 1.25 68.003.5 6.5 4.34.0 3.0 1.0 Honest (100%)
+C132 12.84 1.81 57.634.6 5.0 5.17.3 3.6 5.4 Honest 59%
+C272 11.35 4.96 56.115.3 5.9 6.47.9 5.1 4.8 Defensive 51%
+Table 4.1:Cluster mean ratings and dialoug percentage.
+50
+PAGE 54
+Hyperobjects in VR Chapter 4
+Cluster 0 (n=4)Low-activity but high identificationOutliers
+Cluster 1 (n = 32)Moderate engagement but controlCluster 2 (n = 72)Engaged majority
+- Very low stress and relax counts- Extremely high baseline count- Lowest ratings overall except from identification(highest rating).- Very low in control- 100% honest.
+- Highest stress counts- Moderate system, identification and immersion- Highest control and high valence- Mixed dialogue but mostly honest
+- Similar raw stress counts to Cluster 1- Highest relax counts- Highest system, immersion, valence and arousal- High control- Mixed dialogue choices
+Table 4.2:Cluster descriptives
+•Cluster 0:These kind of players are highly identified with their character and
+chooses 100% honest, however they do not very physiologically enganged and feel
+very little in control.
+–The game feels static to them, even though they are deeply aligned with the
+character. The narrative supports the role identification, but for some players,
+this comes at the cost of perceived agency . Adaptivity may be present, but it’s
+not legible to this group.
+•Cluster 1:These players as the highest stress count and control with mixed dialouge
+options. They have high valence but show mediocre scores in system, identification
+and immersion.
+–The system feels reactive to them but not very expressive or immersive. The
+narrative reacts, but not always meaningfully in a story sense.
+•Cluster 2:These players show a mix between both physiological state and dialouge
+choices and show high control. They also have the highest system, immersion, va-
+lence and arousal scores.
+–The sweet spot of the design.
+The clustering suggests that while the interactive narrative successfully enables adap-
+tive, immersive experiences for some players, others engage primarily through identifica-
+tion or control, indicating that adaptivity is present but unevenly perceived depending on
+player.
+The physiological features used in clustering represent counts of classified stress, re-
+laxation, and baseline states across gameplay . However, this concerned us since counts
+are different from participant to participant (one might have a longer gameplay than the
+other). Two participants look identical physiologically , even though their stress dominance
+is very different as seen in Figure 4.2.
+51
+PAGE 55
+Hyperobjects in VR Chapter 4
+Figure 4.2:Exampel of how a profile can look identical physiologically but have very
+different stress dominance.
+As a result k-prototypes groups them together and fine-grained profiles collapse into
+broader clusters. These findings motivated the use of normalized physiological state rep-
+resentations in subsequent analyses.
+Variation 2
+For the normalized physiological representation, we evaluated solutions between k = 2
+and k = 9 using silhouette scores and clustering stability across multiple random initial-
+izations as seen in Figure 4.3a. While silhouette scores increased dramatically at 7 k and 8
+k, we choose the solution at k = 4 as it showed the second highest stability (mean ARI =
+0.41) while preserving interpretable cluster sizes and it was also at the elbow of the cost
+score (even though it in this case is pretty liniar). In the UMAP in Figure 4.3a we can see
+that we have two bigger clusters (C2 and C3) and two smaller clusters (C0 and C1). The
+cluster values can be seen in Table 4.3 and a description of them can be seen in Table 4.4.
+(a)Cost and Silhouette score from variant 2
+ (b)UMAP for variation 2
+Figure 4.3:Variantion 2
+52
+PAGE 56
+Hyperobjects in VR Chapter 4
+ClusternStressnormRelaxnormBaselinenormSystem Identification ImmersionValence Arousal Control Dialogue tendencyC015 0.113 0.023 0.864 3.71 5.83 5.96 6.53 4.47 2.93 Honest (73%)C118 0.611 0.030 0.360 4.96 5.58 6.11 7.44 4.39 5.33 Defensive (72%)C236 0.089 0.099 0.812 5.82 6.06 6.54 8.25 5.53 4.75 Mixed (56% Honest / 44% Defensive)C339 0.056 0.024 0.921 4.85 5.17 5.23 7.36 3.87 5.36 Mixed (56% Honest / 44% Defensive)
+Table 4.3:Summary of emergent player profiles using normalized physiological measures
+(k= 4). Green indicates the highest mean value within a construct; red indicates the
+lowest.
+Cluster 0 (n = 15)
+Honest - Baseline/stress
+Low system, control, and valence
+Cluster 1 (n = 18)
+Defensive - Stress-dominant
+High immersion and control
+Cluster 2 (n = 36)
+Mixed - Baseline/relax
+Highly engaged
+Cluster 3 (n = 39)
+Mixed - Baseline
+Calm, controlled majority
+- High baseline
+- Some stress
+- Lowest system experience
+- Lowest control
+- Lowest valence
+- High identification
+- Mostly honest dialogue
+- By far the highest stress
+- High immersion
+- High control
+- Mostely defensive dialogue
+- High baseline dominance
+- Highest relax count
+- Highest immersion and identification
+and systen
+- Highest valence
+- Highest arousal
+- Mixed dialogue
+- Lowest stress
+- Highest baseline
+- Lowest identification
+- Lowest immersion
+- Lowest arousal
+- Highest control
+- Mixed dialogue
+Table 4.4:Cluster descriptives using normalized physiological state frequencies at k = 4.
+•Cluster 0:Players are morally aligned (honest dialogue, high identification) but but
+has a quite “flat” engagement and physiology . They do not perceive the system as
+adaptive.
+–Again the narrative supports the role identification, but comes at the cost of
+perceived agency and adaptation.
+•Cluster 1:These players as the highest stress count and are mostly defensive. They
+have high control and immersion.
+–The system feels reactive to them whiich might explain the high control and
+immersion.
+•Cluster 2:These players are relaxed and has mixed dialouge. They are highest in
+almost all categories of questions.
+–This might show that the mixed - relaxed version is actually the best design.
+•Cluster 3:These players do not vary in physiological state but does have a high sense
+of control with mixed dialogue options. They have very low scores in the questions.
+–When the story does not affect the physiology of the players they are not very
+engaged in the story .
+53
+PAGE 57
+Hyperobjects in VR Chapter 4
+Figure 4.4:Emergent player profiles identified through k-prototypes clustering using nor-
+malized physiological state counts and k = 4. Clusters are positioned by stress dominance
+and mean of narrative-, identification- and system questions. Bubble size indicates cluster
+size, and color represents the proportion of defensive dialogue choices.
+Variation 3
+As a last experiment we wanted to try K=8 as this was the peak of the silhouette score
+but unfortunately as a very low ARI at 0.35. However, k=8 might introduce some more
+distinct subtypes to the categories. Looking at the clusters it made sense to have three
+dominant groups with subtypes:
+Table 4.5:Summary of emergent player profiles using normalized physiological measures
+(k= 8). Green text indicates the highest mean value within a construct; red text indicates
+the lowest.
+Cluster Stress Relax Baseline Valence Arousal System Identification Immersion Agency Dialogue
+C0 (n=8) 0.645 0.001 0.354 7.00 4.50 4.50 5.00 5.33 5.50 Honest (75%)
+C1 (n=30) 0.094 0.116 0.789 8.00 5.63 5.37 6.25 6.57 4.77 Honest (63%)
+C2 (n=9) 0.047 0.029 0.924 8.89 5.67 6.59 5.50 6.52 4.11 Defensive (78%)
+C3 (n=12) 0.196 0.020 0.785 7.00 5.33 4.56 5.17 6.33 4.00 Mixed (42%)
+C4 (n=24) 0.008 0.021 0.971 7.50 4.17 5.00 5.67 5.17 6.00 Honest (67%)
+C5 (n=4) 0.105 0.034 0.860 7.00 1.00 3.17 4.00 4.33 3.00 Defensive (100%)
+C6 (n=4) 0.017 0.009 0.974 4.00 3.00 3.67 6.50 4.33 1.00 Honest (100%)
+C7 (n=17) 0.389 0.041 0.571 7.76 3.53 5.00 5.99 6.22 5.18 Defensive (76%)
+54
+PAGE 58
+Hyperobjects in VR Chapter 4
+Stress-dominant engagement
+Cluster 0 (n=8) Cluster 7 (n = 17)
+- Very high stress
+- Mediocre immersion and identification
+- Low system
+- High control
+- Mostly honest dialogue
+- High stress
+- Strong immersion and identification
+- Mediocre system
+- High control
+- Defensive dialogue
+Baseline-dominant engaged players
+Cluster 1 (n = 30) Cluster 2 (n = 9) Cluster 4 (n = 24)
+- Mixed dialogue
+- High on all questions
+- Mediocre control
+- Highest system
+- Very high identification and immersion
+- Highest Valence
+- Defensive dialogue
+- Mediocre control
+- Highest baseline dominance
+- High in all questions
+- Highest control
+- Mostly honest
+Low-affect / extremes
+Cluster 6 (n = 4) Cluster 5 (n = 4)
+- Extremely low physiological activation
+- High identification
+- Low immersion
+- Low valance
+- Low system
+- Fully honest dialogue 100%
+- Low arousal
+- Low immersion
+- High valence
+- Low system
+- Fully defensive dialogue 100%
+Table 4.6:Cluster descriptives using normalized physiological state frequencies at k=8
+4.1.2 Summery Figures of k = 8
+Emergent player profiles identified through k-prototypes clustering using normalized phys-
+iological state counts. Clusters are positioned by stress dominance and mean narrative
+immersion, identification, system adaptiveness and agency . Bubble size indicates cluster
+size, and color represents the proportion of defensive dialogue choices.
+55
+PAGE 59
+Hyperobjects in VR Chapter 4
+Figure 4.5:Immersion
+Figure 4.6:Identification.
+56
+PAGE 60
+Hyperobjects in VR Chapter 4
+Figure 4.7:System Adaptiveness.
+Figure 4.8:Agency .
+57
+PAGE 61
+Hyperobjects in VR Chapter 4
+4.2 Results from Paper
+4.2.1 Semi-Structured Interviews
+Following the playtesting session, participants completed a short, semi-structured inter-
+view to capture qualitative impressions of the experience. Overall, the interviews indicate
+a strongly positive reception, with many participants describing the experience as engag-
+ing, immersive, and technically impressive. The interrogation setting, lighting, graphics,
+and voice acting were frequently highlighted as effective in supporting narrative tension
+and presence.
+Several recurring improvement areas emerged. Multiple participants reported initial
+confusion regarding the narrative context and flashback structure, suggesting that a clearer
+introduction and a more elaborated ending could improve narrative clarity and closure.
+Additionally , while dialogue choices were generally well received, participants often noted
+that options felt limited or too similar, occasionally reducing the sense of agency and
+control.
+Finally , participants pointed to technical and audiovisual issues such as low audio lev-
+els, unnatural animations, and lack of eye contact as immersion-breaking. Some also
+expressed a desire for clearer feedback on how their physiological state influenced the
+interrogation, indicating that the adaptive elements were not always perceptible.
+4.2.2 Descriptive statistics for primary measures
+Norm. Stress Valence Arousal Control Adapt. Immers. Ident.
+−.64(.40) 7.56 (1.04) 4.59 (1.98) 4.81 (1.64) 5.04 (.93) 5.91 (.79) 5.63 (.74)
+Table 4.7:Means and standard deviations of primary measures. Note: SAM means are on
+9-point scale; Ad., Im., and Id. on 7-point scale
+In total, 12 participants fell into the behavioral groupHonest, 6 inDefensive, and 9 in
+Mixed. 13 classified asRelaxed, 13 asStressedfor Majority State, and 1 asMixed(see Fig.
+4.9). Participants’ self-reported measures and physiological stress levels are summarized
+in Table 4.7. On average, valence was moderately high (M = 7.56 out of 9), arousal was
+low-to-moderate (M = 4.59 out of 9), and control was moderate (M = 4.81 out of 9) (see
+Fig. 4.12). Immersion score mean landed at 5.91, and identification score mean landed at
+5.63 out of 7 (see Fig. 4.10 and 4.11). Physiological stress (StressNorm) ranged from -1.0
+to .81 across participants, with a mean of -.64.
+58
+PAGE 62
+Hyperobjects in VR Chapter 4
+Figure 4.9:Participant profiles.
+Figure 4.10:Immersion across participant profiles.
+59
+PAGE 63
+Hyperobjects in VR Chapter 4
+Figure 4.11:Identification across participant profiles.
+Figure 4.12:SAM dimensions across participant profiles.
+60
+PAGE 64
+Hyperobjects in VR Chapter 4
+4.2.3 SAM (Valence, Arousal, Control) Reports
+Pearson correlations between StressNorm and SAM ratings revealed no significant associ-
+ations. For valence,r=−0.06, p=.76; for arousal,r= 0.12, p=.57; and for control,
+r= 0.14, p=.48. Regression analyses using Profile × StressNorm revealed no significant
+main or interaction effects for valence or control. Arousal exhibited a small significant
+main effect of StressNorm, F(1, 15) = 4.73, p = .046, indicating a modest increase in
+self-reported arousal with higher normalized stress. Profile and the Profile × StressNorm
+interaction were not significant for any SAM dimension (valence:F(6,15) = 1.42, p=.271;
+arousal:F(4,15) = 1.32, p=.307; control:F(6,15) = 0.68, p=.672) (see Figs. 4.13-4.15).
+Valence showed a marginal effect of MostChoice (F(1,16) = 4.18, p= 0.058), with Hon-
+est participants slightly lower than Defensive. No other significant effects were observed
+across SAM dimensions. Welch t-tests confirmed that valence differed between Honest
+and Defensive participants,t(12.21) =−2.20, p = .048 (see Fig. 4.16), whereas arousal,
+t(7.41) = 0.79, p=.453, and control,t(10.05) = 0.54, p=.602, did not differ significantly .
+Figure 4.13:Profile * StressNorm for Valence.
+61
+PAGE 65
+Hyperobjects in VR Chapter 4
+Figure 4.14:Profile * StressNorm for Arousal.
+Figure 4.15:Profile * StressNorm for Control.
+62
+PAGE 66
+Hyperobjects in VR Chapter 4
+Figure 4.16:Honest & Defensive Valence Means.
+4.2.4 Identification
+Identification scores were negatively but non-significantly correlated with StressNorm,
+r=−0.11, p=.576. Regression analyses revealed that the Profile × StressNorm inter-
+action approached marginal significance,F(4,15) = 2.98, p=.054, suggesting a potential
+moderation by Profile (see fig. 4.17). Main effects of StressNorm (F(1,15) = 0.07, p=
+.795) and Profile (F(6,15) = 0.76, p=.609) were not significant. Simple ANOVAs con-
+firmed no significant differences across Profile (F(6,20) = 0.57, p=.752), MajorityState
+(F(2,24) = 0.48, p=.627), or MostChoice (F(1,16) = 0.04, p=.838). T-tests revealed no
+significant difference between Honest vs. Defensive participants.
+63
+PAGE 67
+Hyperobjects in VR Chapter 4
+Figure 4.17:Profile * StressNorm for Identification.
+4.2.5 Immersion
+Immersion scores were positively but non-significantly correlated with StressNorm(r=
+0.22, p=.26). Linear models testing Profile × StressNorm indicated no significant main
+or interaction effects,F(11,15) = 1.05, p=.456, with an adjusted R² of .02, suggest-
+ing negligible variance explained (see fig. 4.18). Simple ANOVAs for Profile, Majori-
+tyState, and MostChoice likewise revealed no significant differences in immersion (Pro-
+file:F(6,20) = 1.02, p=.443; MajorityState:F(2,24) = 0.73, p=.490; MostChoice:
+F(1,16) = 0.15, p=.707). T-tests revealed no significant difference between Honest vs.
+Defensive participants.
+64
+PAGE 68
+Hyperobjects in VR Chapter 4
+Figure 4.18:Profile * StressNorm for Immersion.
+4.2.6 Adaptivity
+Linear regression analyses were conducted to examine the relationship between adapt-
+ability and self-reported experience measures. Immersion scores significantly predicted
+adaptability ,b= 0.50,t(25) = 2.36,p=.026, with higher immersion associated with
+higher usability ratings, accounting for 18% of the variance (R 2 =.182). Similarly , con-
+trol ratings also significantly predicted adaptability ,b= 0.23,t(25) = 2.26,p=.033,
+explaining 17% of the variance (R 2 =.170). Valence emerged as the strongest predictor,
+b= 0.53,t(25) = 3.62,p=.001, with 34% of the variance explained (R 2 =.344) (see
+figs. 4.19-4.21). Identification showed a positive but non-significant association,b= 0.40,
+t(25) = 1.70,p=.102, accounting for roughly 10% of the variance (R 2 =.103). These
+results suggest that participants’ subjective emotional and immersive experiences, partic-
+ularly valence and immersion, are positively associated with perceived adaptability . No
+significant relationship was found between profile and adaptivity nor adaptivity and the
+interaction of profile and stress.
+65
+PAGE 69
+Hyperobjects in VR Chapter 4
+Figure 4.19:Regression ofAdaptation∼Control.
+Figure 4.20:Regression ofAdaptation∼V alence.
+66
+PAGE 70
+Hyperobjects in VR Chapter 4
+Figure 4.21:Regression ofAdaptation∼Immersion.
+4.2.7 Post-Hoc Analysis
+As a post hoc examination of trends, additional exploratory questions were assessed:
+whether trial number influenced stress levels, and whether immersion was significantly
+related to control and valence, since all factors independently predicted adaptivity . Va-
+lence and control were not used in a regression, as they fell under the same category
+(SAM).
+Trial number did not significantly predict stress,t=−0.56.
+A significant positive relationship between valence and immersion was found, with
+higher valence ratings associated with greater self-reported immersion (B= 0.38, p=
+.008, ad justedR2 =.22). No significant relation was found between immersion and control,
+with both directions of prediction yielding negligible effect sizes and p-values well above
+.05.
+4.2.8 Clustering with K-prototypes
+Clustering is a good way to find emerging patterns in the data, and the K-prototypes algo-
+rithm suited our project as it is good for mixed data, and we combine both numerical and
+categorical data.
+The data was cleaned for irrelevant items such as (predefined labels, redundant met-
+rics, totals, summed self-report ect.). The input items that was used can be seen in Table
+4.8.
+67
+PAGE 71
+Hyperobjects in VR Chapter 4
+Table 4.8:Input items from the data used in the clustering process.
+Categorical measure
+Choice Defensive,Honest
+Numerical measures
+SAM scales valence,arousal,control
+System Qs naturalint,naturalstorydec,interrogatorfeel
+Identification Qs understandascharacter,imagineinsitu,inhead,
+consequencecare
+Immersion Qs absorbed,reallyinside,fullattention
+Raw physiological counts stress,relax,baseline
+Normalized physiological
+counts
+stress norm,relax norm,baseline norm
+Table 4.9:Example illustrating skewed counts.
+Participant A Participant B
+Stress pings 10 10
+Total pings 20 100
+Stress percentage50% 10%
+Since we wanted as much raw values as possible, we first used raw physiological data,
+and got three fairly distinct clusters. However, these features represent counts of classified
+stress, relaxation, and baseline states across gameplay . This concerned us since counts
+are different from participant to participant (one might have a longer gameplay than the
+other), meaning that two participants can look identical physiologically , even though their
+stress dominance is very different. An example of this can be seen in Table 4.9. As a result
+k-prototypes groups them together and fine-grained profiles collapse into broader clus-
+ters. These findings motivated the use of normalized physiological counts in a subsequent
+analysis.
+For the second cluster analysis, we used the normalized physiological counts. We eval-
+uated solutions between k=2 and k=9 using cost scores and silhouette scores across 10
+multiple random initializations of k. We also ran a stability , Adjusted Rand Index (ARI),
+across 20 initializations.
+While silhouette scores increased dramatically at k=7 and k=8, we chose the solution
+at k=4 as it showed the highest stability (mean ARI = 0.41) while preserving interpretable
+cluster sizes, and it was also at the elbow of the cost score (even though it, in this case, is
+pretty linear). This is visualized in Figure 4.22.
+In the UMAP in Figure 4.23, we can see that we have two bigger clusters (C2 and C3)
+and two smaller clusters (C0 and C1). The clusters were then analysed across the input
+68
+PAGE 72
+Hyperobjects in VR Chapter 4
+Figure 4.22:The Cost score (Y-axis left) and Silhouette score (Y-axis right) across multiple
+initializations of k (X-axis). We can see there is a slight elbow in the cost score at k=4 and
+the silhouette score peaks at k=5 and k=8.
+69
+PAGE 73
+Hyperobjects in VR Chapter 4
+Figure 4.23:A UMAP visualizing the clusters from k=4. We can see there is two larger
+clusters (2 and 3) and two smaller cluster (0 and 1). There is also some overlap between
+the clusters.
+items and a description of each cluster can be found in Table 4.10.
+As a last experiment we wanted to try K=8 as this was the peak of the silhouette score
+but unfortunately as a very low ARI at 0.35. However, k=8 introduced more subtypes
+and, two were quite interesting as they presented outliers or extremes as both were either
+100% honest or defensive. Their descriptions can be seen in Table 4.11.
+For a full overview of the cluster analysis, go to Worksheets section 4.1.
+70
+PAGE 74
+Hyperobjects in VR Chapter 4
+Table 4.10:Cluster descriptions of the four clusters found using normalized physiological
+state frequencies atk= 4.
+Cluster 0 (n= 15)
+Honest - Baseline/Stress;
+Cluster 1 (n= 18)
+Defensive - Stress;
+• High baseline
+• Some stress
+• Lowest system experience
+• Lowest control
+• Lowest valence
+• High identification
+• Mostly honest dialogue
+• By far the highest stress
+• High immersion
+• High control
+• Otherwise mediocre
+• Mostly defensive dialogue
+Cluster 2 (n= 36)
+Mixed - Baseline/Relax;
+Cluster 3 (n= 39)
+Mixed -Baseline;
+• High baseline dominance
+• Highest relax count
+• Highest immersion, identification, and sys-
+tem
+• Highest valence
+• Highest arousal
+• Mixed dialogue
+• Lowest stress
+• Highest baseline
+• Lowest identification
+• Lowest immersion
+• Lowest arousal
+• Highest control
+• Mixed dialogue
+Table 4.11:Description of the two outlier clusters found when using normalized physio-
+logical state frequencies atk= 8.
+Low-affect / extremes
+Cluster 6 (n=4) • Extremely low physiological activation
+• High identification
+• Low immersion
+• Low valence
+• Low system
+• Fully honest dialogue (100%)
+Cluster 5 (n=4) • Low arousal
+• Low immersion
+• High valence
+• Low system
+• Fully defensive dialogue (100%)
+71
+PAGE 75
+Chapter 5
+Discussion
+72
+PAGE 76
+Bibliography
+[1] Adam Mirkowski.How to Write a Branching Narrative. Substack. Accessed: 2025-
+10-01. 2025.URL:https://adammirkowski.substack.com/p/how-to-write-a-
+branching-narrative.
+[2] Melanie C. Green and Keenan M. Jenkins. “Interactive Narratives: Processes and
+Outcomes in User-Directed Stories”. eng. In:Journal of communication64.3 (2014),
+pp. 479–500.ISSN: 0021-9916.
+[3] Daniel Echeverri et al. “Letters to Jos ´e:A Design Case for Building Tangible Interac-
+tive Narratives”. eng. In:Interactive Storytelling. Vol. 12497. Lecture Notes in Com-
+puter Science. Switzerland: Springer International Publishing AG, 2020, pp. 15–29.
+ISBN: 9783030625153.
+[4] Christopher Moser, Xiaowen Fang, and Masaaki Kurosu. “Narrative Control and
+Player Experience in Role Playing Games: Decision Points and Branching Narrative
+Feedback”. eng. In:Human-Computer Interaction. Applications and Services. Vol. 8512.
+Lecture Notes in Computer Science 3. Cham: Springer International Publishing,
+2014, pp. 622–633.ISBN: 3319072269.
+[5] Ulrike Spierling. “Interaction Design Principles as Narrative Techniques for Inter-
+active Digital Storytelling”. In:Interactive Digital Narrative: History, Theory, and
+Practice. Ed. by Hartmut Koenitz et al. New York, NY: Routledge, 2014, pp. 159–
+173.ISBN: 978-1-317-66868-8.URL:https://www.taylorfrancis.com/chapters/
+edit/10.4324/9781315769189-13/interaction-design-principles-narrative-
+techniques-interactive-digital-storytelling-ulrike-spierling.
+[6] Don Norman.The Design of Everyday Things: Revised and Expanded Edition. eng. Rev.
+and expanded ed. Boulder: Basic Books, 2013.ISBN: 9780465050659.
+[7] James C. Miller. “Computer graphics principles and practice, second edition: By
+James Foley , Andries van Dam, Steven Feiner, and John Hughes, published by Addison-
+Wesley Publishing Company , Reading, MA, 1990, 1174 pages,60.00”. eng. In:Com-
+puters Graphics16.2 (1992), pp. 239–240.ISSN: 0097-8493.
+[8] Linda E Sibert and Robert JK Jacob. “Evaluation of eye gaze interaction”. In:Pro-
+ceedings of the SIGCHI conference on Human Factors in Computing Systems. 2000,
+pp. 281–288.
+73
+PAGE 77
+Hyperobjects in VR Chapter 5
+[9] Jakub ˇStˇep´an Nov´ak et al. “Eye tracking, usability , and user experience: A systematic
+review”. In:International Journal of Human–Computer Interaction40.17 (2024),
+pp. 4484–4500.
+[10] Oskar Erlandsson.Look2Hook-A Comparative Study of Eye-tracker and Mouse Based
+Object Selection in a Complex Environment. 2021.
+[11] Akshay Madhav Deshmukh and Ricardo Chalmeta. “User experience and usability of
+voice user interfaces: A systematic literature review”. In:Information15.9 (2024),
+p. 579.
+[12] Mohsen Parisay, Charalambos Poullis, and Marta Kersten-Oertel. “EyeTAP: Introduc-
+ing a multimodal gaze-based technique using voice inputs with a comparative anal-
+ysis of selection techniques”. In:International Journal of Human-Computer Studies
+154 (2021), p. 102676.
+[13] Boris B Velichkovsky, Mikhail A Rumyantsev, and Mikhail A Morozov. “New solution
+to the midas touch problem: Identification of visual commands via extraction of
+focal fixations”. In:procedia computer science39 (2014), pp. 75–82.
+[14] Moritz Lehne and Stefan Koelsch. “Toward a general psychological model of tension
+and suspense”. In:Frontiers in Psychology6 (Feb. 11, 2015).ISSN: 1664-1078.DOI:
+10.3389/fpsyg.2015.00079.URL:http://journal.frontiersin.org/Article/
+10.3389/fpsyg.2015.00079/abstract(visited on 09/24/2025).
+[15] Leon Festinger.A theory of cognitive dissonance. Reissued by Stanford Univ. Press
+in 1962, renewed 1985 by author, [Nachdr.] Stanford, Calif: Stanford Univ. Press,
+2001. 291 pp.ISBN: 978-0-8047-0911-8 978-0-8047-0131-0.
+[16] David Bordwell, Kristin Thompson, and Jeff Smith.Film art: an introduction. Twelfth
+edition. New York, NY: McGraw-Hill Education, 2020. 494 pp.ISBN: 978-1-260-
+56566-9.
+[17] Behrang Keshavarz et al. “Detecting and predicting visually induced motion sickness
+with physiological measures in combination with machine learning techniques”. In:
+International Journal of Psychophysiology176 (June 1, 2022), pp. 14–26.ISSN:
+0167-8760.DOI:10 . 1016 / j . ijpsycho . 2022 . 03 . 006.URL:https : / / www .
+sciencedirect.com/science/article/pii/S0167876022000678(visited on 05/06/2025).
+[18] Marie T. Banich and Rebecca J. Compton.Cognitive Neuroscience:4th ed. Cam-
+bridge University Press, Apr. 5, 2018.ISBN: 978-1-316-66401-8.DOI:10 . 1017 /
+9781316664018.URL:https://www.cambridge.org/core/product/identifier/
+9781316664018/type/book(visited on 04/01/2023).
+[19] Tam ´as Nagy.Psychophysiological responses to distress and eustress. 2015.DOI:10.
+13140/RG.2.1.5154.3207.URL:http://rgdoi.net/10.13140/RG.2.1.5154.3207
+(visited on 05/24/2025).
+74
+PAGE 78
+Hyperobjects in VR Chapter 5
+[20] Rosalind W. Picard.Affective computing. 1. paperback ed. Cambridge, Mass.: MIT
+Press, 2000. 292 pp.ISBN: 978-0-262-66115-7 978-0-262-16170-1.
+[21]Electrodermal Activity (EDA) Sensor. PLUX Biosignals.URL:https://www.pluxbiosignals.
+com/products/electrodermal-activity-eda-sensor-1(visited on 05/03/2025).
+[22] Sebastiaan Mathot. “Pupillometry: Psychology , Physiology , and Function”. In:Jour-
+nal of Cognition1.1 (Feb. 21, 2018).ISSN: 2514-4820.DOI:10 . 5334 / joc . 18.
+URL:https://journalofcognition.org/articles/10.5334/joc.18(visited on
+03/25/2025).
+[23] Stuart R. Steinhauer et al. “Publication guidelines and recommendations for pupil-
+lary measurement in psychophysiological studies”. In:Psychophysiology59.4 (2022).
+eprint: https://onlinelibrary .wiley .com/doi/pdf/10.1111/psyp.14035, e14035.ISSN:
+1469-8986.DOI:10.1111/psyp.14035.URL:https://onlinelibrary.wiley.com/
+doi/abs/10.1111/psyp.14035(visited on 03/25/2025).
+[24] Matthew B. Winn et al. “Best Practices and Advice for Using Pupillometry to Mea-
+sure Listening Effort: An Introduction for Those Who Want to Get Started”. In:
+Trends in Hearing22 (2018). PMID: 30261825, p. 2331216518800869.DOI:10 .
+1177/2331216518800869. eprint:https://doi.org/10.1177/2331216518800869.
+URL:https://doi.org/10.1177/2331216518800869.
+[25]Tobii Eye Tracker 5 — Next Generation of Head and Eye Tracking. Tobii Gaming.URL:
+https://gaming.tobii.com/product/eye-tracker-5/(visited on 10/08/2025).
+[26] Philipp Schmidt et al. “Introducing WESAD, a Multimodal Dataset for Wearable
+Stress and Affect Detection”. In:Proceedings of the 2018 ACM International Con-
+ference on Multimodal Interaction (ICMI ’18). 2018, pp. 400–408.DOI:10 . 1145 /
+3242969.3242985.URL:https://dl.acm.org/doi/10.1145/3242969.3242985.
+[27] Van-Tu Ninh et al. “An Improved Subject-Independent Stress Detection Model Ap-
+plied to Consumer-Grade Wearable Devices”. In:Advances and Trends in Artificial In-
+telligence. Theory and Practices in Artificial Intelligence (IEA/AIE 2022). 2022, pp. 907–
+919.DOI:10.1007/978-3-031-08530-7_77.URL:https://doi.org/10.1007/978-
+3-031-08530-7_77.
+[28] Wolfram Boucsein.Electrodermal Activity. Springer, 2012.DOI:10 . 1007 / 978 - 1 -
+4614-1126-0.URL:https://doi.org/10.1007/978-1-4614-1126-0.
+[29] Maurice Merleau-Ponty.Phenomenology of perception. Trans. by Donald A. Lan-
+des. London New York: Routledge, 2012. 1 p.ISBN: 978-0-415-55869-3 978-0-
+203-72071-4 978-1-135-71860-2 978-1-135-71867-1 978-1-135-71874-9.DOI:10.
+4324/9780203720714.
+75
+PAGE 79
+Hyperobjects in VR Chapter 5
+[30] Mareike Gl ¨oss. “New Perspectives for Phenomenology in Interaction Design”. In:
+Proceedings of the 13th Nordic Conference on Human-Computer Interaction. NordiCHI
+’24. New York, NY, USA: Association for Computing Machinery, 2024, pp. 1–7.ISBN:
+979-8-4007-0966-1.DOI:10.1145/3679318.3685404.URL:https://dl.acm.org/
+doi/10.1145/3679318.3685404(visited on 10/02/2025).
+[31] Vincent Denault et al. “The Analysis of Nonverbal Communication: The Dangers of
+Pseudoscience in Security and Justice Contexts”. In:Anuario de Psicolog ´ıa Jur´ıdica
+30 (2020), pp. 1–12.DOI:10.5093/apj2019a9.URL:https://www.proquest.com/
+docview/2475314975.
+[32] LACA Martin. “Analysis of information during interrogation using nonverbal com-
+munication”. In:2nd LEPSY CEEPUS Network Research and Cooperation Conference
+12 March 2025. 2025, p. 74.
+[33] Joseph Eastwood, Michael Dunk, and Davut Akca. “Assessing the Diagnosticity of a
+Persuasion-Based and a Dialogue-Based Interrogation Approach”. eng. In:Journal
+of police and criminal psychology37.3 (2022), pp. 569–575.ISSN: 0882-0783.
+[34] Christian A. Meissner, Christopher E. Kelly, and Skye A. Woestehoff. “Improving
+the Effectiveness of Suspect Interrogations”. In:Annual Review of Law and Social
+Science11.Volume 11, 2015 (2015), pp. 211–233.ISSN: 1550-3631.DOI:https :
+//doi.org/10.1146/annurev- lawsocsci- 120814- 121657.URL:https://www.
+annualreviews.org/content/journals/10.1146/annurev- lawsocsci- 120814-
+121657.
+[35] Bob G Witmer and Michael J Singer. “Measuring Presence in Virtual Environments:
+A Presence Questionnaire”. eng. In:Presence : teleoperators and virtual environment
+7.3 (1998), pp. 225–240.ISSN: 1054-7460.
+[36] Joe Cutting et al. “The development and validation of the Immersion Experience
+Questionnaire Short Form (IEQ-SF)”. eng. In: (2025).
+[37] Heather L. O’Brien, Paul Cairns, and Mark Hall. “A practical approach to measuring
+user engagement with the refined user engagement scale (UES) and new UES short
+form”. In:International Journal of Human-Computer Studies112 (2018), pp. 28–39.
+ISSN: 1071-5819.DOI:https://doi.org/10.1016/j.ijhcs.2018.01.004.URL:
+https://www.sciencedirect.com/science/article/pii/S1071581918300041.
+[38] Klaus R Scherer. “What are emotions? And how can they be measured?” In:Social
+science information44.4 (2005), pp. 695–729.
+[39] Monica Bordegoni, Marina Carulli, and Elena Spadoni. “User Experience and User
+Experience Design”. eng. In:Prototyping User EXperience in EXtended Reality. Springer-
+Briefs in Applied Sciences and Technology . Switzerland: Springer, 2023, pp. 11–28.
+ISBN: 3031396820.
+76
+PAGE 80
+Hyperobjects in VR Chapter 5
+[40] Vince Polito, Amanda J. Barnier, and Erik Z. Woody. “Developing the Sense of
+Agency Rating Scale (SOARS): An empirical measure of agency disruption in hyp-
+nosis”. In:Consciousness and Cognition22.3 (2013), pp. 684–696.ISSN: 1053-8100.
+DOI:https://doi.org/10.1016/j.concog.2013.04.003.URL:https://www.
+sciencedirect.com/science/article/pii/S1053810013000469.
+[41] Stephen C. Pritchard et al. “Non-hierarchical Influence of Visual Form, Touch, and
+Position Cues on Embodiment, Agency , and Presence in Virtual Reality”. In:Frontiers
+in Psychology7 (2016), p. 1649.DOI:10.3389/fpsyg.2016.01649.URL:https:
+//www.frontiersin.org/articles/10.3389/fpsyg.2016.01649/full.
+[42] Markus Appel et al. “The Transportation Scale–Short Form (TS–SF)”. In:Media Psy-
+chology18.2 (2015), pp. 243–266.DOI:10.1080/15213269.2014.987400. eprint:
+https://doi.org/10.1080/15213269.2014.987400.URL:https://doi.org/10.
+1080/15213269.2014.987400.
+[43]Her Story (video game).https://en.wikipedia.org/wiki/Her_Story_(video_
+game). Accessed: 2025-10-10. Wikipedia, n.d.
+[44]MotionScan.https://lanoire.fandom.com/wiki/MotionScan. Accessed: 2025-10-
+10. L.A. Noire Wiki (Fandom), n.d.
+[45] Maximilian Croissant, Guy Schofield, and Cade McCall. “Theories, Methodologies,
+and Effects of Affect-Adaptive Games: A Systematic Review”. In:Entertainment Com-
+puting47 (2023), p. 100591.DOI:10.1016/j.entcom.2023.100591.URL:https:
+//www.sciencedirect.com/science/article/pii/S1875952123000789.
+[46] Georgios N Yannakakis and Ana Paiva. “Emotion in Games”. In:The Oxford hand-
+book of affective computing(2015), p. 459.
+[47] Eva Hudlicka. “Affective Game Engines: Motivation and Requirements”. In:Proceed-
+ings of the 4th International Conference on Foundations of Digital Games (FDG 2009).
+Orlando, FL, USA: ACM, 2009.
+[48] Masahiro Mori.The Uncanny Valley: The Original Essay by Masahiro Mori - IEEE
+Spectrum. IEEE Spectrum. June 12, 2012.URL:https://spectrum.ieee.org/the-
+uncanny-valley(visited on 10/12/2023).
+[49]Twine.https://twinery.org/. Accessed: 2025-11-20.
+[50] UserTesting.What Is Guerrilla Testing?https://www.usertesting.com/blog/what-
+is-guerrilla-testing. Accessed: 2025-11-20.
+[51] Noname.Mastering the Art of Semi-Structured Interviews: A Psychologist’s Guide.
+https://medium. com/@mrllhtk1/mastering- the- art- of - semi- structured-
+interviews - a - psychologists - guide - c759f9d0fda1. Accessed: YYYY-MM-DD.
+Dec. 2023.
+[52]Convai.https://www.convai.com/. Accessed: 2025-11-20.
+77
+PAGE 81
+Hyperobjects in VR Chapter 5
+[53] Epic Games.MetaHuman Framework. Digital human system used for character cre-
+ation and animation.URL:https : / / www . unrealengine . com / en - US / metahuman
+(visited on 11/19/2025).
+[54] Epic Games.Unreal Engine 5.6. Game engine used for implementation.URL:https:
+//www.unrealengine.com/en-US/unreal-engine-5(visited on 11/19/2025).
+[55] QAtmo.QA Interrogation Room. Modular interrogation-room environment kit; pur-
+chased asset. 2025.URL:https://www.fab.com/listings/41613242-70d7-468b-
+a340-c48653e33091(visited on 11/19/2025).
+[56] Tennur.Conference / Meeting Room Environment. Environment kit used for scene
+construction; purchased asset. 2025.URL:https : / / www . fab . com / listings /
+e3ad8089-e375-4f0e-8218-b43345c69d3c(visited on 11/19/2025).
+[57] AnnaLev.2 Sideburns Styles – MetaHuman Sideburns Groom Pack№4. Strand-based
+sideburn grooms for MetaHuman characters; purchased asset. 2025.URL:https:
+//www.fab.com/listings/ea0eb6ac-d192-415c-abf1-0d8387777167(visited on
+11/19/2025).
+[58] AnnaLev.Curly Short 02 – MetaHuman Hair Groom. Strand-based hair groom for
+MetaHuman characters; purchased asset. 2025.URL:https : / / www . fab . com /
+listings/eddf64e5-09cf-4f0f-a3d7-a39e56c0fb74(visited on 11/19/2025).
+[59] LeBaronMarket.MetaHuman Compatible Casual Outfit Ready. Parametric full outfit
+for MetaHuman characters; purchased asset. 2025.URL:https://www.fab.com/
+listings/b4d3c3b5-34ea-4987-b41a-fa016cf84517(visited on 11/19/2025).
+[60] LeBaronMarket.MetaHuman Compatible Doctor / Teacher Uniform with Tie. Para-
+metric outfit for MetaHuman characters; purchased asset. 2025.URL:https : / /
+www.fab.com/listings/b7b39994-8926-45b6-8ed7-c43653a731003a(visited on
+11/19/2025).
+[61] LeBaronMarket.Metahuman compatible Business Suit.https : / / www . fab . com /
+listings/d6e52010- db78- 48ba- 8350- c10b5346f1fb. Digital asset listing on Fab
+marketplace. Accessed November 20, 2025. 2025. (Visited on 11/19/2025).
+[62] 11labs.Eleven Multilingual v2: Voice Conversion Model. Neural voice conversion
+model used for dialogue processing.URL:https : / / elevenlabs . io/(visited on
+11/19/2025).
+[63] Audacity Team.Audacity: Free, Open-Source, Cross-Platform Audio Software. Audio
+recording and editing software.URL:https://www.audacityteam.org/(visited on
+11/19/2025).
+[64] Epic Games.Unreal Engine: Audio-Driven Facial Animation Pipeline. Audio-to-animation
+system used for MetaHuman lip-sync and facial performance.URL:https://www.
+unrealengine.com/(visited on 11/19/2025).
+78
+PAGE 82
+Hyperobjects in VR Chapter
+[65] Narrative Motion.Narrative Motion: Motion Capture and Animation Assets. Addi-
+tional body animation assets used in the project. 2025.URL:https://www.narrativemotion.
+com/(visited on 11/19/2025).
+[66] Adobe Systems.Mixamo: 3D Character Animations and Motion Capture Library.
+Motion-capture animation assets used in character motion.URL:https : / / www .
+mixamo.com/(visited on 11/19/2025).
+[67] Christian Kothe et al. “The Lab Streaming Layer for Synchronized Multimodal Record-
+ing”. In:Imaging Neuroscience3 (2025). Open Access, IMAG.a.136.DOI:10.1162/
+IMAG.a.136.URL:https://doi.org/10.1162/IMAG.a.136.
+79
+PAGE 83
+Appendix A
+Appendix
+A.1 Initial Guerilla Story Test
+Introduction:Hi, we made this story for an interactive video game, and the purpose of
+this test is to see if the story we have written needs adjustments.
+A.1.1 Participant 1:
+Ending: Guilty
+What did you think of the story?
+Den var fin.
+Do you think the story made sense?
+Det hele gav mening til sidst. Man kom meget pludseligt ind i det, men det gav mening til
+sidst. Alle valg gav mening. Det fortsatte i det tekst der kom bagefter.
+Is there anything you would like to add to improve the story?
+Nej, det hele kørte rundt. Der var et ord som han ikke vidste hvad betød (gulvet). der var
+stavefejl.
+A.1.2 Participant 2:
+Ending: Innocent
+What did you think of the story?
+Den var spænende nok. Været bedre med andre ellementer end bare tekst. Fængende med
+man kom ud og ind af hans tanker.
+Do you think the story made sense?
+List forvirret over man ogs˚a skulle vælge inde i minderne. Føler historien gav mening.
+Is there anything you would like to add to improve the story?
+Lidt voldsomt at interregatoren giver skylden for at spilde kaffen.
+A.1.3 Participant 3:
+Ending: Guilty
+What did you think of the story?
+A bit lost at the beginning, but nice.
+80
+PAGE 84
+Hyperobjects in VR Chapter A
+Do you think the story made sense?
+Still confused about the beginning. Because of the ending, they can make their own story
+of the beginning.
+Is there anything you would like to add to improve the story?
+A bit more details at the beginning explaining why you are there. Because you only get
+fragments of the story , you feel like the character in the story .
+A.1.4 Participant 4:
+Ending: Guilty
+What did you think of the story?
+It was interesting. The twist was nice. Liked the amnesia bit. Good way to expose the
+story . The twist at the end was stereotypical.
+Do you think the story made sense?
+Yes. Trauma from killing your friend could cause amnesia.
+Is there anything you would like to add to improve the story?
+Nope.
+A.2 Semi-Structured Interview Responses
+Following the interactive experience, participants completed a semi-structured interview
+consisting of three open-ended questions:
+• What did you think about the experience?
+• Is there anything you would change to make the experience better?
+• Is there anything you would like to add?
+Participant 1 (Pilot)
+Gender:Male
+Age:20s
+Experience:Enjoyed it a lot; felt immersed in the story; appreciated the lighting setup.
+Improvements:Would like captions for text at the bottom of the screen.
+Additional comments:N/A
+Participant 2
+Gender:Male
+Age:25
+Experience:Very engaging; felt polished and complete.
+Improvements:None.
+Additional comments:Liked the accent.
+81
+PAGE 85
+Hyperobjects in VR Chapter A
+Participant 3
+Gender:Female
+Age:20s
+Experience:Liked the graphics and story .
+Improvements:Initial confusion about the narrative and company’s role; wanted more
+closure.
+Additional comments:N/A
+Participant 4
+Gender:Male
+Age:20s
+Experience:Novel experience; story was strong; initial confusion resolved over time;
+flashbacks well executed; ending felt rushed.
+Improvements:More descriptive ending or an additional interrogation scene.
+Additional comments:N/A
+Participant 5
+Gender:Male
+Age:20s
+Experience:Interrogation setup was effective; dialogue felt unnatural and immersion-
+breaking; pacing was slow and robotic.
+Improvements:Improve dialogue quality and increase choice variety .
+Additional comments:Room temperature was cold; no gameplay-related issues.
+Participant 6 (Audio Issues Noted)
+Gender:Male
+Age:25
+Experience:Very well-made experience.
+Improvements:More distinct dialogue choices.
+Additional comments:Strong voice acting and graphics.
+Participant 7
+Gender:Male
+Age:28
+Experience:Engaging narrative; uncertain about the influence of heart rate.
+Improvements:Make physiological influence more perceivable.
+Additional comments:N/A
+Participant 8
+Gender:Male
+Age:22
+Experience:Very impressive.
+Improvements:Final choice felt forced; loss of agency near the ending.
+82
+PAGE 86
+Hyperobjects in VR Chapter A
+Additional comments:N/A
+Participant 9
+Gender:Male
+Age:24
+Experience:Intense experience; narrative felt ahead of player knowledge; disliked
+forced outcome.
+Improvements:More distinct dialogue choices and formulations.
+Additional comments:Enjoyed the experience but wanted a clearer introduction.
+Participant 10
+Gender:Male
+Age:28
+Experience:Enjoyable overall; verdict reduced enjoyment.
+Improvements:Add blinking mechanisms for player and NPCs.
+Additional comments:More background on the boss character.
+Participant 11
+Gender:Female
+Age:32
+Experience:Very engaging; felt present; good introduction.
+Improvements:Add movement or camera control; potential VR adaptation.
+Additional comments:N/A
+Participant 12
+Gender:Male
+Age:22
+Experience:Highly engaging; strong identification with character.
+Improvements:Improve voice quality .
+Additional comments:Would like visible biofeedback.
+Participant 13
+Gender:Male
+Age:20
+Experience:Very positive; liked the mix of flashbacks and interrogation.
+Improvements:Minor issues only .
+Additional comments:N/A
+Participant 14
+Gender:Male
+Age:23
+Experience:Enjoyable and different.
+Improvements:More backstory instead of flashbacks.
+83
+PAGE 87
+Hyperobjects in VR Chapter A
+Additional comments:Some laggy animations.
+Participant 15
+Gender:Male
+Age:32
+Experience:Very interesting interrogation format.
+Improvements:Reduce exaggerated animations.
+Additional comments:Highly polished and well executed.
+Participant 16
+Gender:Male
+Age:25
+Experience:Solid experience; animation issues reduced realism.
+Improvements:Fix animations; improve audio levels; add subtitles.
+Additional comments:Add consequence feedback (e.g., Telltale-style).
+Participant 17
+Gender:Male
+Age:31
+Experience:Enjoyable; appreciated Unreal Engine visuals.
+Improvements:Increase ambient sound.
+Additional comments:N/A
+Participant 18
+Gender:Male
+Age:25
+Experience:Very engaging.
+Improvements:Improve audio balance; extend experience length.
+Additional comments:N/A
+Participant 19
+Gender:Male
+Age:21
+Experience:Acceptable overall.
+Improvements:Cutscene continuity issues; improve visual transitions.
+Additional comments:Fullscreen mode; hide cursor during cutscenes.
+Participant 20
+Gender:Non-binary
+Age:26
+Experience:Enjoyable; appreciates narrative-driven games.
+Improvements:Improve eye contact from characters.
+Additional comments:Show biofeedback to the player.
+84
+PAGE 88
+Hyperobjects in VR Chapter A
+Participant 21
+Gender:Gender queer
+Age:25
+Experience:Strong concept and execution.
+Improvements:N/A
+Additional comments:N/A
+Participant 22
+Gender:Male
+Age:24
+Experience:Very well made.
+Improvements:None.
+Additional comments:T-pose observed in a flashback scene.
+Participant 23
+Gender:Female
+Age:23
+Experience:Very good overall.
+Improvements:Improve eye contact and small visual details.
+Additional comments:N/A
+Participant 24
+Gender:Male
+Age:32
+Experience:Fun and novel experience.
+Improvements:Extend duration; allow exploration of alternative outcomes.
+Additional comments:N/A
+Participant 25
+Gender:Male
+Age:25
+Experience:Positive overall; initial confusion resolved through flashbacks.
+Improvements:Clearer introductory context.
+Additional comments:N/A
+Participant 26
+Gender:Male
+Age:25
+Experience:Enjoyable; would like mouse movement during gameplay .
+Improvements:Clearer feedback on narrative direction and guilt state.
+Additional comments:N/A
+85
+PAGE 89
+Hyperobjects in VR Chapter A
+Participant 27
+Gender:Male
+Age:23
+Experience:Engaging and immersive.
+Improvements:Increase audio levels.
+Additional comments:N/A
+A.3 Interrogation Scenes
+Figure A.1:Interrogation scene 1.
+86
+PAGE 90
+Hyperobjects in VR Chapter A
+Figure A.2:Flashback 1.
+Figure A.3:Interrogation scene 2.
+87
+PAGE 91
+Hyperobjects in VR Chapter A
+Figure A.4:Flashback 2.
+88
+PAGE 92
+Hyperobjects in VR Chapter A
+Figure A.5:Interrogation scene 3.
+89
+PAGE 93
+Hyperobjects in VR Chapter A
+Figure A.6:Flashback 3.
+Figure A.7:Interrogation scene 4.
+90
+PAGE 94
+Hyperobjects in VR Chapter A
+Figure A.8:Guilty Ending
+91
+PAGE 95
+Hyperobjects in VR Chapter A
+Figure A.9:Innocent Ending
+92
+PAGE 96
+Hyperobjects in VR Chapter A
+A.4 Consent Form
+Figure A.10:In-game consent Form.
+Participant Consent FormYou are invited to take part in a research project explor-
+ing how people respond—emotionally and physiologically*—to dialogue choices in an
+interrogation-style video game. This study is part of a master’s-level academic project.
+You will play a short video-game scenario in which you choose dialogue responses.
+During the session, your heart rate and electrodermal activity (EDA) will be recorded.
+These measurements are noninvasive and collected through wearable sensors.
+Some participants may experience mild stress due to the interrogation theme. You may
+stop at any time if you feel uncomfortable.
+Benefits:
+You may not benefit directly , but your involvement contributes to research on interac-
+tive media and physiological responses.
+Data Use & Confidentiality:
+All data will be anonymized and used only for academic analysis and reporting. No
+personally identifying information will be included in any publications or presentations.
+Voluntary Participation:
+Your participation is completely voluntary . You may withdraw at any point without
+penalty , and your data will be removed upon request.
+Consent:
+By proceeding, you confirm that you are at least 18 years old, have read this informa-
+tion, understand the nature of the study , and agree to participate.
+93
+PAGE 97
+Hyperobjects in VR Chapter A
+A.5 Participant Recruitment
+A.5.1 Recruitment Script
+Participants were presented with the following recruitment text:
+Hi! We are testing an interactive game where the narrative will be influenced
+by your physiological responses and decisions as a suspect who is being inter-
+rogated by the police.
+There’s no right or wrong way to play; your playthrough gives us insight into
+how people engage with dynamic narratives. The session will last approxi-
+mately 25 minutes, including a short baseline recording and two brief ques-
+tionnaires, and an interview at the end.
+You will be questioned by the interrogator, who in real time reads your pulse
+and how much you sweat to try and figure out if you are innocent or guilty .
+These signals will influence how he reacts and how the narrative unfolds. There
+are no wrong choices - it’s all part of the story .
+The data is anonymous and used only for research purposes, and you can quit
+at any time.
+Do you wish to give it a try?
+A.5.2 Baseline Procedure
+Before the interactive experience, participants completed a baseline recording:
+For the next minute, please sit quietly and relax. Try to breathe normally and
+let your body settle. This gives us a baseline to understand your natural physi-
+ological state before the interrogation starts.
+A.5.3 Post-Experience Instructions
+After completing the interactive narrative, participants were informed:
+That’s the end of the interactive part. Now there is a short questionnaire and
+we will have a brief interview afterward.
+A.5.4 Post-Experience Questions
+Participants were asked the following questions:
+• What is your age?
+• What is your gender?
+• What did you think about the experience?
+• Is there anything you would change to make the experience better?
+• Is there anything you would like to add?
+94
+PAGE 98
+Hyperobjects in VR Chapter A
+A.5.5 Debrief
+At the conclusion of the session, participants received the following debrief:
+Thank you for taking part! Your responses and physiological data are anony-
+mous and will help us study how interactive narratives respond to player be-
+havior. You are welcome to share any questions or comments you have right
+now.
+95
