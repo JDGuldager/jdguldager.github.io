@@ -6,8 +6,7 @@ window.projects = [
     "meta": [
       "Unity",
       "VR",
-      "Group project",
-      "Published · IEEE VRW 2025"
+      "Semester project"
     ],
     "image": "assets/shoulder.jpg",
     "alt": "VR exercise room with a virtual mirror and instructor avatar.",
@@ -61,7 +60,12 @@ window.projects = [
       "image": "assets/process-shoulder.jpg",
       "alt": "Exercise prototype showing repetition count and arm-elevation feedback."
     },
-    "highlight": "Co-authored research published in IEEE VRW 2025"
+    "highlight": "Co-authored research published in IEEE VRW 2025",
+    "contributionPoints": [
+      "Exercise validation, repetition counting, and exertion warnings.",
+      "Avatar animation logic and exercise-selection UI.",
+      "Studio co-design, participant recruitment, testing, and iteration."
+    ]
   },
   {
     "id": "narrative",
@@ -70,7 +74,7 @@ window.projects = [
     "meta": [
       "Unreal Engine",
       "Python",
-      "Group project"
+      "Semester project"
     ],
     "image": "assets/interrogation.png",
     "alt": "A character seated across an interrogation table with a case file, recording equipment, and an illuminated exit sign.",
@@ -84,7 +88,7 @@ window.projects = [
         "https://github.com/JDGuldager/ML-Stress-Detector-for-an-Adaptive-Narrative"
       ],
       [
-        "ML walkthrough",
+        "Watch ML development walkthrough",
         "https://youtu.be/_JsQaANyR3A"
       ]
     ],
@@ -115,7 +119,12 @@ window.projects = [
       "text": "The team first tested the story in Twine with four participants, checking whether the flashbacks and their triggers made sense. Feedback supported the structure while highlighting some confusion at the beginning. The response map then connected dialogue choices and physiological states to the interrogator’s behaviour.",
       "image": "assets/process-narrative.jpg",
       "alt": "Team design diagram mapping dialogue choices and physiological states to four interrogator response styles."
-    }
+    },
+    "contributionPoints": [
+      "Helped develop the ML model estimating stress from EDA and blood-volume-pulse signals.",
+      "Worked on optimisation, lighting, and the dialogue system.",
+      "Helped integrate MetaHuman."
+    ]
   },
   {
     "id": "fyrmester",
@@ -123,6 +132,7 @@ window.projects = [
     "category": "Game & level design",
     "meta": [
       "DADIU internship",
+      "3-week project",
       "WiggleTreeStudio",
       "Windows"
     ],
@@ -172,13 +182,17 @@ window.projects = [
         "The finished game combines the work of designers, programmers, artists, and audio specialists. The linked game page includes the full team credits."
       ]
     ],
-    "highlight": "DADIU internship · Multidisciplinary game production",
     "process": {
       "title": "Early concept: balancing repairs, flooding, and the light",
       "text": "One of the earliest concept images explores an Overcooked-inspired loop: repair damage, drain floodwater, and keep the lighthouse running before tasks overwhelm the player. It also considers tower construction and movement options; these are early proposals, not a description of the finished game. I refined the initial loop with the design team and input from the wider team. My later floor layout placed essential materials downstairs, making flood prevention central to keeping the lighthouse operational. Open the image to read the original notes.",
       "image": "assets/process-fyrmester-early.png",
       "alt": "Early lighthouse concept sheet with annotated repairs, flooding, light maintenance, and notes on competing tasks, movement, and difficulty."
-    }
+    },
+    "contributionPoints": [
+      "Created the initial gameplay loop and floor sequence.",
+      "Implemented the entire in-game UI and co-designed the camera.",
+      "Fixed bugs and iterated through repeated testing with the team."
+    ]
   },
   {
     "id": "asteroids",
@@ -187,10 +201,11 @@ window.projects = [
     "meta": [
       "Unity",
       "Arduino",
-      "Individual project"
+      "Individual project",
+      "Course exam project"
     ],
-    "image": "assets/asteroids.jpg",
-    "alt": "Player spaceship surrounded by an asteroid field.",
+    "image": "assets/process-glove.jpg",
+    "alt": "Custom glove controller with its sensors, wiring, Arduino, and thumb-operated button.",
     "summary": "A one-minute asteroid game controlled by a custom glove: rotate your hand to steer, bend a finger for throttle, and press to fire.",
     "contribution": "Custom controller hardware, input processing, Unity integration, and gameplay systems.",
     "role": "Designer / Developer",
@@ -201,6 +216,10 @@ window.projects = [
       ]
     ],
     "sections": [
+      [
+        "Project context",
+        "An individual course project for the Mobile and Wearable Computing exam."
+      ],
       [
         "My contribution",
         "I built a wearable glove controller and integrated it with a Unity spaceship game. The hardware combines an Arduino Nano, a BNO08x orientation sensor, a flex sensor, and a thumb-operated button. I also took part in testing and contributed to the academic writing."
@@ -221,7 +240,10 @@ window.projects = [
       "image": "assets/process-glove.jpg",
       "alt": "The custom glove prototype with its sensors, wiring, Arduino, and thumb button."
     },
-    "highlight": "Individual project · Physical controller and Unity application"
+    "contributionPoints": [
+      "Built the custom glove controller and input processing.",
+      "Integrated the hardware with Unity and implemented gameplay systems."
+    ]
   },
   {
     "id": "cartastrophe",
@@ -266,8 +288,7 @@ window.projects = [
         "Team credit",
         "Developed with a multidisciplinary team. Full credits and downloadable Windows and macOS versions are available on the game page."
       ]
-    ],
-    "highlight": "DADIU internship · One-week game jam"
+    ]
   },
   {
     "id": "throwing",
@@ -387,7 +408,10 @@ window.projects = [
         "The video presents the concept and implementation, including music and audio-reactive visuals."
       ]
     ],
-    "highlight": "Application design & development · Collaborative animated artwork"
+    "contributionPoints": [
+      "Handled most of the application design and implementation.",
+      "Collaborated with a TouchDesigner designer who created the animated artwork."
+    ]
   },
   {
     "id": "tree",
