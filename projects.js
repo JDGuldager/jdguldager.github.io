@@ -307,13 +307,13 @@ window.projects = [
     "image": "assets/throwing.jpg",
     "alt": "VR throwing prototype with floating targets above an Earth backdrop.",
     "summary": "A force-based grabbing and throwing prototype designed to make hitting targets in VR easier and more predictable.",
-    "contribution": "Application design, implementation, system integration, and version control within a collaborative team.",
+    "contribution": "Implemented the throwing physics, scoring, and general gameplay interactions. Carried out testing and contributed to the academic writing.",
     "role": "Design & Implementation",
     "links": [],
     "sections": [
       [
         "My contribution",
-        "I contributed across application design and implementation, combining systems I built with work from teammates into the final build. I also handled version control and helped shape the overall interaction design. I also took part in testing and contributed to the academic writing."
+        "I implemented the throwing physics, scoring system, and general interactions in the game, and carried out testing. A teammate worked on the different object types. I also contributed to the academic writing."
       ],
       [
         "The challenge",
@@ -334,7 +334,11 @@ window.projects = [
       "text": "The team compared a custom interaction with Unity’s default throwing. A crosshair positioned in front of the non-throwing hand provides an explicit target, while movement magnitude controls throwing speed. Two participants scored higher with the custom technique across five trials each. This is an early usability result, not evidence of general performance.",
       "image": "assets/process-throwing.jpg",
       "alt": "Prototype screenshot showing the crosshair used to guide throws."
-    }
+    },
+    "contributionPoints": [
+      "Implemented the throwing physics, scoring, and general gameplay interactions.",
+      "Carried out testing and contributed to the academic writing."
+    ]
   },
   {
     "id": "stepping",
@@ -434,13 +438,13 @@ window.projects = [
     "image": "assets/tree.jpg",
     "alt": "Stylised forest environment from the tree embodiment VR experience.",
     "summary": "A slow-paced VR experience where breathing nurtures a responsive forest and the player inhabits a tree.",
-    "contribution": "Application design, implementation, system integration, and version control within a collaborative team.",
+    "contribution": "Worked on optimisation and communication between Pure Data, Unity, and OpenSignals for respiratory-sensor input. Contributed to testing, research, and writing the report.",
     "role": "Design & Implementation",
     "links": [],
     "sections": [
       [
         "My contribution",
-        "I contributed across application design and implementation, combining systems I built with work from teammates into the final build. I also handled version control and helped shape the overall interaction design. I also took part in testing and contributed to the academic writing."
+        "My main implementation work focused on optimisation and communication between Pure Data, Unity, and OpenSignals for the experience’s respiratory-sensor input. I also participated in testing, research, and writing the report."
       ],
       [
         "Design approach",
@@ -461,6 +465,10 @@ window.projects = [
       "text": "The team linked live respiration input to environmental growth and visual feedback. Distant trees react later than nearby trees, making the effect spread outward. Animated bark used a flipbook shader instead of video textures to address mapping and performance constraints. These choices connect the visual design to the practical requirements of a VR build.",
       "image": "assets/process-tree.jpg",
       "alt": "Team system diagram connecting physiological input, the VR environment, and intended experience outcomes."
-    }
+    },
+    "contributionPoints": [
+      "Worked on optimisation and communication between Pure Data, Unity, and OpenSignals for respiratory-sensor input.",
+      "Contributed to testing, research, and writing the report."
+    ]
   }
 ];
