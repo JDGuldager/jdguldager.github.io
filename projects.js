@@ -1,5 +1,61 @@
 window.projects = [
   {
+    "id": "shoulder",
+    "title": "VRehabilitation",
+    "category": "Guided interaction design",
+    "meta": [
+      "Unity",
+      "VR",
+      "Group project",
+      "Published · IEEE VRW 2025"
+    ],
+    "image": "assets/shoulder.jpg",
+    "alt": "VR exercise room with a virtual mirror and instructor avatar.",
+    "summary": "A guided shoulder rehabilitation prototype using an instructor avatar, a virtual mirror, and movement feedback.",
+    "contribution": "Application design, implementation, system integration, and version control within a collaborative team.",
+    "role": "Design & Implementation",
+    "video": "DN0x5DwvmmU",
+    "links": [
+      [
+        "Read published article",
+        "https://ieeexplore.ieee.org/abstract/document/10972776"
+      ],
+      [
+        "View code",
+        "https://github.com/JDGuldager/VR-Rehabilitation---Shoulder-Rehabilitation-in-Virtual-Reality"
+      ]
+    ],
+    "sections": [
+      [
+        "My contribution",
+        "I contributed across application design and implementation, combining systems I built with work from teammates into the final build. I also handled version control and helped shape the overall interaction design."
+      ],
+      [
+        "Published research",
+        "Co-authored the published article VRehabilitation: A Pilot Study of HMD-Based Guided Exercise & Rehabilitation in VR for Post-Shoulder-Surgery Patients at Home. Featured at the XR Health workshop at IEEE VR 2025 in Saint-Malo, France, and published in the IEEE VRW 2025 proceedings."
+      ],
+      [
+        "Design approach",
+        "The project prioritises calm guidance over gamification. A virtual mirror supports posture awareness, while an instructor demonstrates exercises and visual, audio, and haptic cues provide feedback."
+      ],
+      [
+        "Evaluation",
+        "A pilot study involved eight people with prior rehabilitation experience, together with physiotherapist feedback. Participants reported positive usability, while exercise variety, customisation, and comfort remained areas to improve."
+      ],
+      [
+        "Scope",
+        "A research prototype for investigating guided exercise at home. The pilot does not establish clinical effectiveness or readiness for unsupervised medical use."
+      ]
+    ],
+    "process": {
+      "title": "Making exercise guidance visible",
+      "text": "The team combined an instructor avatar, a virtual mirror, and movement feedback to support guided exercise. The prototype makes repetition count and arm elevation visible during the task. Pilot feedback highlighted exercise variety and customisation as priorities for a future iteration.",
+      "image": "assets/process-shoulder.jpg",
+      "alt": "Exercise prototype showing repetition count and arm-elevation feedback."
+    },
+    "highlight": "Co-authored research published in IEEE VRW 2025"
+  },
+  {
     "id": "fyrmester",
     "title": "Fyrmester: Burden of Light",
     "category": "Game & level design",
@@ -41,51 +97,8 @@ window.projects = [
         "Team credit",
         "The finished game combines the work of designers, programmers, artists, and audio specialists. The linked game page includes the full team credits."
       ]
-    ]
-  },
-  {
-    "id": "cartastrophe",
-    "title": "Cartastrophe",
-    "category": "Game & level design",
-    "meta": [
-      "DADIU internship",
-      "Unity",
-      "Windows / macOS"
     ],
-    "image": "assets/cartastrophe.png",
-    "alt": "Cartastrophe gameplay showing a shopping trolley, shopping list, timer, and supermarket aisles.",
-    "summary": "A frantic supermarket run: collect your shopping list before the store closes in three minutes.",
-    "contribution": "Game design, level design, bug fixing, camera features, and UI features.",
-    "role": "Game Designer / Level Designer",
-    "video": "gZmLCCT5Gbo",
-    "links": [
-      [
-        "Get the game",
-        "https://wiggletreestudio.itch.io/cartastrophe"
-      ],
-      [
-        "About DADIU",
-        "https://www.dadiu.dk/"
-      ]
-    ],
-    "sections": [
-      [
-        "DADIU internship",
-        "This project is part of my internship semester at DADIU (The National Academy of Digital, Interactive Entertainment), where I work with a multidisciplinary game development team."
-      ],
-      [
-        "My contribution",
-        "I contributed to game design and level design, fixed bugs, and worked on camera and UI features as part of the WiggleTreeStudio team."
-      ],
-      [
-        "The experience",
-        "A short time limit turns an everyday shopping trip into a first-person arcade challenge. The supermarket environment, shopping list, and countdown give players a clear objective throughout the round."
-      ],
-      [
-        "Team credit",
-        "Developed with a multidisciplinary team. Full credits and downloadable Windows and macOS versions are available on the game page."
-      ]
-    ]
+    "highlight": "DADIU internship · Multidisciplinary game production"
   },
   {
     "id": "narrative",
@@ -138,59 +151,92 @@ window.projects = [
     }
   },
   {
-    "id": "shoulder",
-    "title": "VRehabilitation",
-    "category": "Guided interaction design",
+    "id": "asteroids",
+    "title": "Custom Hardware Space Project",
+    "category": "Gameplay & physical interaction",
     "meta": [
       "Unity",
-      "VR",
-      "Group project",
-      "Published · IEEE VRW 2025"
+      "Arduino",
+      "Individual project"
     ],
-    "image": "assets/shoulder.jpg",
-    "alt": "VR exercise room with a virtual mirror and instructor avatar.",
-    "summary": "A guided shoulder rehabilitation prototype using an instructor avatar, a virtual mirror, and movement feedback. Published research featured at the XR Health workshop at IEEE VR 2025.",
-    "contribution": "Application design, implementation, system integration, and version control within a collaborative team.",
-    "role": "Design & Implementation",
-    "video": "DN0x5DwvmmU",
+    "image": "assets/asteroids.jpg",
+    "alt": "Player spaceship surrounded by an asteroid field.",
+    "summary": "A one-minute asteroid game controlled by a custom glove: rotate your hand to steer, bend a finger for throttle, and press to fire.",
+    "contribution": "Custom controller hardware, input processing, Unity integration, and gameplay systems.",
+    "role": "Designer / Developer",
     "links": [
       [
-        "Read published article",
-        "https://ieeexplore.ieee.org/abstract/document/10972776"
-      ],
-      [
         "View code",
-        "https://github.com/JDGuldager/VR-Rehabilitation---Shoulder-Rehabilitation-in-Virtual-Reality"
+        "https://github.com/JDGuldager/SpaceAsteroidsMobileAndWearable"
       ]
     ],
     "sections": [
       [
         "My contribution",
-        "I contributed across application design and implementation, combining systems I built with work from teammates into the final build. I also handled version control and helped shape the overall interaction design."
+        "I built a wearable glove controller and integrated it with a Unity spaceship game. The hardware combines an Arduino Nano, a BNO08x orientation sensor, a flex sensor, and a thumb-operated button."
       ],
       [
-        "Published research",
-        "Co-authored the published article VRehabilitation: A Pilot Study of HMD-Based Guided Exercise & Rehabilitation in VR for Post-Shoulder-Surgery Patients at Home. Featured at the XR Health workshop at IEEE VR 2025 in Saint-Malo, France, and published in the IEEE VRW 2025 proceedings."
+        "From gesture to gameplay",
+        "Hand orientation controls rotation, finger flex controls throttle, and the button triggers shooting. Deadzones and exponential smoothing help reduce sensor noise. Gameplay systems manage asteroid spawning, projectiles, the timer, and scoring."
       ],
       [
-        "Design approach",
-        "The project prioritises calm guidance over gamification. A virtual mirror supports posture awareness, while an instructor demonstrates exercises and visual, audio, and haptic cues provide feedback."
-      ],
-      [
-        "Evaluation",
-        "A pilot study involved eight people with prior rehabilitation experience, together with physiotherapist feedback. Participants reported positive usability, while exercise variety, customisation, and comfort remained areas to improve."
-      ],
-      [
-        "Scope",
-        "A research prototype for investigating guided exercise at home. The pilot does not establish clinical effectiveness or readiness for unsupervised medical use."
+        "What comes next",
+        "The prototype was not empirically user-tested. Drift, recalibration, sensor noise, and the wired connection are limitations; a controlled comparison with keyboard input is proposed as future work."
       ]
     ],
+    "video": "u9J_HRNVX4U",
     "process": {
-      "title": "Making exercise guidance visible",
-      "text": "The team combined an instructor avatar, a virtual mirror, and movement feedback to support guided exercise. The prototype makes repetition count and arm elevation visible during the task. Pilot feedback highlighted exercise variety and customisation as priorities for a future iteration.",
-      "image": "assets/process-shoulder.jpg",
-      "alt": "Exercise prototype showing repetition count and arm-elevation feedback."
-    }
+      "title": "From a physical gesture to an in-game action",
+      "text": "I placed the orientation sensor on the back of the hand, the flex sensor along a finger, and the firing button within thumb reach. The glove sends input through Arduino to Unity. Deadzones and smoothing reduce jitter before those signals control steering, throttle, and shooting. Sensor drift and the wired connection remain limitations; a keyboard comparison is future work.",
+      "image": "assets/process-glove.jpg",
+      "alt": "The custom glove prototype with its sensors, wiring, Arduino, and thumb button."
+    },
+    "highlight": "Individual project · Physical controller and Unity application"
+  },
+  {
+    "id": "cartastrophe",
+    "title": "Cartastrophe",
+    "category": "Game & level design",
+    "meta": [
+      "DADIU internship",
+      "Unity",
+      "Windows / macOS"
+    ],
+    "image": "assets/cartastrophe.png",
+    "alt": "Cartastrophe gameplay showing a shopping trolley, shopping list, timer, and supermarket aisles.",
+    "summary": "A frantic supermarket run: collect your shopping list before the store closes in three minutes.",
+    "contribution": "Game design, level design, bug fixing, camera features, and UI features.",
+    "role": "Game Designer / Level Designer",
+    "video": "gZmLCCT5Gbo",
+    "links": [
+      [
+        "Get the game",
+        "https://wiggletreestudio.itch.io/cartastrophe"
+      ],
+      [
+        "About DADIU",
+        "https://www.dadiu.dk/"
+      ]
+    ],
+    "sections": [
+      [
+        "DADIU internship",
+        "This project is part of my internship semester at DADIU (The National Academy of Digital, Interactive Entertainment), where I work with a multidisciplinary game development team."
+      ],
+      [
+        "My contribution",
+        "I contributed to game design and level design, fixed bugs, and worked on camera and UI features as part of the WiggleTreeStudio team."
+      ],
+      [
+        "The experience",
+        "A short time limit turns an everyday shopping trip into a first-person arcade challenge. The supermarket environment, shopping list, and countdown give players a clear objective throughout the round."
+      ],
+      [
+        "Team credit",
+        "Developed with a multidisciplinary team. Full credits and downloadable Windows and macOS versions are available on the game page."
+      ]
+    ],
+    "highlight": "DADIU internship · Multidisciplinary game production"
   },
   {
     "id": "throwing",
@@ -231,48 +277,6 @@ window.projects = [
       "text": "The team compared a custom interaction with Unity’s default throwing. A crosshair positioned in front of the non-throwing hand provides an explicit target, while movement magnitude controls throwing speed. Two participants scored higher with the custom technique across five trials each. This is an early usability result, not evidence of general performance.",
       "image": "assets/process-throwing.jpg",
       "alt": "Prototype screenshot showing the crosshair used to guide throws."
-    }
-  },
-  {
-    "id": "asteroids",
-    "title": "Custom Hardware Space Project",
-    "category": "Gameplay & physical interaction",
-    "meta": [
-      "Unity",
-      "Arduino",
-      "Individual project"
-    ],
-    "image": "assets/asteroids.jpg",
-    "alt": "Player spaceship surrounded by an asteroid field.",
-    "summary": "A one-minute asteroid game controlled by a custom glove: rotate your hand to steer, bend a finger for throttle, and press to fire.",
-    "contribution": "Custom controller hardware, input processing, Unity integration, and gameplay systems.",
-    "role": "Designer / Developer",
-    "links": [
-      [
-        "View code",
-        "https://github.com/JDGuldager/SpaceAsteroidsMobileAndWearable"
-      ]
-    ],
-    "sections": [
-      [
-        "My contribution",
-        "I built a wearable glove controller and integrated it with a Unity spaceship game. The hardware combines an Arduino Nano, a BNO08x orientation sensor, a flex sensor, and a thumb-operated button."
-      ],
-      [
-        "From gesture to gameplay",
-        "Hand orientation controls rotation, finger flex controls throttle, and the button triggers shooting. Deadzones and exponential smoothing help reduce sensor noise. Gameplay systems manage asteroid spawning, projectiles, the timer, and scoring."
-      ],
-      [
-        "What comes next",
-        "The prototype was not empirically user-tested. Drift, recalibration, sensor noise, and the wired connection are limitations; a controlled comparison with keyboard input is proposed as future work."
-      ]
-    ],
-    "video": "u9J_HRNVX4U",
-    "process": {
-      "title": "From a physical gesture to an in-game action",
-      "text": "I placed the orientation sensor on the back of the hand, the flex sensor along a finger, and the firing button within thumb reach. The glove sends input through Arduino to Unity. Deadzones and smoothing reduce jitter before those signals control steering, throttle, and shooting. Sensor drift and the wired connection remain limitations; a keyboard comparison is future work.",
-      "image": "assets/process-glove.jpg",
-      "alt": "The custom glove prototype with its sensors, wiring, Arduino, and thumb button."
     }
   },
   {
@@ -326,12 +330,14 @@ window.projects = [
     "title": "NeuroJukebox",
     "category": "Programming & arts",
     "meta": [
-      "Aalborg University",
+      "Hackathon prototype",
+      "Unity",
+      "Python",
       "Group project"
     ],
     "image": "assets/neurojukebox-visuals.png",
     "alt": "NeuroJukebox visuals with floating panels surrounded by bright yellow, blue, and pink patterns.",
-    "summary": "A programming and arts project exploring EEG input, music, and audio-reactive visuals.",
+    "summary": "A hackathon prototype exploring EEG input, music, and audio-reactive visuals.",
     "contribution": "Responsible for almost all design and implementation of NeuroJukebox.",
     "role": "Designer / Developer",
     "video": "ZUSKlnxOCf4",
@@ -349,7 +355,8 @@ window.projects = [
         "See the project",
         "The video presents the concept and implementation, including music and audio-reactive visuals."
       ]
-    ]
+    ],
+    "highlight": "Almost all design and implementation"
   },
   {
     "id": "tree",
