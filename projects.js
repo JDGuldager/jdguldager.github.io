@@ -237,8 +237,8 @@ window.projects = [
     "process": {
       "title": "From a physical gesture to an in-game action",
       "text": "I placed the orientation sensor on the back of the hand, the flex sensor along a finger, and the firing button within thumb reach. The glove sends input through Arduino to Unity. Deadzones and smoothing reduce jitter before those signals control steering, throttle, and shooting. Sensor drift and the wired connection remain limitations; a keyboard comparison is future work.",
-      "image": "assets/process-glove.jpg",
-      "alt": "The custom glove prototype with its sensors, wiring, Arduino, and thumb button."
+      "image": "assets/asteroids.jpg",
+      "alt": "Player spaceship surrounded by an asteroid field in the glove-controlled Unity game."
     },
     "contributionPoints": [
       "Built the custom glove controller and input processing.",
