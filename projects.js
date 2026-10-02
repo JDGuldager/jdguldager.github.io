@@ -172,7 +172,13 @@ window.projects = [
         "The finished game combines the work of designers, programmers, artists, and audio specialists. The linked game page includes the full team credits."
       ]
     ],
-    "highlight": "DADIU internship · Multidisciplinary game production"
+    "highlight": "DADIU internship · Multidisciplinary game production",
+    "process": {
+      "title": "Early concept: balancing repairs, flooding, and the light",
+      "text": "One of the earliest concept images explores an Overcooked-inspired loop: repair damage, drain floodwater, and keep the lighthouse running before tasks overwhelm the player. It also considers tower construction and movement options; these are early proposals, not a description of the finished game. I refined the initial loop with the design team and input from the wider team. My later floor layout placed essential materials downstairs, making flood prevention central to keeping the lighthouse operational. Open the image to read the original notes.",
+      "image": "assets/process-fyrmester-early.png",
+      "alt": "Early lighthouse concept sheet with annotated repairs, flooding, light maintenance, and notes on competing tasks, movement, and difficulty."
+    }
   },
   {
     "id": "asteroids",
