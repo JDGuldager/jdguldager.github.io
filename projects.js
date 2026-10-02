@@ -258,7 +258,7 @@ window.projects = [
     "image": "assets/cartastrophe.png",
     "alt": "Cartastrophe gameplay showing a shopping trolley, shopping list, timer, and supermarket aisles.",
     "summary": "A frantic supermarket run: collect your shopping list before the store closes in three minutes.",
-    "contribution": "Game design, level design, bug fixing, camera features, and UI features.",
+    "contribution": "Level design, gameplay-loop development, and balancing. Designed and implemented the scoring system. Created and implemented the camera script.",
     "role": "Game Designer / Level Designer",
     "video": "gZmLCCT5Gbo",
     "links": [
@@ -278,7 +278,7 @@ window.projects = [
       ],
       [
         "My contribution",
-        "I contributed to game design and level design, fixed bugs, and worked on camera and UI features as part of the WiggleTreeStudio team."
+        "I worked on level design, helped shape the gameplay loop, and balanced the game. I designed and implemented the scoring system and created and implemented the camera script within the one-week game jam."
       ],
       [
         "The experience",
@@ -288,6 +288,11 @@ window.projects = [
         "Team credit",
         "Developed with a multidisciplinary team. Full credits and downloadable Windows and macOS versions are available on the game page."
       ]
+    ],
+    "contributionPoints": [
+      "Level design, gameplay-loop development, and balancing.",
+      "Designed and implemented the scoring system.",
+      "Created and implemented the camera script."
     ]
   },
   {
@@ -343,7 +348,7 @@ window.projects = [
     "image": "assets/stepping.jpg",
     "alt": "Virtual lily pads and tracked feet in the reactive stepping prototype.",
     "summary": "A frog-and-lily-pad stepping experience comparing fully immersive VR with AR for older adults with vestibular dysfunction.",
-    "contribution": "Application design, implementation, system integration, and version control within a collaborative team.",
+    "contribution": "Owned end-to-end implementation, carrying out the development iterations largely independently. Contributed to testing and academic writing within the group project.",
     "role": "Design & Implementation",
     "video": "LMOELrw7tPA",
     "links": [
@@ -355,7 +360,7 @@ window.projects = [
     "sections": [
       [
         "My contribution",
-        "I contributed across application design and implementation, combining systems I built with work from teammates into the final build. I also handled version control and helped shape the overall interaction design. I also took part in testing and contributed to the academic writing."
+        "I handled end-to-end implementation and worked through the development iterations largely independently, with limited implementation support from the group. I also participated in testing and contributed to the academic writing."
       ],
       [
         "Design approach",
@@ -372,10 +377,14 @@ window.projects = [
     ],
     "process": {
       "title": "Three approaches to foot tracking",
-      "text": "The team tried Azure Kinect, then Vive trackers, before attaching Quest 3 controllers to the feet. Kinect struggled with occlusion and fast movement; Vive trackers added calibration and passthrough compatibility problems. Quest controllers simplified setup and supported both VR and AR. Early slip-on mounts were refined into elastic and Velcro attachments for participants’ own shoes.",
+      "text": "I worked through the implementation iterations from Azure Kinect to Vive trackers, then Quest 3 controllers attached to the feet. Kinect struggled with occlusion and fast movement; Vive trackers added calibration and passthrough compatibility problems. Quest controllers simplified setup and supported both VR and AR. Early slip-on mounts were refined into elastic and Velcro attachments for participants’ own shoes.",
       "image": "assets/process-stepping.jpg",
       "alt": "Prototype mounting arrangement for attaching a Quest controller to footwear."
-    }
+    },
+    "contributionPoints": [
+      "Owned end-to-end implementation, carrying out the development iterations largely independently.",
+      "Contributed to testing and academic writing within the group project."
+    ]
   },
   {
     "id": "neurojukebox",
