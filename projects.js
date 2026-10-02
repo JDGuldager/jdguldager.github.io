@@ -128,7 +128,7 @@ window.projects = [
     ],
     "image": "assets/fyrmester-logo.png",
     "alt": "Fyrmester: The Burden of Light — white title lettering beside a lighthouse on a rocky island.",
-    "summary": "A lighthouse setting brought to life through hands-on tasks, environmental interactions, and the pressures of a working shift.",
+    "summary": "Keep a lighthouse running as tasks pile up and flooding threatens essential supplies. Staying ahead of maintenance is key to avoiding failure.",
     "contribution": "Created the initial gameplay loop and floor sequence, implemented the entire in-game UI, and co-designed the camera. Iterated with the team through bug fixing and repeated testing.",
     "role": "Game Designer / Level Designer",
     "video": "m6NMnlolrgI",
@@ -148,8 +148,12 @@ window.projects = [
         "This project is part of my internship semester at DADIU (The National Academy of Digital, Interactive Entertainment), where I work with a multidisciplinary game development team."
       ],
       [
-        "Gameplay loop & level design",
-        "I proposed the initial gameplay loop and refined it with the design team, incorporating feedback from the wider team. I determined the order of the lighthouse floors so their sequence made sense in relation to the game’s mechanics."
+        "Gameplay loop: pressure through competing tasks",
+        "Inspired by Overcooked, I proposed a gameplay loop intended to overwhelm players who fall behind on their tasks. I refined it with the design team, incorporating feedback from the wider team. The aim was to make staying ahead of maintenance central to the experience."
+      ],
+      [
+        "Floor layout: making flooding matter",
+        "I arranged the lighthouse floors around the flooding mechanic, placing the most important materials at the bottom. This makes keeping the lighthouse flood-free essential: neglecting the water threatens access to the supplies needed to keep operating and avoid losing the game. The layout ties task prioritisation directly to the consequences of flooding."
       ],
       [
         "UI implementation & camera design",
