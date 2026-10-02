@@ -75,7 +75,7 @@ window.projects = [
     "image": "assets/interrogation.png",
     "alt": "A character seated across an interrogation table with a case file, recording equipment, and an illuminated exit sign.",
     "summary": "An experimental narrative that uses wearable biosignals and player choices to influence dialogue and story outcomes.",
-    "contribution": "Application design, implementation, system integration, and version control within a collaborative team.",
+    "contribution": "Helped develop the ML model estimating stress from EDA and blood-volume-pulse signals. Worked on optimisation, lighting, and the dialogue system, and helped integrate MetaHuman.",
     "role": "Design & Implementation",
     "video": "u2QmzKhKYxI",
     "links": [
@@ -90,8 +90,12 @@ window.projects = [
     ],
     "sections": [
       [
-        "My contribution",
-        "I contributed across application design and implementation, combining systems I built with work from teammates into the final build. I also handled version control and helped shape the overall interaction design. I also took part in testing and contributed to the academic writing."
+        "Main technical challenge",
+        "The biggest technical challenge I helped solve was developing the machine-learning model that estimates the user’s stress level from electrodermal activity (EDA) and blood-volume-pulse signals. This estimated state gives the narrative another input alongside explicit player choices."
+      ],
+      [
+        "Experience implementation",
+        "I worked extensively on optimisation, lighting, and the dialogue system, and helped with MetaHuman implementation. I also contributed to system integration, version control, testing, and the academic writing."
       ],
       [
         "Design question",
