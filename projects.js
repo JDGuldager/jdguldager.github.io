@@ -369,14 +369,14 @@ window.projects = [
     "image": "assets/neurojukebox-visuals.png",
     "alt": "NeuroJukebox visuals with floating panels surrounded by bright yellow, blue, and pink patterns.",
     "summary": "A prototype built during the two-day BR41N hackathon, exploring EEG input, music, and audio-reactive visuals.",
-    "contribution": "Responsible for almost all design and implementation of NeuroJukebox.",
+    "contribution": "Handled most of the application design and implementation, collaborating with a TouchDesigner designer who created the animated artwork.",
     "role": "Designer / Developer",
     "video": "ZUSKlnxOCf4",
     "links": [],
     "sections": [
       [
         "My contribution",
-        "I carried out almost all of the design and implementation of NeuroJukebox within the group project."
+        "I carried out most of the application design and implementation. I collaborated with a TouchDesigner designer who created the animated artwork used in the experience."
       ],
       [
         "Project overview",
@@ -387,7 +387,7 @@ window.projects = [
         "The video presents the concept and implementation, including music and audio-reactive visuals."
       ]
     ],
-    "highlight": "Almost all design and implementation"
+    "highlight": "Application design & development · Collaborative animated artwork"
   },
   {
     "id": "tree",
