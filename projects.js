@@ -12,7 +12,7 @@ window.projects = [
     "image": "assets/shoulder.jpg",
     "alt": "VR exercise room with a virtual mirror and instructor avatar.",
     "summary": "A guided shoulder rehabilitation prototype using an instructor avatar, a virtual mirror, and movement feedback.",
-    "contribution": "Application design, implementation, system integration, and version control within a collaborative team.",
+    "contribution": "Exercise validation and repetition counting, exertion warnings, avatar animation logic, and exercise-selection UI. Co-designed the studio and helped recruit participants, test, and iterate.",
     "role": "Design & Implementation",
     "video": "DN0x5DwvmmU",
     "links": [
@@ -27,16 +27,24 @@ window.projects = [
     ],
     "sections": [
       [
-        "My contribution",
-        "I contributed across application design and implementation, combining systems I built with work from teammates into the final build. I also handled version control and helped shape the overall interaction design."
+        "Exercise logic",
+        "I implemented the logic for recognising correctly completed exercises and incrementing the repetition count, along with warnings when users exercised too hard. These features were designed to discourage overexertion during recovery from a recent shoulder injury."
+      ],
+      [
+        "Avatar animation",
+        "I implemented animation logic combining a VR-controller-driven upper body with traditional lower-body animation."
+      ],
+      [
+        "Interface & studio design",
+        "I built the interface for selecting exercises and having the physiotherapist NPC demonstrate them. I also designed the studio environment in collaboration with group members."
+      ],
+      [
+        "Testing & research",
+        "I helped recruit test participants, took part in testing, and iterated on the project. I also contributed to the academic writing."
       ],
       [
         "Published research",
         "Co-authored the published article VRehabilitation: A Pilot Study of HMD-Based Guided Exercise & Rehabilitation in VR for Post-Shoulder-Surgery Patients at Home. Featured at the XR Health workshop at IEEE VR 2025 in Saint-Malo, France, and published in the IEEE VRW 2025 proceedings."
-      ],
-      [
-        "Design approach",
-        "The project prioritises calm guidance over gamification. A virtual mirror supports posture awareness, while an instructor demonstrates exercises and visual, audio, and haptic cues provide feedback."
       ],
       [
         "Evaluation",
@@ -49,11 +57,61 @@ window.projects = [
     ],
     "process": {
       "title": "Making exercise guidance visible",
-      "text": "The team combined an instructor avatar, a virtual mirror, and movement feedback to support guided exercise. The prototype makes repetition count and arm elevation visible during the task. Pilot feedback highlighted exercise variety and customisation as priorities for a future iteration.",
+      "text": "I developed exercise-completion checks, repetition counting, exertion warnings, and the exercise-selection interface. The team combined these with an instructor avatar and virtual mirror to support guided exercise. I helped recruit participants, test, and iterate on the prototype. Pilot feedback highlighted exercise variety and customisation as priorities for a future iteration.",
       "image": "assets/process-shoulder.jpg",
       "alt": "Exercise prototype showing repetition count and arm-elevation feedback."
     },
     "highlight": "Co-authored research published in IEEE VRW 2025"
+  },
+  {
+    "id": "narrative",
+    "title": "The Interrogation: Bioadaptive narratives",
+    "category": "Interactive storytelling",
+    "meta": [
+      "Unreal Engine",
+      "Python",
+      "Group project"
+    ],
+    "image": "assets/interrogation.png",
+    "alt": "A character seated across an interrogation table with a case file, recording equipment, and an illuminated exit sign.",
+    "summary": "An experimental narrative that uses wearable biosignals and player choices to influence dialogue and story outcomes.",
+    "contribution": "Application design, implementation, system integration, and version control within a collaborative team.",
+    "role": "Design & Implementation",
+    "video": "u2QmzKhKYxI",
+    "links": [
+      [
+        "View code",
+        "https://github.com/JDGuldager/ML-Stress-Detector-for-an-Adaptive-Narrative"
+      ],
+      [
+        "ML walkthrough",
+        "https://youtu.be/_JsQaANyR3A"
+      ]
+    ],
+    "sections": [
+      [
+        "My contribution",
+        "I contributed across application design and implementation, combining systems I built with work from teammates into the final build. I also handled version control and helped shape the overall interaction design. I also took part in testing and contributed to the academic writing."
+      ],
+      [
+        "Design question",
+        "How can a story respond to the player beyond explicit dialogue choices? The project connects an estimated physiological state to an Unreal Engine narrative experience."
+      ],
+      [
+        "System",
+        "Wearable EDA and blood-volume-pulse signals feed a Python pipeline. A Random Forest model trained on WESAD estimates baseline, relaxed, or stressed states; Unreal Blueprints use these estimates alongside player choices."
+      ],
+      [
+        "Evaluation & limits",
+        "The model was evaluated offline, while the integrated real-time system was tested qualitatively. Noisy wrist signals remain a limitation. This is an exploration of narrative interaction, not a medical stress assessment."
+      ]
+    ],
+    "process": {
+      "title": "From story prototype to adaptive responses",
+      "text": "The team first tested the story in Twine with four participants, checking whether the flashbacks and their triggers made sense. Feedback supported the structure while highlighting some confusion at the beginning. The response map then connected dialogue choices and physiological states to the interrogator’s behaviour.",
+      "image": "assets/process-narrative.jpg",
+      "alt": "Team design diagram mapping dialogue choices and physiological states to four interrogator response styles."
+    }
   },
   {
     "id": "fyrmester",
@@ -87,7 +145,7 @@ window.projects = [
       ],
       [
         "My contribution",
-        "I worked on game design and level design, alongside bug fixing and camera and UI features. The project was developed collaboratively at WiggleTreeStudio."
+        "I worked on game design and level design, alongside bug fixing and camera and UI features. The project was developed collaboratively at WiggleTreeStudio. I also took part in testing the game."
       ],
       [
         "The experience",
@@ -99,56 +157,6 @@ window.projects = [
       ]
     ],
     "highlight": "DADIU internship · Multidisciplinary game production"
-  },
-  {
-    "id": "narrative",
-    "title": "The Interrogation: Bioadaptive narratives",
-    "category": "Interactive storytelling",
-    "meta": [
-      "Unreal Engine",
-      "Python",
-      "Group project"
-    ],
-    "image": "assets/interrogation.png",
-    "alt": "A character seated across an interrogation table with a case file, recording equipment, and an illuminated exit sign.",
-    "summary": "An experimental narrative that uses wearable biosignals and player choices to influence dialogue and story outcomes.",
-    "contribution": "Application design, implementation, system integration, and version control within a collaborative team.",
-    "role": "Design & Implementation",
-    "video": "u2QmzKhKYxI",
-    "links": [
-      [
-        "View code",
-        "https://github.com/JDGuldager/ML-Stress-Detector-for-an-Adaptive-Narrative"
-      ],
-      [
-        "ML walkthrough",
-        "https://youtu.be/_JsQaANyR3A"
-      ]
-    ],
-    "sections": [
-      [
-        "My contribution",
-        "I contributed across application design and implementation, combining systems I built with work from teammates into the final build. I also handled version control and helped shape the overall interaction design."
-      ],
-      [
-        "Design question",
-        "How can a story respond to the player beyond explicit dialogue choices? The project connects an estimated physiological state to an Unreal Engine narrative experience."
-      ],
-      [
-        "System",
-        "Wearable EDA and blood-volume-pulse signals feed a Python pipeline. A Random Forest model trained on WESAD estimates baseline, relaxed, or stressed states; Unreal Blueprints use these estimates alongside player choices."
-      ],
-      [
-        "Evaluation & limits",
-        "The model was evaluated offline, while the integrated real-time system was tested qualitatively. Noisy wrist signals remain a limitation. This is an exploration of narrative interaction, not a medical stress assessment."
-      ]
-    ],
-    "process": {
-      "title": "From story prototype to adaptive responses",
-      "text": "The team first tested the story in Twine with four participants, checking whether the flashbacks and their triggers made sense. Feedback supported the structure while highlighting some confusion at the beginning. The response map then connected dialogue choices and physiological states to the interrogator’s behaviour.",
-      "image": "assets/process-narrative.jpg",
-      "alt": "Team design diagram mapping dialogue choices and physiological states to four interrogator response styles."
-    }
   },
   {
     "id": "asteroids",
@@ -173,7 +181,7 @@ window.projects = [
     "sections": [
       [
         "My contribution",
-        "I built a wearable glove controller and integrated it with a Unity spaceship game. The hardware combines an Arduino Nano, a BNO08x orientation sensor, a flex sensor, and a thumb-operated button."
+        "I built a wearable glove controller and integrated it with a Unity spaceship game. The hardware combines an Arduino Nano, a BNO08x orientation sensor, a flex sensor, and a thumb-operated button. I also took part in testing and contributed to the academic writing."
       ],
       [
         "From gesture to gameplay",
@@ -199,6 +207,7 @@ window.projects = [
     "category": "Game & level design",
     "meta": [
       "DADIU internship",
+      "One-week game jam",
       "Unity",
       "Windows / macOS"
     ],
@@ -236,7 +245,7 @@ window.projects = [
         "Developed with a multidisciplinary team. Full credits and downloadable Windows and macOS versions are available on the game page."
       ]
     ],
-    "highlight": "DADIU internship · Multidisciplinary game production"
+    "highlight": "DADIU internship · One-week game jam"
   },
   {
     "id": "throwing",
@@ -256,7 +265,7 @@ window.projects = [
     "sections": [
       [
         "My contribution",
-        "I contributed across application design and implementation, combining systems I built with work from teammates into the final build. I also handled version control and helped shape the overall interaction design."
+        "I contributed across application design and implementation, combining systems I built with work from teammates into the final build. I also handled version control and helped shape the overall interaction design. I also took part in testing and contributed to the academic writing."
       ],
       [
         "The challenge",
@@ -303,7 +312,7 @@ window.projects = [
     "sections": [
       [
         "My contribution",
-        "I contributed across application design and implementation, combining systems I built with work from teammates into the final build. I also handled version control and helped shape the overall interaction design."
+        "I contributed across application design and implementation, combining systems I built with work from teammates into the final build. I also handled version control and helped shape the overall interaction design. I also took part in testing and contributed to the academic writing."
       ],
       [
         "Design approach",
@@ -330,14 +339,14 @@ window.projects = [
     "title": "NeuroJukebox",
     "category": "Programming & arts",
     "meta": [
-      "Hackathon prototype",
+      "Two-day BR41N hackathon",
       "Unity",
       "Python",
       "Group project"
     ],
     "image": "assets/neurojukebox-visuals.png",
     "alt": "NeuroJukebox visuals with floating panels surrounded by bright yellow, blue, and pink patterns.",
-    "summary": "A hackathon prototype exploring EEG input, music, and audio-reactive visuals.",
+    "summary": "A prototype built during the two-day BR41N hackathon, exploring EEG input, music, and audio-reactive visuals.",
     "contribution": "Responsible for almost all design and implementation of NeuroJukebox.",
     "role": "Designer / Developer",
     "video": "ZUSKlnxOCf4",
@@ -376,7 +385,7 @@ window.projects = [
     "sections": [
       [
         "My contribution",
-        "I contributed across application design and implementation, combining systems I built with work from teammates into the final build. I also handled version control and helped shape the overall interaction design."
+        "I contributed across application design and implementation, combining systems I built with work from teammates into the final build. I also handled version control and helped shape the overall interaction design. I also took part in testing and contributed to the academic writing."
       ],
       [
         "Design approach",
