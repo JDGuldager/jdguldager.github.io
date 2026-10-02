@@ -125,3 +125,5 @@ footer .contact-actions{justify-content:center}
  .intro-copy{margin:16px auto;max-width:520px}
  .contact-actions{justify-content:center}
 }
+
+#contact{scroll-margin-top:28px}.contact-address{font-size:18px;user-select:all;margin:12px 0 18px}#copy-status{min-height:24px;font-size:14px;color:var(--accent);margin:12px 0 0}
