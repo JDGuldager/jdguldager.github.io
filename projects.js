@@ -38,16 +38,8 @@ window.projects = [
         "I built the interface for selecting exercises and having the physiotherapist NPC demonstrate them. I also designed the studio environment in collaboration with group members."
       ],
       [
-        "Testing & research",
-        "I helped recruit test participants, took part in testing, and iterated on the project. I also contributed to the academic writing."
-      ],
-      [
         "Published research",
         "Co-authored the published article VRehabilitation: A Pilot Study of HMD-Based Guided Exercise & Rehabilitation in VR for Post-Shoulder-Surgery Patients at Home. Featured at the XR Health workshop at IEEE VR 2025 in Saint-Malo, France, and published in the IEEE VRW 2025 proceedings."
-      ],
-      [
-        "Evaluation",
-        "A pilot study involved eight people with prior rehabilitation experience, together with physiotherapist feedback. Participants reported positive usability, while exercise variety, customisation, and comfort remained areas to improve."
       ],
       [
         "Scope",
@@ -55,8 +47,8 @@ window.projects = [
       ]
     ],
     "process": {
-      "title": "Making exercise guidance visible",
-      "text": "I developed exercise-completion checks, repetition counting, exertion warnings, and the exercise-selection interface. The team combined these with an instructor avatar and virtual mirror to support guided exercise. I helped recruit participants, test, and iterate on the prototype. Pilot feedback highlighted exercise variety and customisation as priorities for a future iteration.",
+      "title": "What the pilot revealed",
+      "text": "I helped recruit participants and test the prototype. Eight people with prior rehabilitation experience took part, alongside physiotherapist feedback. Participants reported positive usability; exercise variety, customisation, and comfort emerged as priorities for a future iteration. The image shows how repetition count and arm elevation were communicated during exercise.",
       "image": "assets/process-shoulder.jpg",
       "alt": "Exercise prototype showing repetition count and arm-elevation feedback."
     },
@@ -94,19 +86,7 @@ window.projects = [
     ],
     "sections": [
       [
-        "Main technical challenge",
-        "The biggest technical challenge I helped solve was developing the machine-learning model that estimates the user’s stress level from electrodermal activity (EDA) and blood-volume-pulse signals. This estimated state gives the narrative another input alongside explicit player choices."
-      ],
-      [
-        "Experience implementation",
-        "I worked extensively on optimisation, lighting, and the dialogue system, and helped with MetaHuman implementation. I also contributed to system integration, version control, testing, and the academic writing."
-      ],
-      [
-        "Design question",
-        "How can a story respond to the player beyond explicit dialogue choices? The project connects an estimated physiological state to an Unreal Engine narrative experience."
-      ],
-      [
-        "System",
+        "From biosignals to dialogue",
         "Wearable EDA and blood-volume-pulse signals feed a Python pipeline. A Random Forest model trained on WESAD estimates baseline, relaxed, or stressed states; Unreal Blueprints use these estimates alongside player choices."
       ],
       [
@@ -154,12 +134,8 @@ window.projects = [
     ],
     "sections": [
       [
-        "DADIU internship",
-        "This project is part of my internship semester at DADIU (The National Academy of Digital, Interactive Entertainment), where I work with a multidisciplinary game development team."
-      ],
-      [
         "Gameplay loop: pressure through competing tasks",
-        "Inspired by Overcooked, I proposed a gameplay loop intended to overwhelm players who fall behind on their tasks. I refined it with the design team, incorporating feedback from the wider team. The aim was to make staying ahead of maintenance central to the experience."
+        "Inspired by Overcooked, the loop is intended to overwhelm players who fall behind on maintenance. I refined my initial proposal with the design team and feedback from the wider team."
       ],
       [
         "Floor layout: making flooding matter",
@@ -170,21 +146,13 @@ window.projects = [
         "I implemented the entire in-game UI from start to finish. I also co-designed the camera, which was implemented by one of the programmers."
       ],
       [
-        "Iteration & final production",
-        "I helped bring the game towards completion through repeated cycles of bug fixing, re-testing, and iteration with the team."
-      ],
-      [
-        "The experience",
-        "Players move through the lighthouse and interact with its equipment. The gameplay screenshots show tasks involving coal, planks, pumping, and repairs, with task indicators and a shift timer providing context."
-      ],
-      [
         "Team credit",
         "The finished game combines the work of designers, programmers, artists, and audio specialists. The linked game page includes the full team credits."
       ]
     ],
     "process": {
       "title": "Early concept: balancing repairs, flooding, and the light",
-      "text": "One of the earliest concept images explores an Overcooked-inspired loop: repair damage, drain floodwater, and keep the lighthouse running before tasks overwhelm the player. It also considers tower construction and movement options; these are early proposals, not a description of the finished game. I refined the initial loop with the design team and input from the wider team. My later floor layout placed essential materials downstairs, making flood prevention central to keeping the lighthouse operational. Open the image to read the original notes.",
+      "text": "This early concept explores competing repairs, flooding, and light maintenance. It also proposes tower construction and alternative movement controls—ideas under consideration at this stage, rather than features of the finished game. Open the image to read the original notes.",
       "image": "assets/process-fyrmester-early.png",
       "alt": "Early lighthouse concept sheet with annotated repairs, flooding, light maintenance, and notes on competing tasks, movement, and difficulty."
     },
@@ -221,22 +189,14 @@ window.projects = [
         "An individual course project for the Mobile and Wearable Computing exam."
       ],
       [
-        "My contribution",
-        "I built a wearable glove controller and integrated it with a Unity spaceship game. The hardware combines an Arduino Nano, a BNO08x orientation sensor, a flex sensor, and a thumb-operated button. I also took part in testing and contributed to the academic writing."
-      ],
-      [
-        "From gesture to gameplay",
-        "Hand orientation controls rotation, finger flex controls throttle, and the button triggers shooting. Deadzones and exponential smoothing help reduce sensor noise. Gameplay systems manage asteroid spawning, projectiles, the timer, and scoring."
-      ],
-      [
-        "What comes next",
-        "The prototype was not empirically user-tested. Drift, recalibration, sensor noise, and the wired connection are limitations; a controlled comparison with keyboard input is proposed as future work."
+        "Evaluation & next steps",
+        "Development included implementation testing, but no formal participant study. Sensor drift, recalibration, and the wired connection remain limitations. A controlled comparison with keyboard input was proposed as future work."
       ]
     ],
     "video": "u9J_HRNVX4U",
     "process": {
       "title": "From a physical gesture to an in-game action",
-      "text": "I placed the orientation sensor on the back of the hand, the flex sensor along a finger, and the firing button within thumb reach. The glove sends input through Arduino to Unity. Deadzones and smoothing reduce jitter before those signals control steering, throttle, and shooting. Sensor drift and the wired connection remain limitations; a keyboard comparison is future work.",
+      "text": "I placed the BNO08x orientation sensor on the back of the hand, a flex sensor along a finger, and the firing button within thumb reach. An Arduino Nano sends their input to Unity. Deadzones and exponential smoothing reduce jitter before the signals control steering, throttle, and shooting.",
       "image": "assets/asteroids.jpg",
       "alt": "Player spaceship surrounded by an asteroid field in the glove-controlled Unity game."
     },
@@ -273,16 +233,8 @@ window.projects = [
     ],
     "sections": [
       [
-        "DADIU internship",
-        "This project is part of my internship semester at DADIU (The National Academy of Digital, Interactive Entertainment), where I work with a multidisciplinary game development team."
-      ],
-      [
-        "My contribution",
-        "I worked on level design, helped shape the gameplay loop, and balanced the game. I designed and implemented the scoring system and created and implemented the camera script within the one-week game jam."
-      ],
-      [
         "The experience",
-        "A short time limit turns an everyday shopping trip into a first-person arcade challenge. The supermarket environment, shopping list, and countdown give players a clear objective throughout the round."
+        "The shopping list and countdown keep the objective visible during the three-minute round. These systems support a short arcade experience built within a one-week production window."
       ],
       [
         "Team credit",
@@ -312,20 +264,12 @@ window.projects = [
     "links": [],
     "sections": [
       [
-        "My contribution",
-        "I implemented the throwing physics, scoring system, and general interactions in the game, and carried out testing. A teammate worked on the different object types. I also contributed to the academic writing."
+        "Collaboration",
+        "A teammate developed the different object types while I implemented the physics, scoring, and general interactions. I also contributed to the academic writing."
       ],
       [
         "The challenge",
         "Throwing in VR can be sensitive to release timing and tracking. The project explores an alternative selection and throwing technique alongside Unity’s default interaction."
-      ],
-      [
-        "The prototype",
-        "A projected target and crosshair support force-based throwing. The same target-hitting task was used to compare the custom mechanic with the default interaction."
-      ],
-      [
-        "Early findings",
-        "Two participants completed five trials per technique. Both scored higher with the force-based interaction and rated target hitting more favourably. The small sample makes this an early usability signal, not a generalisable result."
       ]
     ],
     "video": "zg1tq0ce_X4",
@@ -363,12 +307,8 @@ window.projects = [
     ],
     "sections": [
       [
-        "My contribution",
-        "I handled end-to-end implementation and worked through the development iterations largely independently, with limited implementation support from the group. I also participated in testing and contributed to the academic writing."
-      ],
-      [
         "Design approach",
-        "A frog guides reactive steps between lily pads. The project compares a virtual lake with passthrough AR, where users can still see their physical surroundings."
+        "Passthrough AR lets users see their physical surroundings during the stepping task. The project compared this with a fully virtual lake to explore orientation, comfort, and acceptance."
       ],
       [
         "Prototype",
@@ -409,16 +349,8 @@ window.projects = [
     "links": [],
     "sections": [
       [
-        "My contribution",
-        "I carried out most of the application design and implementation. I collaborated with a TouchDesigner designer who created the animated artwork used in the experience."
-      ],
-      [
-        "Project overview",
-        "NeuroJukebox brings brain-signal input into an audiovisual experience. The project presentation outlines a pipeline connecting EEG processing, Python, and Unity."
-      ],
-      [
-        "See the project",
-        "The video presents the concept and implementation, including music and audio-reactive visuals."
+        "Prototype approach",
+        "The prototype connects EEG processing, Python, and Unity to combine brain-signal input with music and animated artwork. The linked video demonstrates the concept and implementation developed during the two-day hackathon."
       ]
     ],
     "contributionPoints": [
@@ -443,16 +375,8 @@ window.projects = [
     "links": [],
     "sections": [
       [
-        "My contribution",
-        "My main implementation work focused on optimisation and communication between Pure Data, Unity, and OpenSignals for the experience’s respiratory-sensor input. I also participated in testing, research, and writing the report."
-      ],
-      [
         "Design approach",
-        "The experience moves away from conventional objectives. Respiration influences environmental growth through a root network, connecting the participant’s body to the surrounding forest."
-      ],
-      [
-        "Interaction",
-        "A seed phase develops into tree embodiment. Breathing drives environmental progression, supported by stylised visuals and responsive sound."
+        "The experience moves away from conventional objectives: a seed phase develops into tree embodiment, with respiration influencing growth through a root network. The intention was to connect the participant’s body to the surrounding forest."
       ],
       [
         "What the study found",
