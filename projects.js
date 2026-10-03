@@ -8,7 +8,7 @@ window.projects = [
       "VR",
       "Semester project"
     ],
-    "image": "assets/shoulder.jpg",
+    "image": "assets/shoulder.webp",
     "alt": "VR exercise room with a virtual mirror and instructor avatar.",
     "summary": "A guided shoulder rehabilitation prototype using an instructor avatar, a virtual mirror, and movement feedback.",
     "contribution": "Exercise validation and repetition counting, exertion warnings, avatar animation logic, and exercise-selection UI. Co-designed the studio and helped recruit participants, test, and iterate.",
@@ -49,7 +49,7 @@ window.projects = [
     "process": {
       "title": "What the pilot revealed",
       "text": "I helped recruit participants and test the prototype. Eight people with prior rehabilitation experience took part, alongside physiotherapist feedback. Participants reported positive usability; exercise variety, customisation, and comfort emerged as priorities for a future iteration. The image shows how repetition count and arm elevation were communicated during exercise.",
-      "image": "assets/process-shoulder.jpg",
+      "image": "assets/process-shoulder.webp",
       "alt": "Exercise prototype showing repetition count and arm-elevation feedback."
     },
     "highlight": "Co-authored research published in IEEE VRW 2025",
@@ -68,7 +68,7 @@ window.projects = [
       "Python",
       "Semester project"
     ],
-    "image": "assets/interrogation.png",
+    "image": "assets/interrogation.webp",
     "alt": "A character seated across an interrogation table with a case file, recording equipment, and an illuminated exit sign.",
     "summary": "An experimental narrative that uses wearable biosignals and player choices to influence dialogue and story outcomes.",
     "contribution": "Helped develop the ML model estimating stress from EDA and blood-volume-pulse signals. Worked on optimisation, lighting, and the dialogue system, and helped integrate MetaHuman.",
@@ -97,7 +97,7 @@ window.projects = [
     "process": {
       "title": "From story prototype to adaptive responses",
       "text": "The team first tested the story in Twine with four participants, checking whether the flashbacks and their triggers made sense. Feedback supported the structure while highlighting some confusion at the beginning. The response map then connected dialogue choices and physiological states to the interrogator’s behaviour.",
-      "image": "assets/process-narrative.jpg",
+      "image": "assets/process-narrative.webp",
       "alt": "Team design diagram mapping dialogue choices and physiological states to four interrogator response styles."
     },
     "contributionPoints": [
@@ -116,7 +116,7 @@ window.projects = [
       "WiggleTreeStudio",
       "Windows"
     ],
-    "image": "assets/fyrmester-logo.png",
+    "image": "assets/fyrmester-logo.webp",
     "alt": "Fyrmester: The Burden of Light — white title lettering beside a lighthouse on a rocky island.",
     "summary": "Keep a lighthouse running as tasks pile up and flooding threatens essential supplies. Staying ahead of maintenance is key to avoiding failure.",
     "contribution": "Created the initial gameplay loop and floor sequence, implemented the entire in-game UI, and co-designed the camera. Iterated with the team through bug fixing and repeated testing.",
@@ -153,7 +153,7 @@ window.projects = [
     "process": {
       "title": "Early concept: balancing repairs, flooding, and the light",
       "text": "This early concept explores competing repairs, flooding, and light maintenance. It also proposes tower construction and alternative movement controls—ideas under consideration at this stage, rather than features of the finished game. Open the image to read the original notes.",
-      "image": "assets/process-fyrmester-early.png",
+      "image": "assets/process-fyrmester-early.webp",
       "alt": "Early lighthouse concept sheet with annotated repairs, flooding, light maintenance, and notes on competing tasks, movement, and difficulty."
     },
     "contributionPoints": [
@@ -172,7 +172,7 @@ window.projects = [
       "Individual project",
       "Course exam project"
     ],
-    "image": "assets/process-glove.jpg",
+    "image": "assets/process-glove.webp",
     "alt": "Custom glove controller with its sensors, wiring, Arduino, and thumb-operated button.",
     "summary": "A one-minute asteroid game controlled by a custom glove: rotate your hand to steer, bend a finger for throttle, and press to fire.",
     "contribution": "Custom controller hardware, input processing, Unity integration, and gameplay systems.",
@@ -197,7 +197,7 @@ window.projects = [
     "process": {
       "title": "From a physical gesture to an in-game action",
       "text": "I placed the BNO08x orientation sensor on the back of the hand, a flex sensor along a finger, and the firing button within thumb reach. An Arduino Nano sends their input to Unity. Deadzones and exponential smoothing reduce jitter before the signals control steering, throttle, and shooting.",
-      "image": "assets/asteroids.jpg",
+      "image": "assets/asteroids.webp",
       "alt": "Player spaceship surrounded by an asteroid field in the glove-controlled Unity game."
     },
     "contributionPoints": [
@@ -215,7 +215,7 @@ window.projects = [
       "Unity",
       "Windows / macOS"
     ],
-    "image": "assets/cartastrophe.png",
+    "image": "assets/cartastrophe.webp",
     "alt": "Cartastrophe gameplay showing a shopping trolley, shopping list, timer, and supermarket aisles.",
     "summary": "A frantic supermarket run: collect your shopping list before the store closes in three minutes.",
     "contribution": "Level design, gameplay-loop development, and balancing. Designed and implemented the scoring system. Created and implemented the camera script.",
@@ -256,7 +256,7 @@ window.projects = [
       "VR",
       "3-person project"
     ],
-    "image": "assets/throwing.jpg",
+    "image": "assets/throwing.webp",
     "alt": "VR throwing prototype with floating targets above an Earth backdrop.",
     "summary": "A force-based grabbing and throwing prototype designed to make hitting targets in VR easier and more predictable.",
     "contribution": "Implemented the throwing physics, scoring, and general gameplay interactions. Carried out testing and contributed to the academic writing.",
@@ -276,7 +276,7 @@ window.projects = [
     "process": {
       "title": "Making the throw more predictable",
       "text": "The team compared a custom interaction with Unity’s default throwing. A crosshair positioned in front of the non-throwing hand provides an explicit target, while movement magnitude controls throwing speed. Two participants scored higher with the custom technique across five trials each. This is an early usability result, not evidence of general performance.",
-      "image": "assets/process-throwing.jpg",
+      "image": "assets/process-throwing.webp",
       "alt": "Prototype screenshot showing the crosshair used to guide throws."
     },
     "contributionPoints": [
@@ -293,7 +293,7 @@ window.projects = [
       "VR / AR",
       "Group project"
     ],
-    "image": "assets/stepping.jpg",
+    "image": "assets/stepping.webp",
     "alt": "Virtual lily pads and tracked feet in the reactive stepping prototype.",
     "summary": "A frog-and-lily-pad stepping experience comparing fully immersive VR with AR for older adults with vestibular dysfunction.",
     "contribution": "Owned end-to-end implementation, carrying out the development iterations largely independently. Contributed to testing and academic writing within the group project.",
@@ -322,7 +322,7 @@ window.projects = [
     "process": {
       "title": "Three approaches to foot tracking",
       "text": "I worked through the implementation iterations from Azure Kinect to Vive trackers, then Quest 3 controllers attached to the feet. Kinect struggled with occlusion and fast movement; Vive trackers added calibration and passthrough compatibility problems. Quest controllers simplified setup and supported both VR and AR. Early slip-on mounts were refined into elastic and Velcro attachments for participants’ own shoes.",
-      "image": "assets/process-stepping.jpg",
+      "image": "assets/process-stepping.webp",
       "alt": "Prototype mounting arrangement for attaching a Quest controller to footwear."
     },
     "contributionPoints": [
@@ -340,7 +340,7 @@ window.projects = [
       "Python",
       "Group project"
     ],
-    "image": "assets/neurojukebox-visuals.png",
+    "image": "assets/neurojukebox-visuals.webp",
     "alt": "NeuroJukebox visuals with floating panels surrounded by bright yellow, blue, and pink patterns.",
     "summary": "A prototype built during the two-day BR41N hackathon, exploring EEG input, music, and audio-reactive visuals.",
     "contribution": "Handled most of the application design and implementation, collaborating with a TouchDesigner designer who created the animated artwork.",
@@ -367,7 +367,7 @@ window.projects = [
       "VR",
       "Group project"
     ],
-    "image": "assets/tree.jpg",
+    "image": "assets/tree.webp",
     "alt": "Stylised forest environment from the tree embodiment VR experience.",
     "summary": "A slow-paced VR experience where breathing nurtures a responsive forest and the player inhabits a tree.",
     "contribution": "Worked on optimisation and communication between Pure Data, Unity, and OpenSignals for respiratory-sensor input. Contributed to testing, research, and writing the report.",
@@ -387,7 +387,7 @@ window.projects = [
     "process": {
       "title": "Connecting breathing to the environment",
       "text": "The team linked live respiration input to environmental growth and visual feedback. Distant trees react later than nearby trees, making the effect spread outward. Animated bark used a flipbook shader instead of video textures to address mapping and performance constraints. These choices connect the visual design to the practical requirements of a VR build.",
-      "image": "assets/process-tree.jpg",
+      "image": "assets/process-tree.webp",
       "alt": "Team system diagram connecting physiological input, the VR environment, and intended experience outcomes."
     },
     "contributionPoints": [
