@@ -116,7 +116,7 @@ footer h2{text-wrap:balance}
 .cv-link{font-size:15px;font-weight:600;color:var(--accent)}
 .cv-link span{font-size:12px;font-weight:400;color:var(--muted)}
 footer .contact-actions{justify-content:center}
-#asteroids .media img{object-fit:contain}
+#asteroids .media img{object-fit:cover;object-position:50% 45%}
 @media(max-width:750px){
  .intro{display:flex;flex-direction:column;text-align:center;gap:22px;padding:28px 0}
  .portrait{position:static;order:-1;width:170px;max-width:170px;height:auto;margin:0;align-self:center;border-width:4px}

@@ -164,7 +164,7 @@ window.projects = [
   },
   {
     "id": "asteroids",
-    "title": "Custom Hardware Space Project",
+    "title": "Custom Hardware Space Game Project",
     "category": "Gameplay & physical interaction",
     "meta": [
       "Unity",
