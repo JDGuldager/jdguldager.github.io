@@ -139,3 +139,11 @@ footer .contact-actions{justify-content:center}
 .topbar nav{align-items:center}
 #theme-toggle{font-size:13px;line-height:1.4;padding:7px 10px;white-space:nowrap;color:var(--accent)}
 @media(max-width:550px){.topbar{flex-wrap:wrap;gap:12px;padding:16px 0}.topbar nav{justify-content:space-between;flex-wrap:wrap;width:100%;gap:12px}}
+/* Keep mobile experience labels and values in two aligned columns. */
+@media(max-width:750px){
+ .credentials{gap:0;text-align:left}
+ .credentials a{display:grid;grid-template-columns:105px minmax(0,1fr);gap:16px;align-items:baseline;padding:12px 0}
+ .credentials a+a{border-top:1px solid var(--line)}
+ .credentials span{display:block;margin:0;line-height:1.5}
+ .credentials small{grid-column:2}
+}
