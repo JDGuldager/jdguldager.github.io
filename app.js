@@ -10,3 +10,18 @@ document.getElementById('copy-email').addEventListener('click',async()=>{
  try{await navigator.clipboard.writeText('Guldager.post@gmail.com');status.textContent='Email address copied.';}
  catch{status.textContent='Select and copy the email address above.';}
 });
+
+const themeToggle=document.getElementById('theme-toggle');
+function syncThemeToggle(){
+ const dark=document.documentElement.dataset.theme==='dark';
+ themeToggle.textContent=dark?'Light mode':'Dark mode';
+ themeToggle.setAttribute('aria-label',dark?'Switch to light theme':'Switch to dark theme');
+ themeToggle.setAttribute('aria-pressed',String(dark));
+}
+themeToggle.addEventListener('click',()=>{
+ const next=document.documentElement.dataset.theme==='dark'?'light':'dark';
+ document.documentElement.dataset.theme=next;
+ try{localStorage.setItem('portfolio-theme',next);}catch{}
+ syncThemeToggle();
+});
+syncThemeToggle();

@@ -129,3 +129,13 @@ footer .contact-actions{justify-content:center}
 #contact{scroll-margin-top:28px}.contact-address{font-size:18px;user-select:all;margin:12px 0 18px}#copy-status{min-height:24px;font-size:14px;color:var(--accent);margin:12px 0 0}
 
 .availability{font-size:15px;color:var(--accent);margin:0 0 14px}
+
+/* Light by default; the original dark palette remains available. */
+:root{color-scheme:light;--bg:#F5F2EB;--surface:#E7ECE5;--text:#202A30;--muted:#566368;--line:#D3D8D0;--accent:#21665F;--summary:#202A30}
+:root[data-theme="dark"]{color-scheme:dark;--bg:#11151b;--surface:#191f28;--text:#f1f3f5;--muted:#b0b9c7;--line:#333d4c;--accent:#a8cbff;--summary:#d5dbe4}
+.summary{color:var(--summary)}
+.links a,.email,.contact-actions a{color:var(--accent)}
+#fyrmester .media img{background:#202A30}
+.topbar nav{align-items:center}
+#theme-toggle{font-size:13px;line-height:1.4;padding:7px 10px;white-space:nowrap;color:var(--accent)}
+@media(max-width:550px){.topbar{flex-wrap:wrap;gap:12px;padding:16px 0}.topbar nav{justify-content:space-between;flex-wrap:wrap;width:100%;gap:12px}}
